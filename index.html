@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bipul Debnath | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Welcome overlay -->
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-inner">
+      <span id="welcomeText">Welcome</span>
+    </div>
+  </div>
+
+
+ <!-- Floating Particles Canvas -->
+<canvas id="particleCanvas"></canvas>
+
+<div class="page-wrapper">
+
+  
+    <!-- Top navigation -->
+    <header class="main-header">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <span class="brand-text">bipul.dev</span>
+      </div>
+
+      <nav class="main-nav">
+  <a href="index.html" class="nav-link">
+    <img src="icons/home-page.png" class="nav-icon" alt="Home">
+    <span>Home</span>
+  </a>
+
+  <a href="projects.html" class="nav-link">
+    <img src="icons/backlog.png" class="nav-icon" alt="Projects">
+    <span>My Projects</span>
+  </a>
+
+  <a href="about.html" class="nav-link">
+    <img src="icons/about.png" class="nav-icon" alt="About Me">
+    <span>About Me</span>
+  </a>
+</nav>
+
+      <a id="connectBtn" class="pill-button pill-outline connect-btn">
+  <img src="assets/connect.png" class="connect-icon" />
+  <span>Connect Me</span>
+</a>
+
+
+
+    </header>
+    
+<!-- CONNECT MODAL -->
+<div id="connectModal" class="connect-modal">
+  <div class="connect-modal-content">
+
+    <button id="connectClose" class="connect-close">&times;</button>
+
+    <h2 class="connect-title">Let's Connect</h2>
+
+    <p class="connect-email">To: <strong>bdnatheduknow27@gmail.com</strong></p>
+
+    <!-- ADDED: REAL FORMSPREE FORM -->
+    <form id="connectForm" action="https://formspree.io/f/mkgaywkd" method="POST">
+
+      <input type="text" name="name" class="connect-input" placeholder="Your Name" required>
+
+      <input type="email" name="email" class="connect-input" placeholder="Your Email" required>
+
+      <textarea name="message" class="connect-textarea" rows="4" placeholder="Your Message" required></textarea>
+
+      <button type="submit" class="connect-send-btn">Send</button>
+    </form>
+
+  </div>
+</div>
+
+
+    <main>
+      <!-- Name Loader -->
+<div class="name-loader" id="nameLoader">
+  <span id="typedName"></span>
+</div>
+
+            <!-- Hero section -->
+            
+
+      <section class="hero-section" id="home">
+        
+
+
+
+        <div class="hero-left">
+          <div class="hero-intro-pill">
+    <div class="avatar-circle">
+      <img src="assets/avatar.png" alt="Avatar" class="avatar-img">
+    </div>
+
+    <span>Hello, I'm Bipul</span>
+</div>
+
+
+          <div class="hero-title">
+            <span class="hero-word hero-digital">DIGITAL</span>
+            <span class="hero-word hero-experience">EXPERIENCE</span>
+            <span class="hero-word hero-designer">ENGINEER</span>
+            <span class="hero-word hero-and">&amp;</span>
+            <span class="hero-word hero-developer">DEVELOPER.</span>
+          </div>
+
+          <div class="hero-meta-row">
+            <div class="hero-meta">
+              <span>// Developer</span>
+              <span>CSE Undergrad</span>
+            </div>
+            <div class="hero-meta hero-location">
+              <span>// Based in</span>
+              <span>Tripura, India</span>
+            </div>
+          </div>
+
+          
+
+          <p class="hero-subtext">
+  I build <span class="accent-purple">fast</span>, 
+  <span class="accent-yellow">reliable</span>, and 
+  <span class="accent-cyan">scalable</span> digital experiences using clean code and thoughtful design.
+</p>
+
+        </div>
+      </section>
+
+
+      <!-- What I do -->
+      <section class="section what-i-do" id="services">
+        <p class="section-eyebrow">WHAT I DO</p>
+        <h2 class="section-title-center">How I can help you</h2>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>Frontend Dev
+            </h3>
+            <p>Building Responsive, clear & modern web interfaces</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">📱</div>
+            <h3>Web & Mobile</h3>
+            <p>Turning ideas into responsive and accessible web experiences.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">🧠</div>
+            <h3>Design & Creative</h3>
+            <p>Crafting visuals that connect with your users and brand.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>Development</h3>
+            <p>Building scalable frontends using modern JavaScript and tools.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects preview -->
+      <section class="section projects-preview" id="projects-preview">
+        <div class="section-header-row">
+          <h2 class="section-title">My Projects</h2>
+          <a href="projects.html" class="pill-button pill-outline">
+            <span>View All</span>
+          </a>
+        </div>
+
+        <div class="project-list">
+          <a href="projects.html#infogenie" class="project-row">
+            <div>
+              <h3>Infogenie</h3>
+              <p class="project-meta">MERN Stack · 2025</p>
+            </div>
+            <div class="project-tags">
+              <span>Full-Stack</span>
+              <span>React</span>
+            </div>
+          </a>
+
+          <a href="projects.html#null-academy" class="project-row">
+            <div>
+              <h3>DevTools Hub</h3>
+              <p class="project-meta">Utility Tools for Developers · 2025</p>
+            </div>
+            <div class="project-tags">
+              <span>Content</span>
+              <span>Dev Education</span>
+            </div>
+          </a>
+
+          <a href="projects.html#biomass-energy" class="project-row">
+            <div>
+              <h3>LeetCode Java Solution</h3>
+              <p class="project-meta">DSA· 2025</p>
+            </div>
+            <div class="project-tags">
+              <span>Logic</span>
+              <span>Algorithms</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Tech stack -->
+      <section class="section tech-stack">
+        <p class="section-eyebrow">MY TECH STACK</p>
+        <h2 class="section-title-center">
+          My expertise spans a range of
+          <span class="accent-yellow">technologies</span>, enabling me to ship
+          <span class="accent-cyan">reliable</span> &amp;
+          <span class="accent-purple">modern</span> solutions.
+        </h2>
+
+ <div class="tech-marquee">
+  <div class="marquee-content" id="marqueeRow">
+    
+    <div class="tech-pill"><img src="icons/html.png"><span>HTML</span></div>
+    <div class="tech-pill"><img src="icons/css.png"><span>CSS</span></div>
+    <div class="tech-pill"><img src="icons/javascript.png"><span>JavaScript</span></div>
+    <div class="tech-pill"><img src="icons/react.png"><span>React</span></div>
+    <div class="tech-pill"><img src="icons/node.png"><span>Node.js</span></div>
+    <div class="tech-pill"><img src="icons/mongodb.png"><span>MongoDB</span></div>
+    <div class="tech-pill"><img src="icons/c.png"><span>C</span></div>
+    <div class="tech-pill"><img src="icons/java.png"><span>Java</span></div>
+    <div class="tech-pill"><img src="icons/git.png"><span>Git</span></div>
+    <div class="tech-pill"><img src="icons/github.png"><span>GitHub</span></div>
+    <div class="tech-pill"><img src="icons/cpp.png"><span>C++</span></div>
+    <div class="tech-pill"><img src="icons/gcp.png"><span>Google Cloud</span></div>
+
+  </div>
+</div>
+
+
+
+        <div class="cta-row">
+          <a href="projects.html" class="pill-button pill-solid-green">
+            <span>My Projects</span>
+          </a>
+          <!-- HIRE ME button -->
+<button id="hireBtn" class="hire-button">
+  <img src="assets/hired.png" class="hire-icon" alt="Hire Me Icon">
+  <span>Hire Me</span>
+</button>
+
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-heading">Where aesthetics &amp; functionality meet</p>
+          <p class="footer-text">
+            Clean layouts, smooth interactions, and code that is easy to maintain.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-heading">Follow Me</p>
+          <ul class="footer-links">
+            <a href="https://www.linkedin.com/in/bipul-debnath-bb5b20338/" target="_blank" class="social-icon">
+    <img src="icons/linkedin.png" alt="LinkedIn">
+    <span>LinkedIn</span>
+  </a>
+</li>
+             <a href="https://www.instagram.com/bd_nath09?igsh=cHNxZzUwMTc4djZw" target="_blank" class="social-icon">
+    <img src="icons/instagram.png" alt="Instagram">
+    <span>Instagram</span>
+  </a>
+</li>
+            <li>
+  <a href="https://github.com/bdnath702" target="_blank" class="social-icon">
+    <img src="icons/github.png" alt="GitHub">
+    <span>GitHub</span>
+  </a>
+</li>
+<li>
+  <a href="https://www.reddit.com/u/just_im_frustrated6/s/yF8vAq0iFE" target="_blank" class="social-icon">
+    <img src="icons/reddit.png" alt="Reddit">
+    <span>Reddit</span>
+  </a>
+</li>
+
+          </ul>
+        </div>
+
+        <div>
+  <p class="footer-heading">Contact</p>
+  <ul class="footer-links">
+    <li><a id="footerHello" style="cursor:pointer;">Say Hello!</a></li>
+
+
+    <li><span>Tripura, India</span></li>
+    <li><span>Let's build something incredible together 🚀</span></li>
+    <li><span>I reply fast — try me.</span></li>
+  </ul>
+</div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Bipul Debnath</span>
+        <span>Portfolio</span>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <!-- HIRE ME MODAL -->
+<div id="hireModal" class="hire-modal">
+  <div class="hire-modal-content">
+
+    <button id="hireClose" class="hire-close">×</button>
+    <h2 class="hire-title">Hire Me</h2>
+
+   <form id="hireForm" class="hire-form" action="https://formspree.io/f/mkgaywkd" method="POST">
+
+  <input type="hidden" name="_subject" value="New Hire Request">
+  <input type="hidden" name="_replyto" value="">
+
+  <label>Your Name</label>
+  <input type="text" name="name" required>
+
+  <label>Your Email</label>
+  <input type="email" name="email" required>
+
+  <label>Your Message</label>
+  <textarea name="message" rows="4" required></textarea>
+
+  <label>Budget Range</label>
+  <select name="budget">
+    <option value="Not specified">Not specified</option>
+    <option value="₹1,000 – ₹5,000">₹1,000 – ₹5,000</option>
+    <option value="₹5,000 – ₹15,000">₹5,000 – ₹15,000</option>
+    <option value="₹15,000+">₹15,000+</option>
+  </select>
+
+  <button type="submit" class="hire-send-btn">Send</button>
+</form>
+
+
+  </div>
+</div>
+
+
+
+<!-- SUCCESS POPUP -->
+<div id="hireSuccess" class="hire-success-popup">Request Sent Successfully!</div>
+
+</body>
+
+</html>

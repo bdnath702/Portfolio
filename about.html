@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About | Bipul Debnath</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="main-header">
+      <div class="brand">
+        <div class="brand-dot"></div>
+        <span class="brand-text">bipul.dev</span>
+      </div>
+
+     <nav class="main-nav">
+  <a href="index.html" class="nav-link">
+    <img src="icons/home-page.png" class="nav-icon" alt="Home">
+    <span>Home</span>
+  </a>
+
+  <a href="projects.html" class="nav-link">
+    <img src="icons/backlog.png" class="nav-icon" alt="Projects">
+    <span>My Projects</span>
+  </a>
+
+  <a href="about.html" class="nav-link ">
+    <img src="icons/about.png" class="nav-icon" alt="About Me">
+    <span>About Me</span>
+  </a>
+</nav>
+
+
+    <a id="resumeBtn" class="pill-button pill-outline resume-btn">
+  <img src="assets/profile.png" class="resume-icon" />
+  <span>View Resume</span>
+</a>
+
+
+
+
+    </header>
+    <!-- Resume Modal -->
+<div id="resumeModal" class="resume-modal">
+  <div class="resume-modal-content">
+    <button id="resumeClose" class="resume-close">&times;</button>
+    <iframe id="resumeFrame" class="resume-frame"></iframe>
+  </div>
+</div>
+
+
+
+    <main>
+      <!-- Import the blob mask -->
+<!-- Blob mask definition (NEEDED for clip-path to work) -->
+<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+  <clipPath id="myBlob" clipPathUnits="objectBoundingBox">
+    <path d="M0.54,0.03 C0.67,0.05,0.82,0.13,0.91,0.26 C1.02,0.42,1.01,0.61,0.93,0.78 C0.85,0.95,0.69,1.02,0.51,1 C0.33,0.98,0.18,0.88,0.09,0.74 C-0.02,0.57,-0.02,0.37,0.09,0.19 C0.19,0.06,0.36,0.01,0.54,0.03Z"/>
+  </clipPath>
+</svg>
+
+<section class="section about-hero">
+  <h1 class="page-title">About Me</h1>
+  <p class="page-subtitle">
+    Developer, CSE undergrad, and someone who enjoys balancing clean code,
+    design, and real-life responsibilities.
+  </p>
+
+   <div class="profile-blob">
+    <img src="assets/about-pic.jpg" alt="Profile Photo">
+  </div>
+
+
+
+
+</section>
+
+
+
+      <section class="section about-layout">
+        <div class="about-main">
+          <p>
+  I'm <strong style="color:#00eaff;">Bipul Debnath</strong>, a B.Tech CSE student with a strong
+  interest in <span style="color:#ffb034;">web development</span> and 
+  <span>computer science fundamentals</span>. 
+  I enjoy building interfaces that feel 
+  <span style="color:#00ffa6;">smooth and polished</span> 
+  while keeping the codebase 
+  <strong style="color:#ff5e73;">readable</strong> 
+  and 
+  <strong style="color:#ffd84d;">maintainable</strong>.
+</p>
+
+          <p>
+            Outside of coding, I’m passionate about <strong style="color: #00ffa6">cricket</strong>, learning new tech,
+            and creating content that simplifies programming concepts for others.
+          </p>
+          <p>
+            I see myself growing into a well-rounded engineer who can design,
+            build, and communicate clearly within a team.
+          </p>
+        </div>
+
+     <aside class="about-side">
+  
+  <div class="about-card ask-card">
+    <h3>Ask Me Anything</h3>
+
+    <p class="ask-desc">Got a question? Send it directly to my inbox.</p>
+
+    <textarea 
+      id="askMessage"
+      placeholder="Type your question here..."
+      class="ask-input"
+      rows="4"
+    ></textarea>
+
+    <a 
+      id="sendEmailBtn"
+      class="ask-button"
+      style="display:block; text-align:center; margin-top:10px;"
+    >
+      Send
+    </a>
+
+  </div>
+
+</aside>
+
+      </section>
+
+      <section class="section timeline-section">
+  <h2 class="section-title">Experience & Education</h2>
+
+  <div class="timeline">
+
+    <!-- 10th Grade -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <p class="timeline-date">2022</p>
+        <h3>10th Grade – TBSE</h3>
+        <p>Completed secondary education with strong academic performance.</p>
+      </div>
+    </div>
+
+    <!-- 12th Grade -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <p class="timeline-date">2024</p>
+        <h3>12th Grade – CBSE</h3>
+        <p>Studied Physics, Chemistry, and Mathematics with an interest in computer science.</p>
+      </div>
+    </div>
+
+    <!-- B.Tech CSE Admission -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <p class="timeline-date">2024 – Present</p>
+        <h3>B.Tech CSE – ICFAI University Tripura</h3>
+        <p>Learning programming, DSA, web technologies, and core computer science.</p>
+      </div>
+    </div>
+
+    <!-- LeetCode Java -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <p class="timeline-date">2025</p>
+        <h3>LeetCode – Java Solutions</h3>
+        <p>Consistently solving DSA problems to improve problem-solving and Java skills.</p>
+      </div>
+    </div>
+
+    <!-- Infogenie – Frontend -->
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <p class="timeline-date">2025</p>
+        <h3>Infogenie – MERN Stack</h3>
+        <p>Built an AI-powered chatbot using the MERN stack, focusing on intelligent responses, fast search, and smooth user interaction.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-heading">Where aesthetics &amp; functionality meet</p>
+          <p class="footer-text">
+            Aligning design choices with technical decisions from day one.
+          </p>
+        </div>
+        <div>
+          <p class="footer-heading">Explore</p>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="projects.html">My Projects</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Follow Me</p>
+          <ul class="footer-links">
+            <a href="https://www.linkedin.com/in/bipul-debnath-bb5b20338/" target="_blank" class="social-icon">
+    <img src="icons/linkedin.png" alt="LinkedIn">
+    <span>LinkedIn</span>
+  </a>
+</li>
+             <a href="https://www.instagram.com/bd_nath09?igsh=cHNxZzUwMTc4djZw" target="_blank" class="social-icon">
+    <img src="icons/instagram.png" alt="Instagram">
+    <span>Instagram</span>
+  </a>
+</li>
+            <li>
+  <a href="https://github.com/bdnath702" target="_blank" class="social-icon">
+    <img src="icons/github.png" alt="GitHub">
+    <span>GitHub</span>
+  </a>
+</li>
+<li>
+  <a href="https://www.reddit.com/u/just_im_frustrated6/s/yF8vAq0iFE" target="_blank" class="social-icon">
+    <img src="icons/reddit.png" alt="Reddit">
+    <span>Reddit</span>
+  </a>
+</li>
+
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <ul class="footer-links">
+          <li><a id="footerHello" style="cursor:pointer;">Say Hello!</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Bipul Debnath</span>
+        <span>Portfolio</span>
+      </div>
+    </footer>
+  </div>
+  <div id="successPopup" class="success-popup">Message sent successfully!</div>
+<script src="script.js"></script>
+
+<div id="resumeViewer" class="resume-modal">
+  <div class="resume-modal-content">
+    <span id="closeResume" class="resume-close">&times;</span>
+
+    <!-- PDF or Image -->
+    <iframe id="resumeFrame" src="" frameborder="0"></iframe>
+    <!-- Or image fallback -->
+    <img id="resumeImg" src="" alt="Resume" />
+  </div>
+</div>
+
+
+
+
+<!-- ==============================
+     CONNECT ME MODAL (Reusable)
+     ============================== -->
+<div id="connectModal" class="connect-modal">
+  <div class="connect-modal-content">
+    <span id="connectClose" class="connect-close">&times;</span>
+
+    <h2>Connect With Me</h2>
+
+    <p>You can also email me directly at: 
+      <strong>bdnatheduknow27@gmail.com</strong>
+    </p>
+
+    <input id="connectName" type="text" placeholder="Your Name" class="connect-input">
+    <input id="connectEmail" type="email" placeholder="Your Email" class="connect-input">
+
+    <textarea id="connectMessage" placeholder="Your Message" class="connect-textarea"></textarea>
+
+    <button id="connectSend" class="connect-send-btn">Send Message</button>
+  </div>
+</div>
+
+</body>
+
+
+</html>
