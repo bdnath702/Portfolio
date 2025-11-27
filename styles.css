@@ -1498,7 +1498,7 @@ body {
 }
 
 /* ==========================
-   Blob Profile Photo – 3D Hover
+   Profile Photo – Square with Rounded Corners + 3D Hover
    ========================== */
 
 .profile-blob {
@@ -1507,13 +1507,19 @@ body {
   right: 20%;
   width: 260px;
   height: 260px;
+
+  /* square rounded style */
+  border-radius: 24px;
   overflow: hidden;
-  clip-path: url("#myBlob");
+
+  /* remove blob clip-path */
+  clip-path: none;
+
+  /* hover effect */
   transform-style: preserve-3d;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Image styling */
 .profile-blob img {
   width: 100%;
   height: 100%;
@@ -1521,46 +1527,46 @@ body {
   transition: transform 0.4s ease;
 }
 
-/* 3D hover tilt */
-.profile-blob:hover {
-  transform: perspective(800px) rotateX(8deg) rotateY(-8deg) scale(1.03);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-}
+/* =====================================
+   Profile Photo — Clean Modern Hover
+   ===================================== */
 
-/* Light reflection sweep */
-.profile-blob::after {
-  content: "";
+.profile-blob {
   position: absolute;
-  top: -120%;
-  left: -120%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    130deg,
-    transparent 50%,
-    rgba(255,255,255,0.18) 60%,
-    transparent 72%
-  );
-  transform: rotate(20deg);
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.6s ease;
-  pointer-events: none;
+  top: 100px;
+  right: 20%;
+  width: 260px;
+  height: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+
+  /* new clean transitions */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.profile-blob:hover::after {
-  opacity: 1;
-  transform: translate(40%, 40%) rotate(20deg);
+/* image stays natural */
+.profile-blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
 }
 
-/* Zoom-in on hover */
+/* NEW minimal hover effect */
+.profile-blob:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+}
+
+/* slight zoom */
 .profile-blob:hover img {
-  transform: scale(1.08);
-}
-.hero-section {
-  position: relative;
-  z-index: 2; /* hero content stays on top */
+  transform: scale(1.06);
 }
 
+/* Remove previous reflection / 3D */
+.profile-blob::after {
+  display: none !important;
+}
 
 
 
@@ -1736,4 +1742,58 @@ body {
 .hire-send-btn:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 0 16px rgba(0,173,255,0.45);
+}
+
+
+/* ===========================
+   FIXES FOR SMALL SCREENS
+   =========================== */
+@media (max-width: 600px) {
+
+  /* Hide profile picture in ABOUT page */
+  .about-hero .profile-blob {
+    display: none !important;
+  }
+
+  /* Hide Connect Me button on mobile */
+  #connectBtn {
+    display: none !important;
+  }
+
+  /* Header alignment clean-up */
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  /* Keep only nav buttons clean and centered */
+  .main-nav {
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 8px 6px;
+  }
+
+  /* Move resume button to bottom center */
+  #resumeBtn {
+    width: 100%;
+    max-width: 240px;
+    margin: 10px auto 0 auto;
+    display: block;
+    text-align: center;
+  }
+
+  /* Make hero section slightly compact so particles stay top-only */
+  .hero-section {
+    padding-top: 55px;
+    padding-bottom: 10px;
+  }
+
+  /* IMPORTANT: prevent particles from filling entire page */
+  #particleCanvas {
+    height: 320px !important;
+    pointer-events: none;
+    display: block; /* make sure it's visible again */
+  }
 }

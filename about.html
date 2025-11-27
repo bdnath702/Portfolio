@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -107,26 +109,31 @@
      <aside class="about-side">
   
   <div class="about-card ask-card">
-    <h3>Ask Me Anything</h3>
+  <h3>Ask Me Anything</h3>
 
-    <p class="ask-desc">Got a question? Send it directly to my inbox.</p>
+  <p class="ask-desc">Got a question? Send it directly to my inbox.</p>
+
+  <form id="askForm" action="https://formspree.io/f/mkgaywkd" method="POST">
 
     <textarea 
-      id="askMessage"
+      name="message"
       placeholder="Type your question here..."
       class="ask-input"
       rows="4"
+      required
     ></textarea>
 
-    <a 
-      id="sendEmailBtn"
+    <button 
+      type="submit"
       class="ask-button"
-      style="display:block; text-align:center; margin-top:10px;"
+      style="display:block; text-align:center; margin-top:10px; width:100%;"
     >
       Send
-    </a>
+    </button>
 
-  </div>
+  </form>
+</div>
+
 
 </aside>
 
