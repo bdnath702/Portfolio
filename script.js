@@ -242,7 +242,7 @@ if (particleCanvas && heroSection) {
   window.addEventListener("resize", resizeCanvas);
 
   const particles = [];
-  const totalParticles = 70;
+  const totalParticles = window.innerWidth < 768 ? 35 : 70;
 
   // create particles
   function createParticles() {

@@ -1,6 +1,9 @@
 /* ===========================
    Global Reset & Variables
    =========================== */
+   html, body {
+  overflow-x: hidden;
+}
 
 *,
 *::before,
@@ -434,6 +437,48 @@ body {
 .accent-cyan {
   color: var(--accent-cyan);
 }
+
+
+
+/* ===============================
+   HERO TEXT MOBILE FIX
+   =============================== */
+
+@media (max-width: 768px) {
+
+  .hero-word {
+    line-height: 1.05;
+  }
+
+  .hero-digital {
+    font-size: clamp(2.1rem, 9vw, 2.5rem);
+  }
+
+  .hero-experience {
+    font-size: clamp(2.4rem, 10vw, 2.9rem);
+  }
+
+  .hero-designer {
+    font-size: clamp(2.2rem, 9vw, 2.6rem);
+  }
+
+  .hero-and {
+    font-size: clamp(1.9rem, 8vw, 2.2rem);
+  }
+
+  .hero-developer {
+    font-size: clamp(2.4rem, 10vw, 2.9rem);
+  }
+
+  .hero-meta-row {
+    justify-content: center;
+    gap: 16px;
+  }
+
+}
+
+
+
 
 
 /* ===========================
@@ -1796,4 +1841,54 @@ body {
     pointer-events: none;
     display: block; /* make sure it's visible again */
   }
+}
+/* ===============================
+   MOBILE HEADER FIX
+   =============================== */
+
+@media (max-width: 768px) {
+
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px 10px;
+  }
+
+  .nav-link {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .nav-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+}
+
+@media (max-width: 768px){
+
+.hero-section{
+  min-height:auto;
+  padding:60px 10px 20px;
+}
+
+.hero-subtext{
+  font-size:0.9rem;
+  padding:0 10px;
+}
+
 }
