@@ -1905,12 +1905,11 @@ body {
 
   .main-header {
     padding: 6px 10px;
-    border-radius: 16px; /* reduce big pill look */
+    border-radius: 16px;
     flex-wrap: nowrap;
     gap: 6px;
   }
 
-  /* Brand smaller */
   .brand-text {
     font-size: 0.75rem;
   }
@@ -1920,42 +1919,38 @@ body {
     height: 12px;
   }
 
-  /* NAV CONTAINER */
   .main-nav {
     gap: 4px;
     padding: 2px;
-    background: transparent; /* remove big dark capsule */
+    background: transparent;
   }
 
-  /* NAV LINKS */
   .nav-link {
-    padding: 4px 8px;
-    font-size: 0.7rem;
+    padding: 4px 6px;
+    font-size: 0.65rem;
     gap: 4px;
   }
 
-  .nav-link span {
-    display: none; /* 🔥 hide text → only icons (clean like your last pic) */
-  }
-
   .nav-icon {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
-  /* RIGHT BUTTON (Connect / Resume) */
+  /* keep text BUT make it small */
+  .nav-link span {
+    font-size: 0.6rem;
+  }
+
+  /* buttons */
   .pill-button {
-    padding: 4px 8px;
-    font-size: 0.7rem;
-  }
-
-  .pill-button span {
-    display: none; /* keep only icon */
+    padding: 4px 6px;
+    font-size: 0.65rem;
+    gap: 4px;
   }
 
   .connect-icon,
   .resume-icon {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 }
