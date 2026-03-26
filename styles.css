@@ -1892,3 +1892,70 @@ body {
 }
 
 }
+
+
+
+
+
+
+/* ============================
+   MOBILE HEADER COMPACT FIX
+   ============================ */
+@media (max-width: 600px) {
+
+  .main-header {
+    padding: 6px 10px;
+    border-radius: 16px; /* reduce big pill look */
+    flex-wrap: nowrap;
+    gap: 6px;
+  }
+
+  /* Brand smaller */
+  .brand-text {
+    font-size: 0.75rem;
+  }
+
+  .brand-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  /* NAV CONTAINER */
+  .main-nav {
+    gap: 4px;
+    padding: 2px;
+    background: transparent; /* remove big dark capsule */
+  }
+
+  /* NAV LINKS */
+  .nav-link {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+    gap: 4px;
+  }
+
+  .nav-link span {
+    display: none; /* 🔥 hide text → only icons (clean like your last pic) */
+  }
+
+  .nav-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* RIGHT BUTTON (Connect / Resume) */
+  .pill-button {
+    padding: 4px 8px;
+    font-size: 0.7rem;
+  }
+
+  .pill-button span {
+    display: none; /* keep only icon */
+  }
+
+  .connect-icon,
+  .resume-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
