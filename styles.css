@@ -940,40 +940,6 @@ body {
 }
 
 
-/* ===========================
-   Lottie Animation (Projects Page)
-   =========================== */
-
-.projects-lottie {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 280px;
-  height: auto;
-  animation: walkAcross 16s linear infinite;
-}
-
-.projects-lottie lottie-player {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-
-/* walking left animation */
-@keyframes walkAcross {
-  0% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  80% {
-    transform: translateX(-90vw);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100vw);
-    opacity: 0;
-  }
-}
 
 
 /* ===========================
@@ -1032,6 +998,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 20%;
 }
 
 
