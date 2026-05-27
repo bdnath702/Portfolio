@@ -568,7 +568,267 @@ body {
   box-shadow: var(--shadow-soft);
 
 }
+/* =========================================
+   MOBILE SIDEBAR
+========================================= */
 
+.mobile-sidebar {
+
+  position: fixed;
+
+  top: 0;
+  right: -100%;
+
+  width: 82%;
+  max-width: 340px;
+
+  height: 100vh;
+
+  background: var(--bg-card);
+
+  border-left:
+    1px solid var(--border-soft);
+
+  z-index: 99999;
+
+  transition:
+    right 0.35s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 22px 22px 34px;
+
+  box-shadow:
+    -10px 0 30px rgba(0,0,0,0.12);
+
+}
+
+
+.mobile-sidebar.open {
+
+  right: 0;
+
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.close-sidebar-btn {
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid var(--border-soft);
+
+  background: transparent;
+
+  color: var(--text-main);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  margin-bottom: 42px;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+
+}
+
+
+.close-sidebar-btn:hover {
+
+  background:
+    rgba(255,255,255,0.06);
+
+  transform: rotate(90deg);
+
+}
+
+
+/* =========================================
+   SIDEBAR CONTENT
+========================================= */
+
+.mobile-sidebar-content {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+}
+
+
+/* =========================================
+   MOBILE LINKS
+========================================= */
+
+.mobile-link {
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  width: 100%;
+
+  padding: 16px 18px;
+
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  color: var(--text-main);
+
+  font-size: 1.08rem;
+  font-weight: 500;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    color 0.25s ease;
+
+}
+
+
+/* ICON */
+
+.mobile-link svg {
+
+  width: 24px;
+  height: 24px;
+
+  stroke-width: 2.1;
+
+}
+
+
+/* HOVER */
+
+.mobile-link:hover {
+
+  background:
+    rgba(255,255,255,0.06);
+
+  transform: translateX(6px);
+
+}
+
+
+/* =========================================
+   RESUME BUTTON
+========================================= */
+
+#mobileResumeBtn {
+
+  margin-top: 18px;
+
+  border:
+    1px solid var(--border-soft);
+
+}
+
+
+/* =========================================
+   LIGHT THEME
+========================================= */
+
+html:not(.dark-theme) .mobile-sidebar {
+
+  background: #f8f3eb;
+
+}
+
+
+html:not(.dark-theme) .mobile-link:hover {
+
+  background:
+    rgba(0,0,0,0.05);
+
+}
+
+
+html:not(.dark-theme) #mobileResumeBtn {
+
+  background: #ffffff;
+
+  color: #111111;
+
+}
+
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+.dark-theme .mobile-sidebar {
+
+  background: #080909;
+
+}
+
+
+.dark-theme .mobile-link {
+
+  color: #f7efd4;
+
+}
+
+
+.dark-theme .mobile-link:hover {
+
+  background:
+    rgba(255,255,255,0.05);
+
+}
+
+
+.dark-theme #mobileResumeBtn {
+
+  background: #111111;
+
+  color: #f7efd4;
+
+  border:
+    1px solid #262626;
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+  .mobile-sidebar {
+
+    width: 86%;
+
+    padding:
+      18px 18px 28px;
+
+  }
+
+  .mobile-link {
+
+    font-size: 1rem;
+
+    padding: 15px 16px;
+
+  }
+
+}
 
 /* =========================================
    TABLET & MOBILE
@@ -594,67 +854,11 @@ body {
 
   }
 
-  .mobile-sidebar {
+  
 
-    display: block;
+  
 
-    position: fixed;
-
-    top: 0;
-    right: -100%;
-
-    width: 78%;
-    height: 100vh;
-
-    background: var(--bg-card);
-
-    border-left: 1px solid var(--border-soft);
-
-    z-index: 9999;
-
-    transition: right 0.35s ease;
-
-    visibility: hidden;
-    opacity: 0;
-
-  }
-
-  .mobile-sidebar.open {
-
-    right: 0;
-
-    visibility: visible;
-    opacity: 1;
-
-  }
-
-  .mobile-sidebar-content {
-
-    padding: 100px 24px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 14px;
-
-  }
-
-  .mobile-link {
-
-    display: flex;
-    align-items: center;
-
-    gap: 12px;
-
-    padding: 16px;
-
-    border-radius: 14px;
-
-    text-decoration: none;
-
-    color: var(--text-main);
-
-  }
+  
 
   .footer-grid {
 
