@@ -1,312 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
   <title>Bipul Debnath | Projects</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-  <script defer src="script.js"></script>
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJ63QXHP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-03VJ63QXHP');
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- LUCIDE -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet"
+        href="css/styles.css">
+
+  <link rel="stylesheet"
+        href="css/layout.css">
+
+  <link rel="stylesheet"
+        href="css/projects.css">
+
+        <script>
+
+  const savedTheme =
+    localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+
+    document.documentElement.classList.add("dark-theme");
+
+  }
+
 </script>
+
 </head>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-<body>
+<body class="projects-page">
+
   <div class="page-wrapper">
-    <header class="main-header">
-      <div class="brand">
-        <div class="brand-dot"></div>
-        <span class="brand-text">bipul.dev</span>
-      </div>
-
-      <nav class="main-nav">
-  <a href="index.html" class="nav-link">
-    <img src="icons/home-page.png" class="nav-icon" alt="Home">
-    <span>Home</span>
-  </a>
-
-  <a href="projects.html" class="nav-link">
-    <img src="icons/backlog.png" class="nav-icon" alt="Projects">
-    <span>My Projects</span>
-  </a>
-
-  <a href="about.html" class="nav-link">
-    <img src="icons/about.png" class="nav-icon" alt="About Me">
-    <span>About Me</span>
-  </a>
-</nav>
-
-      <a id="connectBtn" class="pill-button pill-outline connect-btn">
-  <img src="assets/connect.png" class="connect-icon" />
-  <span>Connect Me</span>
-</a>
-
-    </header>
-    
 <!-- CONNECT MODAL -->
 <div id="connectModal" class="connect-modal">
+
   <div class="connect-modal-content">
 
-    <button id="connectClose" class="connect-close">&times;</button>
+    <button id="connectClose"
+            class="connect-close">
 
-    <h2 class="connect-title">Let's Connect</h2>
+      &times;
 
-    <p class="connect-email">To: <strong>bdnatheduknow27@gmail.com</strong></p>
+    </button>
 
-    <!-- ADDED: REAL FORMSPREE FORM -->
-    <form id="connectForm" action="https://formspree.io/f/mkgaywkd" method="POST">
+    <h2 class="connect-title">
+      Let's Connect
+    </h2>
 
-      <input type="text" name="name" class="connect-input" placeholder="Your Name" required>
+    <p class="connect-email">
 
-      <input type="email" name="email" class="connect-input" placeholder="Your Email" required>
+      To:
+      <strong>
+        bdnatheduknow27@gmail.com
+      </strong>
 
-      <textarea name="message" class="connect-textarea" rows="4" placeholder="Your Message" required></textarea>
+    </p>
 
-      <button type="submit" class="connect-send-btn">Send</button>
+    <form id="connectForm"
+          action="https://formspree.io/f/mkgaywkd"
+          method="POST">
+
+      <input type="text"
+             name="name"
+             class="connect-input"
+             placeholder="Your Name"
+             required>
+
+      <input type="email"
+             name="email"
+             class="connect-input"
+             placeholder="Your Email"
+             required>
+
+      <textarea name="message"
+                class="connect-textarea"
+                rows="4"
+                placeholder="Your Message"
+                required></textarea>
+
+      <button type="submit"
+              class="connect-send-btn">
+
+        Send
+
+      </button>
+
     </form>
 
   </div>
+
 </div>
-
-    <main>
-      <section class="section projects-page-hero">
-
-  <h1 class="page-title">My Projects</h1>
-  <p class="page-subtitle">
-    A curated selection of work that reflects how I think, code, and ship.
-  </p>
-
-  <!-- Lottie Animation -->
-  <div class="projects-lottie">
-  <lottie-player 
-    src="assets/animations/my-animation.json"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay>
-  </lottie-player>
-</div>
+    <!-- HEADER -->
+    <div id="header"></div>
 
 
-</section>
+    <!-- =========================================
+         PROJECT HERO
+    ========================================== -->
 
+    <section class="projects-hero-section">
 
-      <!-- Project 1 -->
-      <section class="section project-detail" id="infogenie">
-        <div class="project-detail-main">
-          <div class="project-detail-text">
-            <p class="project-meta-top">
-  <span>MERN Stack</span> · 2025
-</p>
+      <div class="projects-hero-content">
 
-<h2>Infogenie</h2>
+        <h1 class="projects-heading">
+          My Projects
+        </h1>
 
-<p class="project-role" >Full-Stack Development</p>
+        <p class="projects-subtitle">
 
-<ul class="project-points">
-  <li>
-    Built a responsive info platform using 
-    <span style="color:#00eaff;">React</span>, 
-    <span style="color:#86ff5c;">Node.js</span>, 
-    <span>Express</span>, and 
-    <span style="color:#ffd84d;">MongoDB</span>.
-  </li>
+          A curated selection of work that reflects
+          how I think, code, and ship.
 
-  <li>
-    Designed smooth navigation and clear content hierarchy 
-    for a better <span style="color:#ffa93a;">UX</span>.
-  </li>
+        </p>
 
-  <li>
-    Implemented 
-    <span>reusable components</span> 
-    and a 
-    <strong style="color:#00ffa6;">modular folder structure</strong>.
-  </li>
-
-  <li>
-    Deployed the frontend on 
-    <span style="color:#00eaff;">Render</span> and backend API on a 
-    <span style="color:#ff5e73;">separate service</span>.
-  </li>
-</ul>
-
-            <div class="project-links-row">
-              <a href="https://infogenie.onrender.com/" class="pill-button pill-outline">Visit</a>
-              <a href="https://github.com/bdnath702" class="pill-button pill-soft">GitHub</a>
-            </div>
-          </div>
-          <div class="project-preview-box">
-  <img src="assets/infogenie.png" alt="Infogenie Project" class="project-image">
-</div>
-
-        </div>
-      </section>
-
-     <!-- Project 2 -->
-<section class="section project-detail" id="devtools-hub">
-  <div class="project-detail-main">
-
-    <div class="project-detail-text">
-
-      <p class="project-meta-top">
-        Utility Tools for Developers · 
-        <span>2025</span>
-      </p>
-
-      <h2>DevTools Hub</h2>
-
-      <p class="project-role">Frontend · Tools & Utilities</p>
-
-      <ul class="project-points">
-        <li>
-          Building a <strong style="color:#86ff5c;">collection of essential developer tools</strong> like JSON formatter, text converter, and encoders.
-        </li>
-
-        <li>
-          Designed a <span style="color:#ffb034;">clean, modular interface</span> focusing on utility and speed.
-        </li>
-
-        <li>
-          Planned <span style="color:#00ffa6;">component-based UI</span> with responsive layout and smooth micro-interactions.
-        </li>
-      </ul>
-
-      <div class="project-links-row">
-        <a href="#" id="devtoolsVisitBtn" class="pill-button pill-outline">Visit</a>
-        <a href="#" class="pill-button pill-soft">GitHub</a>
       </div>
 
-    </div>
-
-    <div class="project-preview-box">
-      <span class="preview-placeholder">Coming Soon</span>
-    </div>
-
-  </div>
-</section>
+    </section>
 
 
 
-     <!-- Project 3 -->
-<section class="section project-detail glass-card" id="leetcode-java">
-  <div class="project-detail-main">
-    <div class="project-detail-text">
+    <!-- =========================================
+         PROJECT 1
+    ========================================== -->
 
-      <p class="project-meta-top">
-        Problem-Solving & Algorithms · 
-        <span>2025</span>
-      </p>
+    <section class="project-showcase-section">
 
-      <h2>LeetCode Java Solutions</h2>
+      <div class="project-showcase-grid">
 
-      <p class="project-role">DSA Problem-Solving & Algorithms</p>
+        <!-- LEFT -->
+        <div class="project-showcase-content">
 
-      <ul class="project-points">
-        <li>
-          Solved problems consistently to strengthen 
-          <span style="color:#ffd84d;">problem-solving skills</span>.
-        </li>
+          <span class="project-mini-title">
+            MERN STACK · 2025
+          </span>
 
-        <li>
-          Wrote <strong>clean, structured Java code</strong> 
-          with proper comments.
-        </li>
+          <h2 class="project-main-title">
+            Infogenie
+          </h2>
 
-        <li>
-          Focused on <span>time/space optimization</span> 
-          and <span style="color:#ff5e73;">pattern recognition</span>.
-        </li>
-
-        <li>
-          Includes <span style="color:#00ffa6;">beginner-friendly</span> and 
-          <span>optimized</span> approaches.
-        </li>
-      </ul>
-
-      <div class="project-links-row">
-        <a href="https://github.com/bdnath702/LeetCode_Java_Solution"
-           class="pill-button pill-outline">View Repository</a>
-      </div>
-
-    </div>
-
-    <div class="project-preview-box">
-      <img src="assets/leetcode.png" alt="LeetCode Project" class="project-image">
-    </div>
-
-  </div>
-</section>
-
-
-    </main>
-
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-heading">Where aesthetics &amp; functionality meet</p>
-          <p class="footer-text">
-            Carefully structured layouts and clean implementation, project after project.
+          <p class="project-role-text">
+            Full-Stack Development
           </p>
-        </div>
-        <div>
-          <p class="footer-heading">Explore</p>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="footer-heading">Follow Me</p>
-          <ul class="footer-links">
-            <a href="https://www.linkedin.com/in/bipul-debnath-bb5b20338/" target="_blank" class="social-icon">
-    <img src="icons/linkedin.png" alt="LinkedIn">
-    <span>LinkedIn</span>
-  </a>
-</li>
-             <a href="https://www.instagram.com/bd_nath09?igsh=cHNxZzUwMTc4djZw" target="_blank" class="social-icon">
-    <img src="icons/instagram.png" alt="Instagram">
-    <span>Instagram</span>
-  </a>
-</li>
+
+
+          <ul class="project-feature-list">
+
             <li>
-  <a href="https://github.com/bdnath702" target="_blank" class="social-icon">
-    <img src="icons/github.png" alt="GitHub">
-    <span>GitHub</span>
-  </a>
-</li>
-<li>
-  <a href="https://www.reddit.com/u/just_im_frustrated6/s/yF8vAq0iFE" target="_blank" class="social-icon">
-    <img src="icons/reddit.png" alt="Reddit">
-    <span>Reddit</span>
-  </a>
-</li>
+
+              Built a responsive info platform using
+
+              <span class="highlight-cyan">
+                React
+              </span>,
+
+              <span class="highlight-green">
+                Node.js
+              </span>,
+
+              Express, and
+
+              <span class="highlight-yellow">
+                MongoDB
+              </span>.
+
+            </li>
+
+
+            <li>
+
+              Designed smooth navigation and clear
+              content hierarchy for a better
+
+              <span class="highlight-orange">
+                UX
+              </span>.
+
+            </li>
+
+
+            <li>
+
+              Implemented reusable components and a
+
+              <span class="highlight-green">
+                modular folder structure
+              </span>.
+
+            </li>
+
+
+            <li>
+
+              Deployed frontend on
+
+              <span class="highlight-cyan">
+                Render
+              </span>
+
+              and backend API on a
+
+              <span class="highlight-red">
+                separate service
+              </span>.
+
+            </li>
+
           </ul>
+
+
+          <div class="project-action-buttons">
+
+            <a href="https://infogenie.onrender.com/"
+               target="_blank"
+               class="project-btn">
+
+              Visit
+
+            </a>
+
+
+            <a href="https://github.com/bdnath702"
+               target="_blank"
+               class="project-btn project-btn-outline">
+
+              GitHub
+
+            </a>
+
+          </div>
+
         </div>
-        <div>
-          <p class="footer-heading">Contact</p>
-          <ul class="footer-links">
-            <li><a id="footerHello" style="cursor:pointer;">Say Hello!</a></li>
-          </ul>
+
+
+        <!-- RIGHT -->
+        <div class="project-showcase-image">
+
+          <img src="assets/infogenie.png"
+               alt="Infogenie Project">
+
         </div>
+
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2025 Bipul Debnath</span>
-        <span>Portfolio</span>
+    </section>
+
+
+
+    <!-- =========================================
+     PROJECT 2
+========================================== -->
+
+
+    <section class="project-showcase-section">
+
+      <div class="project-showcase-grid">
+
+        <!-- LEFT -->
+        <div class="project-showcase-content">
+
+          <span class="project-mini-title">
+            PROBLEM-SOLVING & ALGORITHMS · 2025
+          </span>
+
+          <h2 class="project-main-title">
+            LeetCode Java Solutions
+          </h2>
+
+          <p class="project-role-text">
+            DSA Problem-Solving & Algorithms
+          </p>
+
+
+          <ul class="project-feature-list">
+
+            <li>
+
+              Solved problems consistently to strengthen
+
+              <span class="highlight-yellow">
+                problem-solving skills
+              </span>.
+
+            </li>
+
+
+            <li>
+
+              Wrote clean, structured Java code
+              with proper comments.
+
+            </li>
+
+
+            <li>
+
+              Focused on time/space optimization and
+
+              <span class="highlight-red">
+                pattern recognition
+              </span>.
+
+            </li>
+
+
+            <li>
+
+              Includes
+
+              <span class="highlight-green">
+                beginner-friendly
+              </span>
+
+              and optimized approaches.
+
+            </li>
+
+          </ul>
+
+
+          <div class="project-action-buttons">
+
+            <a href="https://github.com/bdnath702/LeetCode_Java_Solution"
+               target="_blank"
+               class="project-btn">
+
+              View Repository
+
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+        <div class="project-showcase-image">
+
+          <img src="assets/leetcode.png"
+               alt="Leetcode Java Solutions">
+
+        </div>
+
       </div>
-    </footer>
+
+    </section>
+
+
+    <!-- =========================================
+         PROJECT 3
+    ========================================== -->
+<section class="project-showcase-section">
+
+  <div class="project-showcase-grid">
+
+    <!-- LEFT -->
+    <div class="project-showcase-content">
+
+      <span class="project-mini-title">
+        PRIVACY & SECURITY TOOLS · 2026
+      </span>
+
+      <h2 class="project-main-title">
+        PrivacyTestLab
+      </h2>
+
+      <p class="project-role-text">
+        Full-Stack Web Development · Privacy Tools Platform
+      </p>
+
+
+      <ul class="project-feature-list">
+
+        <li>
+
+          Built a powerful
+
+          <span class="highlight-green">
+            privacy testing platform
+          </span>
+
+          using
+
+          <span class="highlight-cyan">
+            PHP
+          </span>,
+
+          <span class="highlight-yellow">
+            JavaScript
+          </span>,
+
+          HTML, CSS,
+
+          and
+
+          <span class="highlight-orange">
+            .htaccess
+          </span>.
+
+        </li>
+
+
+        <li>
+
+          Developed advanced tools for
+
+          <span class="highlight-red">
+            IP leak detection
+          </span>,
+
+          DNS/WebRTC testing,
+          browser fingerprinting,
+          metadata removal,
+          and password generation.
+
+        </li>
+
+
+        <li>
+
+          Created utility-based features like
+
+          <span class="highlight-cyan">
+            internet speed checker
+          </span>,
+
+          ping & jitter testing,
+          network diagnostics,
+          and privacy analysis tools.
+
+        </li>
+
+
+        <li>
+
+          Focused on a
+
+          <span class="highlight-green">
+            fast, responsive UI
+          </span>
+
+          with modular architecture,
+          smooth animations,
+          and clean accessibility-first design.
+
+        </li>
+
+      </ul>
+
+
+      <div class="project-action-buttons">
+
+        <a href="https://privacytestlab.com/"
+           target="_blank"
+           class="project-btn">
+
+          Visit Website
+
+        </a>
+
+
+        <a href="https://www.instagram.com/privacytestlabdotcom?igsh=MWt1aGVmajR6emlzeg=="
+           target="_blank"
+           class="project-btn project-btn-outline">
+
+          Instagram
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+    <div class="project-showcase-image">
+
+      <img src="assets/project2.png"
+           alt="PrivacyTestLab Project">
+
+    </div>
+
   </div>
+
+</section>
+
+
+
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+  </div>
+
+
+  <!-- SCRIPT -->
+  <script src="js/script.js"></script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="resume-modal">
+
+  <div class="resume-modal-content">
+
+    <span id="resumeClose"
+          class="resume-close">
+
+      &times;
+
+    </span>
+
+    <iframe
+      id="resumeFrame"
+      class="resume-frame"
+      src="assets/resume.pdf">
+
+    </iframe>
+
+  </div>
+
+</div>
 </body>
 </html>

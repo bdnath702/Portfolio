@@ -27,11 +27,25 @@
 
 html,
 body {
+
   margin: 0;
   padding: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
   background-color: var(--bg-main);
+
   color: var(--text-main);
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+
 }
 
 body {
@@ -80,89 +94,7 @@ body {
 }
 
 
-/* ===========================
-   Header & Navigation
-   =========================== */
 
-.main-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--border-soft);
-  background: rgba(10, 10, 10, 0.95);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.02), var(--shadow-soft);
-  position: sticky;
-  top: 16px;
-  z-index: 50;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.brand-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: radial-gradient(circle, var(--accent-green), #243b1f);
-}
-
-.brand-text {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.main-nav {
-  display: flex;
-  gap: 10px;
-  padding: 4px;
-  border-radius: 999px;
-  background: #050606;
-}
-
-/* nav links with icons */
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: var(--text-muted);
-  border: 1px solid transparent;
-  transition: all 0.15s ease-out;
-}
-
-.nav-link:hover {
-  border-color: var(--border-soft);
-  color: var(--text-main);
-  background: #11110d;
-}
-
-.nav-link.active {
-  background: #151510;
-  border-color: var(--border-soft);
-  color: var(--accent-yellow);
-}
-
-/* icons in nav */
-.nav-icon {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  opacity: 0.85;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.nav-link:hover .nav-icon {
-  opacity: 1;
-  transform: scale(1.12);
-}
 
 
 /* ===========================
@@ -759,18 +691,41 @@ body {
 }
 
 .tech-marquee {
+
   width: 100%;
+
   overflow: hidden;
+
   position: relative;
+
   margin-top: 20px;
+
+  contain: content;
+
 }
 
 .marquee-content {
+
   display: flex;
-  gap: 20px;
+
+  align-items: center;
+
+  gap: 18px;
+
+  width: max-content;
+
   white-space: nowrap;
+
   will-change: transform;
-  animation: marqueeMove 18s linear infinite;
+
+  transform: translate3d(0,0,0);
+
+  backface-visibility: hidden;
+
+  perspective: 1000px;
+
+  animation: marqueeMove 20s linear infinite;
+
 }
 
 /* tech pill inside marquee */
@@ -816,7 +771,19 @@ body {
     transform: translateX(-50%);
   }
 }
+/* MOBILE MARQUEE SPEED */
 
+@media (max-width: 768px) {
+
+  .marquee-content {
+
+    gap: 14px;
+
+    animation: marqueeMove 9s linear infinite;
+
+  }
+
+}
 .cta-row {
   margin-top: 24px;
   display: flex;
@@ -825,181 +792,11 @@ body {
 }
 
 
-/* ===========================
-   Projects Page (Detail Layout)
-   =========================== */
-
-.projects-page-hero {
-  padding-top: 60px;
-  position: relative;
-}
-
-.page-title {
-  font-size: 2.2rem;
-  margin-bottom: 8px;
-}
-
-.page-subtitle {
-  color: var(--text-muted);
-  max-width: 560px;
-}
-
-/* project detail layout */
-.project-detail {
-  border-top: 1px solid #171715;
-}
-
-.project-detail-main {
-  display: grid;
-  grid-template-columns: 1.6fr 1.1fr;
-  gap: 30px;
-  align-items: stretch;
-}
-
-.project-detail-text h2 {
-  margin: 4px 0 4px;
-}
-
-.project-role {
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.project-points {
-  padding-left: 18px;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.project-meta-top {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  text-transform: uppercase;
-}
-
-.project-links-row {
-  margin-top: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* project preview box shared */
-.project-preview-box {
-  position: relative;
-  overflow: hidden;
-  border-radius: 24px;
-  border: 1px dashed #2a2a20;
-  background: #10110f;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-/* if image inside preview */
-.project-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-preview-box:hover .project-image {
-  transform: scale(1.07);
-}
-
-/* reflection effect */
-.project-preview-box::after {
-  content: "";
-  position: absolute;
-  top: -120%;
-  left: -120%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.4) 40%,
-    transparent 80%
-  );
-  transform: rotate(15deg);
-  transition: 0.8s ease;
-  pointer-events: none;
-}
-
-.project-preview-box:hover::after {
-  top: -20%;
-  left: -20%;
-}
-
-.preview-placeholder {
-  opacity: 0.7;
-}
 
 
 
 
-/* ===========================
-   About Page Layout
-   =========================== */
 
-.about-hero {
-  padding-top: 60px;
-}
-
-.about-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
-  gap: 32px;
-}
-
-.about-main p {
-  color: var(--text-muted);
-  line-height: 1.7;
-}
-
-.about-side {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.about-card {
-  padding: 18px 20px;
-  border-radius: 22px;
-  border: 1px solid var(--border-soft);
-  background: #101110;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-}
-
-.about-card h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  color: var(--text-main);
-}
-
-.about-card ul {
-  margin: 0;
-  padding-left: 18px;
-}
-
-
-/* ===========================
-   Blob-shaped Profile Photo
-   =========================== */
-
-
-
-.profile-blob img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20%;
-}
 
 
 /* ===========================
@@ -1138,75 +935,6 @@ body {
   color: var(--text-muted);
 }
 
-
-/* ===========================
-   Footer
-   =========================== */
-
-.site-footer {
-  border-top: 1px solid #171715;
-  margin-top: 40px;
-  padding-top: 26px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 24px;
-}
-
-.footer-heading {
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: var(--accent-yellow);
-}
-
-.footer-text {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.footer-links li {
-  margin-bottom: 0; /* handled by gap */
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-links a:hover {
-  color: var(--text-main);
-}
-
-.footer-links img {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-}
-
-.footer-bottom {
-  margin-top: 20px;
-  border-top: 1px solid #171715;
-  padding-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
 
 
 /* ===========================
@@ -1487,113 +1215,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/* Floating Particles Canvas */
-/* Full-screen particles canvas */
-#particleCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: var(--hero-height, 600px); /* dynamic height */
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* ==========================
-   Profile Photo – Square with Rounded Corners + 3D Hover
-   ========================== */
-
-.profile-blob {
-  position: absolute;
-  top: 100px;
-  right: 20%;
-  width: 260px;
-  height: 260px;
-
-  /* square rounded style */
-  border-radius: 24px;
-  overflow: hidden;
-
-  /* remove blob clip-path */
-  clip-path: none;
-
-  /* hover effect */
-  transform-style: preserve-3d;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.profile-blob img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-/* =====================================
-   Profile Photo — Clean Modern Hover
-   ===================================== */
-
-.profile-blob {
-  position: absolute;
-  top: 100px;
-  right: 20%;
-  width: 260px;
-  height: 260px;
-  border-radius: 24px;
-  overflow: hidden;
-
-  /* new clean transitions */
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
-
-/* image stays natural */
-.profile-blob img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.35s ease;
-}
-
-/* NEW minimal hover effect */
-.profile-blob:hover {
-  transform: scale(1.04);
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
-}
-
-/* slight zoom */
-.profile-blob:hover img {
-  transform: scale(1.06);
-}
-
-/* Remove previous reflection / 3D */
-.profile-blob::after {
-  display: none !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* HIRE ME BUTTON */
 .hire-button {
   display: inline-flex;
@@ -1757,167 +1378,497 @@ body {
 }
 
 
-/* ===========================
-   FIXES FOR SMALL SCREENS
-   =========================== */
-@media (max-width: 600px) {
 
-  /* Hide profile picture in ABOUT page */
-  .about-hero .profile-blob {
-    display: none !important;
-  }
 
-  /* Hide Connect Me button on mobile */
-  #connectBtn {
-    display: none !important;
-  }
+/* =========================================
+   LIGHT THEME HOVER FIXES
+========================================= */
 
-  /* Header alignment clean-up */
-  .main-header {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-  }
+body:not(.dark-theme) .service-card:hover,
+body:not(.dark-theme) .project-row:hover,
+body:not(.dark-theme) .intro-card:hover,
+body:not(.dark-theme) .icon-pill:hover,
+body:not(.dark-theme) .pill-outline:hover,
+body:not(.dark-theme) .project-tags span:hover {
 
-  /* Keep only nav buttons clean and centered */
-  .main-nav {
-    width: 100%;
-    justify-content: space-evenly;
-    padding: 8px 6px;
-  }
+  background: #f3ede2 !important;
 
-  /* Move resume button to bottom center */
-  #resumeBtn {
-    width: 100%;
-    max-width: 240px;
-    margin: 10px auto 0 auto;
-    display: block;
-    text-align: center;
-  }
+  border-color: #d8cfc0 !important;
 
-  /* Make hero section slightly compact so particles stay top-only */
-  .hero-section {
-    padding-top: 55px;
-    padding-bottom: 10px;
-  }
+  color: #111 !important;
 
-  /* IMPORTANT: prevent particles from filling entire page */
-  #particleCanvas {
-    height: 320px !important;
-    pointer-events: none;
-    display: block; /* make sure it's visible again */
-  }
-}
-/* ===============================
-   MOBILE HEADER FIX
-   =============================== */
-
-@media (max-width: 768px) {
-
-  .main-header {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 14px;
-  }
-
-  .brand {
-    justify-content: center;
-  }
-
-  .main-nav {
-    width: 100%;
-    justify-content: space-between;
-    padding: 8px 10px;
-  }
-
-  .nav-link {
-    flex-direction: column;
-    gap: 4px;
-    font-size: 0.75rem;
-    padding: 6px 10px;
-  }
-
-  .nav-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-}
-
-@media (max-width: 768px){
-
-.hero-section{
-  min-height:auto;
-  padding:60px 10px 20px;
-}
-
-.hero-subtext{
-  font-size:0.9rem;
-  padding:0 10px;
-}
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 
 }
 
 
+/* BUTTONS */
+
+body:not(.dark-theme) .pill-outline {
+
+  background: #ffffff;
+
+  color: #111111;
+
+  border: 1px solid #d8cfc0;
+
+}
+
+body:not(.dark-theme) .pill-outline:hover {
+
+  background: #f3ede2;
+
+  color: #000;
+
+}
+
+
+/* PROJECT TAGS */
+
+body:not(.dark-theme) .project-tags span {
+
+  background: #ffffff;
+
+  color: #111111;
+
+  border: 1px solid #d8cfc0;
+
+}
+
+body:not(.dark-theme) .project-tags span:hover {
+
+  background: #ece3d3;
+
+}
+
+
+/* PROJECT ROW */
+
+body:not(.dark-theme) .project-row {
+
+  background: #ffffff;
+
+  color: #111111;
+
+}
+
+body:not(.dark-theme) .project-row:hover {
+
+  background: #f5eee2;
+
+}
+
+
+/* SERVICE CARDS */
+
+body:not(.dark-theme) .service-card {
+
+  background: #ffffff;
+
+  color: #111111;
+
+}
+
+body:not(.dark-theme) .service-card p {
+
+  color: #444;
+
+}
+
+
+/* INTRO CARDS */
+
+body:not(.dark-theme) .intro-card {
+
+  background: #ffffff;
+
+  color: #222;
+
+}
+
+
+/* ICON PILLS */
+
+body:not(.dark-theme) .icon-pill {
+
+  background: #ffffff;
+
+  color: #111111;
+
+}
+
+
+/* TECH PILLS */
+
+body:not(.dark-theme) .tech-pill {
+
+  background: #ffffff !important;
+
+  color: #111 !important;
+
+  border: 1px solid #ddd2c2 !important;
+
+}
+
+
+/* FOOTER LINKS */
+
+body:not(.dark-theme) .footer-links a:hover {
+
+  color: #000;
+
+}
+
+
+/* BUTTON TEXT FIX */
+
+body:not(.dark-theme) .project-tag,
+body:not(.dark-theme) .view-all-btn,
+body:not(.dark-theme) .pill-button {
+
+  color: #111111;
+
+}
+
+
+
+/* =========================================
+   HIRE MODAL
+========================================= */
+
+.hire-modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0,0,0,0.65);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+
+  z-index: 9999;
+}
+
+.hire-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hire-modal-content {
+  width: 90%;
+  max-width: 500px;
+
+  background: #111;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 24px;
+
+  padding: 30px;
+
+  position: relative;
+
+  transform: translateY(20px);
+  transition: 0.3s ease;
+}
+
+.hire-modal.open .hire-modal-content {
+  transform: translateY(0);
+}
+
+.hire-close {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  background: transparent;
+  border: none;
+
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.hire-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.hire-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hire-form label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+.hire-form input,
+.hire-form textarea,
+.hire-form select {
+  width: 100%;
+
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.08);
+
+  padding: 14px;
+  border-radius: 14px;
+
+  color: white;
+  font-size: 15px;
+
+  outline: none;
+}
+
+.hire-send-btn {
+  margin-top: 10px;
+
+  background: linear-gradient(135deg,#00c896,#00e1ff);
+
+  border: none;
+  color: black;
+
+  font-weight: 700;
+  padding: 14px;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.hire-send-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+
+body:not(.dark-theme) #welcomeText {
+
+  color: #ffffff;
+
+  opacity: 1;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,0.35);
+
+}
+
+html {
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+
+}
+
+body {
+
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+
+}
+
+/* =========================================
+   LIGHT THEME HERO COLORS
+========================================= */
+
+body:not(.dark-theme) .hero-digital {
+
+  color: #8f45ff;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.08);
+
+}
+
+
+body:not(.dark-theme) .hero-experience {
+
+  color: #d9b300;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.08);
+
+}
+
+
+body:not(.dark-theme) .hero-designer {
+
+  color: #d33726;
+
+  text-shadow:
+    0 2px 8px rgba(212,178,106,0.18);
+
+}
+
+body:not(.dark-theme) .hero-and {
+
+  color: #111111;
+
+}
+
+
+body:not(.dark-theme) .hero-developer {
+
+  color: #009dff;
+
+  text-shadow:
+    0 1px 0 rgba(0,0,0,0.08);
+
+}
+
+
+/* =========================================
+   LIGHT THEME ACCENT TEXT
+========================================= */
+
+body:not(.dark-theme) .accent-purple {
+
+  color: #8f45ff;
+
+}
+
+body:not(.dark-theme) .accent-yellow {
+
+  color: #f33207;
+
+}
+
+body:not(.dark-theme) .accent-cyan {
+
+  color: #009dff;
+
+}
+
+
+
+/* =========================================
+   LIGHT THEME DEFAULT
+========================================= */
+
+:root {
+
+  --bg-main: #f6f1e7;
+  --bg-card: #ffffff;
+
+  --text-main: #111111;
+  --text-muted: #4f4f4f;
+
+  --accent-purple: #8f45ff;
+  --accent-yellow: #d6aa00;
+  --accent-cyan: #009dff;
+  --accent-green: #00c96b;
+
+  --border-soft: #ddd6c8;
+
+  --radius-pill: 999px;
+
+  --shadow-soft:
+    0 10px 40px rgba(0,0,0,0.06);
+
+}
 
 
 
 
-/* ============================
-   MOBILE HEADER COMPACT FIX
-   ============================ */
-@media (max-width: 600px) {
 
-  .main-header {
-    padding: 6px 10px;
-    border-radius: 16px;
-    flex-wrap: nowrap;
-    gap: 6px;
-  }
 
-  .brand-text {
-    font-size: 0.75rem;
-  }
+/* =========================================
+   RESUME MODAL
+========================================= */
 
-  .brand-dot {
-    width: 12px;
-    height: 12px;
-  }
+.resume-modal {
 
-  .main-nav {
-    gap: 4px;
-    padding: 2px;
-    background: transparent;
-  }
+  position: fixed;
 
-  .nav-link {
-    padding: 4px 6px;
-    font-size: 0.65rem;
-    gap: 4px;
-  }
+  inset: 0;
 
-  .nav-icon {
-    width: 14px;
-    height: 14px;
-  }
+  background:
+    rgba(0,0,0,0.72);
 
-  /* keep text BUT make it small */
-  .nav-link span {
-    font-size: 0.6rem;
-  }
+  display: flex;
 
-  /* buttons */
-  .pill-button {
-    padding: 4px 6px;
-    font-size: 0.65rem;
-    gap: 4px;
-  }
+  align-items: center;
 
-  .connect-icon,
-  .resume-icon {
-    width: 14px;
-    height: 14px;
-  }
+  justify-content: center;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transition: 0.3s ease;
+
+  z-index: 99999;
+
+}
+
+
+.resume-modal.open {
+
+  opacity: 1;
+
+  visibility: visible;
+
+}
+
+
+.resume-modal-content {
+
+  width: 90%;
+
+  max-width: 900px;
+
+  height: 88vh;
+
+  background: #fff;
+
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  position: relative;
+
+}
+
+
+.resume-frame {
+
+  width: 100%;
+
+  height: 100%;
+
+  border: none;
+
+}
+
+
+.resume-close {
+
+  position: absolute;
+
+  top: 14px;
+
+  right: 20px;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  z-index: 20;
+
+  color: #000;
+
 }

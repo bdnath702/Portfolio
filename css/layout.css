@@ -1,0 +1,724 @@
+/* =========================================
+   GLOBAL THEME VARIABLES
+========================================= */
+
+:root {
+
+  --bg-main: #f6f1e7;
+  --bg-card: #ffffff;
+
+  --text-main: #111111;
+  --text-muted: #4f4f4f;
+
+  --border-soft: #ddd6c8;
+
+  --header-bg: rgba(255,255,255,0.78);
+
+  --shadow-soft:
+    0 10px 40px rgba(0,0,0,0.06);
+
+  --accent-purple: #b85cff;
+  --accent-yellow: #f0d85a;
+  --accent-cyan: #63dfff;
+
+}
+
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+.dark-theme {
+
+  --bg-main: #050606;
+  --bg-card: #101110;
+
+  --text-main: #f8f3dc;
+  --text-muted: #b7b7aa;
+
+  --border-soft: #262620;
+
+  --header-bg: rgba(10,10,10,0.88);
+
+  --shadow-soft:
+    0 10px 40px rgba(0,0,0,0.45);
+
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+
+  background: var(--bg-main);
+
+  color: var(--text-main);
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.main-header {
+
+  width: 100%;
+
+  margin-top: 28px;
+
+  padding: 14px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 999px;
+
+  background: var(--header-bg);
+
+  border: 1px solid var(--border-soft);
+
+  backdrop-filter: blur(14px);
+
+  box-shadow: var(--shadow-soft);
+
+  position: sticky;
+
+  top: 18px;
+
+  z-index: 500;
+
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-left: 18px;
+
+}
+
+.brand-dot {
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle,
+    #92ff8b,
+    #2a8d2d);
+
+}
+
+.brand-text {
+
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  color: var(--text-main);
+
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-nav {
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 6px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(0,0,0,0.04);
+
+}
+
+.dark-theme .main-nav {
+
+  background:
+    rgba(255,255,255,0.03);
+
+}
+
+.nav-link {
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: var(--text-main);
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+
+}
+
+.nav-link:hover {
+
+  background:
+    rgba(255,255,255,0.12);
+
+}
+
+
+/* =========================================
+   HEADER ACTIONS
+========================================= */
+
+.header-actions {
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+}
+
+
+/* =========================================
+   THEME BUTTON
+========================================= */
+
+.theme-btn,
+.mobile-menu-btn {
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: 1px solid var(--border-soft);
+
+  background: var(--bg-card);
+
+  color: var(--text-main);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+
+  display: none;
+
+}
+
+
+/* =========================================
+   RESUME BUTTON
+========================================= */
+
+.resume-btn {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 18px;
+
+  border-radius: 999px;
+
+  background: #000;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  border: 1px solid #000;
+
+}
+
+.resume-icon {
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+
+}
+
+
+/* =========================================
+   MOBILE SIDEBAR
+========================================= */
+
+.mobile-sidebar {
+
+  display: none;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+
+  margin-top: 120px;
+
+  padding: 70px 0 30px;
+
+  border-top: 1px solid var(--border-soft);
+
+}
+
+
+/* FOOTER GRID */
+
+.footer-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.7fr 1fr 1.2fr 1fr;
+
+  gap: 60px;
+
+  align-items: flex-start;
+
+}
+
+
+/* HEADINGS */
+
+.footer-heading {
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  margin-bottom: 18px;
+
+  color: var(--text-main);
+
+  line-height: 1.4;
+
+}
+
+
+/* TEXT */
+
+.footer-text {
+
+  color: var(--text-muted);
+
+  line-height: 1.8;
+
+  max-width: 260px;
+
+}
+
+
+/* LINKS */
+
+.footer-links {
+
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+}
+
+
+/* FOOTER LINK */
+
+.footer-links a {
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: fit-content;
+
+  text-decoration: none;
+
+  color: var(--text-muted);
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+
+}
+
+
+/* HOVER */
+
+.footer-links a:hover {
+
+  color: var(--text-main);
+
+  transform: translateX(4px);
+
+}
+
+
+/* SOCIAL ICONS */
+
+.footer-links img {
+
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  border-radius: 6px;
+
+}
+
+
+/* CONTACT LINK */
+
+#footerHello {
+
+  cursor: pointer;
+
+}
+
+
+/* BOTTOM */
+
+.footer-bottom {
+
+  margin-top: 55px;
+
+  padding-top: 22px;
+
+  border-top: 1px solid var(--border-soft);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--text-muted);
+
+  font-size: 0.92rem;
+
+}
+
+
+/* =========================================
+   TABLET FOOTER
+========================================= */
+
+@media (max-width: 900px) {
+
+  .site-footer {
+
+    margin-top: 90px;
+
+  }
+
+  .footer-grid {
+
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 40px;
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE FOOTER
+========================================= */
+
+@media (max-width: 600px) {
+
+  .site-footer {
+
+    margin-top: 70px;
+
+    padding: 55px 0 24px;
+
+  }
+
+  .footer-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 34px;
+
+  }
+
+  .footer-heading {
+
+    margin-bottom: 14px;
+
+  }
+
+  .footer-links {
+
+    gap: 14px;
+
+  }
+
+  .footer-bottom {
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: center;
+
+  }
+
+}
+/* =========================================
+   HERO COLOR FIXES
+========================================= */
+
+.hero-digital {
+
+  color: var(--accent-purple);
+
+  -webkit-text-stroke:
+    1px rgba(0,0,0,0.18);
+
+}
+
+.hero-experience {
+
+  color: var(--accent-yellow);
+
+  -webkit-text-stroke:
+    1px rgba(0,0,0,0.12);
+
+}
+
+.hero-designer {
+
+  color: #ece3c9;
+
+  -webkit-text-stroke:
+    1px rgba(0,0,0,0.18);
+
+}
+
+.hero-developer {
+
+  color: var(--accent-cyan);
+
+  -webkit-text-stroke:
+    1px rgba(0,0,0,0.15);
+
+}
+
+
+/* =========================================
+   LIGHT MODE CARD FIXES
+========================================= */
+
+.service-card,
+.project-row,
+.tech-pill {
+
+  background: var(--bg-card);
+
+  border: 1px solid var(--border-soft);
+
+  box-shadow: var(--shadow-soft);
+
+}
+
+
+/* =========================================
+   TABLET & MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .main-nav {
+
+    display: none;
+
+  }
+
+  .resume-btn {
+
+    display: none;
+
+  }
+
+  .mobile-menu-btn {
+
+    display: flex;
+
+  }
+
+  .mobile-sidebar {
+
+    display: block;
+
+    position: fixed;
+
+    top: 0;
+    right: -100%;
+
+    width: 78%;
+    height: 100vh;
+
+    background: var(--bg-card);
+
+    border-left: 1px solid var(--border-soft);
+
+    z-index: 9999;
+
+    transition: right 0.35s ease;
+
+    visibility: hidden;
+    opacity: 0;
+
+  }
+
+  .mobile-sidebar.open {
+
+    right: 0;
+
+    visibility: visible;
+    opacity: 1;
+
+  }
+
+  .mobile-sidebar-content {
+
+    padding: 100px 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+  }
+
+  .mobile-link {
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    color: var(--text-main);
+
+  }
+
+  .footer-grid {
+
+    grid-template-columns: 1fr 1fr;
+
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .main-header {
+
+    padding: 14px 16px;
+
+    border-radius: 24px;
+
+  }
+
+  .brand {
+
+    margin-left: 0;
+
+  }
+
+  .brand-text {
+
+    font-size: 1rem;
+
+  }
+
+  .header-actions {
+
+    gap: 10px;
+
+  }
+
+  .theme-btn,
+  .mobile-menu-btn {
+
+    width: 44px;
+    height: 44px;
+
+  }
+
+  .footer-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .footer-bottom {
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: center;
+
+  }
+
+}

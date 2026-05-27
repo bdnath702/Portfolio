@@ -1,0 +1,360 @@
+/* =========================================
+   PROJECTS PAGE
+========================================= */
+
+.projects-page {
+  overflow-x: hidden;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.projects-hero-section {
+  padding-top: 58px;
+  padding-bottom: 34px;
+}
+
+.projects-hero-content {
+  max-width: 760px;
+}
+
+.projects-heading {
+  font-size: clamp(2.8rem, 5vw, 2.3rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+  margin: 0 0 12px;
+  color: var(--text-main);
+}
+
+.projects-subtitle {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* =========================================
+   PROJECT SECTION
+========================================= */
+
+.project-showcase-section {
+  padding: 40px 0 52px;
+  border-top: 1px solid var(--border-soft);
+}
+.project-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.02fr;
+  align-items: center;
+  gap: 52px;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.project-mini-title {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  font-size: 0.92rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: var(--text-muted);
+}
+
+.project-main-title {
+  font-size: clamp(2.2rem, 3.2vw, 3.4rem);
+  line-height: 0.96;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: var(--text-main);
+}
+
+.project-role-text {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.project-feature-list {
+  padding-left: 26px;
+  margin: 0 0 34px;
+}
+.project-feature-list li {
+  margin-bottom: 12px;
+  line-height: 1.55;
+  font-size: 0.96rem;
+  color: var(--text-main);
+}
+
+/* =========================================
+   HIGHLIGHT COLORS
+========================================= */
+
+.highlight-cyan {
+  color: #53c7ff;
+  font-weight: 600;
+}
+
+.highlight-green {
+  color: #7eff72;
+  font-weight: 600;
+}
+
+.highlight-yellow {
+  color: #ffd44d;
+  font-weight: 600;
+}
+
+.highlight-orange {
+  color: #ffb347;
+  font-weight: 600;
+}
+
+.highlight-red {
+  color: #ff6f8d;
+  font-weight: 600;
+}
+
+/* LIGHT MODE FIX */
+
+html:not(.dark-theme) .highlight-yellow {
+  color: #b88600;
+}
+
+html:not(.dark-theme) .highlight-green {
+  color: #2f8a45;
+}
+
+html:not(.dark-theme) .highlight-cyan {
+  color: #2586d8;
+}
+
+html:not(.dark-theme) .highlight-orange {
+  color: #d67b00;
+}
+
+html:not(.dark-theme) .highlight-red {
+  color: #d14b67;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.project-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 13px 28px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    border 0.3s ease;
+}
+
+/* DARK */
+
+.dark-theme .project-btn {
+  background: #111111;
+  color: #ffffff;
+  border: 1px solid #2b2b2b;
+}
+
+.dark-theme .project-btn:hover {
+  background: #1b1b1b;
+  transform: translateY(-3px);
+}
+
+/* LIGHT */
+
+html:not(.dark-theme) .project-btn {
+  background: #ffffff;
+  color: #111111;
+  border: 1px solid #d7cdc0;
+}
+
+html:not(.dark-theme) .project-btn:hover {
+  background: #f4ece2;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   IMAGE SIDE
+========================================= */
+
+.project-showcase-image {
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  border: 1px solid var(--border-soft);
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.project-showcase-image:hover {
+  transform: translateY(-5px);
+}
+
+.project-showcase-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+
+  border-radius: 30px;
+}
+
+/* REMOVE EXTRA WHITE SPACE */
+
+.project-showcase-image::after {
+  display: none !important;
+}
+
+/* LIGHT MODE */
+
+html:not(.dark-theme) .project-showcase-image {
+  border: 1px solid #d8cfc1;
+}
+
+html:not(.dark-theme) .project-showcase-image:hover {
+  box-shadow: 0 14px 34px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   COMING SOON
+========================================= */
+
+.coming-soon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 320px;
+}
+
+.coming-soon-box span {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .project-showcase-grid {
+    gap: 64px;
+  }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .project-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .projects-heading {
+    font-size: 3.3rem;
+  }
+
+  .project-main-title {
+    font-size: 2.8rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .projects-hero-section {
+    padding-top: 56px;
+    padding-bottom: 40px;
+  }
+
+  .projects-heading {
+    font-size: 2.7rem;
+  }
+
+  .projects-subtitle {
+    font-size: 1rem;
+  }
+
+  .project-showcase-section {
+    padding: 42px 0 56px;
+  }
+
+  .project-main-title {
+    font-size: 2.2rem;
+  }
+
+  .project-role-text {
+    font-size: 1rem;
+  }
+
+  .project-feature-list li {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .projects-heading {
+    font-size: 2.2rem;
+  }
+
+  .project-main-title {
+    font-size: 1.9rem;
+  }
+
+  .project-mini-title {
+    font-size: 0.8rem;
+  }
+
+  .project-btn {
+    width: 100%;
+  }
+
+}
+

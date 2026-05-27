@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+
   <title>Bipul Debnath | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-  <script defer src="script.js"></script>
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJ63QXHP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-03VJ63QXHP');
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <!-- LUCIDE ICONS -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet"
+        href="css/styles.css">
+
+  <link rel="stylesheet"
+        href="css/layout.css">
+
+  <!-- FAVICON -->
+  <link rel="icon"
+        type="image/png"
+        href="assets/favicon.png">
+        <script>
+
+  const savedTheme =
+    localStorage.getItem("theme");
+
+  if (savedTheme === "dark") {
+
+    document.documentElement.classList.add("dark-theme");
+
+  }
+
 </script>
 
 </head>
+
 <body>
-  <!-- Welcome overlay -->
+
+  <!-- WELCOME OVERLAY -->
   <div class="welcome-overlay" id="welcomeOverlay">
+
     <div class="welcome-inner">
       <span id="welcomeText">Welcome</span>
     </div>
+
   </div>
 
 
- <!-- Floating Particles Canvas -->
-<canvas id="particleCanvas"></canvas>
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
 
-<div class="page-wrapper">
+    <!-- HEADER -->
+    <div id="header"></div>
 
-  
-    <!-- Top navigation -->
-    <header class="main-header">
-      <div class="brand">
-        <div class="brand-dot"></div>
-        <span class="brand-text">bipul.dev</span>
-      </div>
+    <!-- MAIN -->
+    <main>
 
-      <nav class="main-nav">
-  <a href="index.html" class="nav-link">
-    <img src="icons/home-page.png" class="nav-icon" alt="Home">
-    <span>Home</span>
-  </a>
-
-  <a href="projects.html" class="nav-link">
-    <img src="icons/backlog.png" class="nav-icon" alt="Projects">
-    <span>My Projects</span>
-  </a>
-
-  <a href="about.html" class="nav-link">
-    <img src="icons/about.png" class="nav-icon" alt="About Me">
-    <span>About Me</span>
-  </a>
-</nav>
-
-      <a id="connectBtn" class="pill-button pill-outline connect-btn">
-  <img src="assets/connect.png" class="connect-icon" />
-  <span>Connect Me</span>
-</a>
-
-
-
-    </header>
-    
-<!-- CONNECT MODAL -->
+      <!-- CONNECT MODAL -->
 <div id="connectModal" class="connect-modal">
   <div class="connect-modal-content">
 
@@ -77,7 +79,7 @@
 
     <h2 class="connect-title">Let's Connect</h2>
 
-    <p class="connect-email">To: <strong>bdnatheduknow27@gmail.com</strong></p>
+    <p class="connect-email">To: <strong>aroraa09tg@gmail.com</strong></p>
 
     <!-- ADDED: REAL FORMSPREE FORM -->
     <form id="connectForm" action="https://formspree.io/f/mkgaywkd" method="POST">
@@ -130,11 +132,11 @@
           <div class="hero-meta-row">
             <div class="hero-meta">
               <span>// Developer</span>
-              <span>CSE Undergrad</span>
+              <span><b>CSE Undergrad</b></span>
             </div>
             <div class="hero-meta hero-location">
               <span>// Based in</span>
-              <span>Tripura, India</span>
+              <span><b>Tripura, India</b></span>
             </div>
           </div>
 
@@ -190,7 +192,7 @@
         </div>
 
         <div class="project-list">
-          <a href="projects.html#infogenie" class="project-row">
+          <a  class="project-row">
             <div>
               <h3>Infogenie</h3>
               <p class="project-meta">MERN Stack · 2025</p>
@@ -201,18 +203,8 @@
             </div>
           </a>
 
-          <a href="projects.html#null-academy" class="project-row">
-            <div>
-              <h3>DevTools Hub</h3>
-              <p class="project-meta">Utility Tools for Developers · 2025</p>
-            </div>
-            <div class="project-tags">
-              <span>Content</span>
-              <span>Dev Education</span>
-            </div>
-          </a>
-
-          <a href="projects.html#biomass-energy" class="project-row">
+          
+          <a  class="project-row">
             <div>
               <h3>LeetCode Java Solution</h3>
               <p class="project-meta">DSA· 2025</p>
@@ -222,6 +214,26 @@
               <span>Algorithms</span>
             </div>
           </a>
+
+
+          <a  class="project-row">
+  <div>
+    <h3>PrivacyTestLab</h3>
+
+
+    <p class="project-meta">
+      Privacy & Security Tools Platform · 2026
+    </p>
+  </div>
+
+
+  <div class="project-tags">
+    <span>Privacy Tools</span>
+    <span>Cyber Security</span>
+    <span>Web Utilities</span>
+  </div>
+</a>
+
         </div>
       </section>
 
@@ -383,6 +395,84 @@
 <!-- SUCCESS POPUP -->
 <div id="hireSuccess" class="hire-success-popup">Request Sent Successfully!</div>
 
-</body>
+    </main>
 
+
+   
+
+  </div>
+
+
+   <!-- HIRE ME MODAL -->
+<div id="hireModal" class="hire-modal">
+  <div class="hire-modal-content">
+
+    <button id="hireClose" class="hire-close">×</button>
+    <h2 class="hire-title">Hire Me</h2>
+
+   <form id="hireForm" class="hire-form" action="https://formspree.io/f/mkgaywkd" method="POST">
+
+  <input type="hidden" name="_subject" value="New Hire Request">
+  <input type="hidden" name="_replyto" value="">
+
+  <label>Your Name</label>
+  <input type="text" name="name" required>
+
+  <label>Your Email</label>
+  <input type="email" name="email" required>
+
+  <label>Your Message</label>
+  <textarea name="message" rows="4" required></textarea>
+
+  <label>Budget Range</label>
+  <select name="budget">
+    <option value="Not specified">Not specified</option>
+    <option value="₹1,000 – ₹5,000">₹1,000 – ₹5,000</option>
+    <option value="₹5,000 – ₹15,000">₹5,000 – ₹15,000</option>
+    <option value="₹15,000+">₹15,000+</option>
+  </select>
+
+  <button type="submit" class="hire-send-btn">Send</button>
+</form>
+
+
+  </div>
+</div>
+
+
+
+<!-- SUCCESS POPUP -->
+<div id="hireSuccess" class="hire-success-popup">Request Sent Successfully!</div>
+
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+
+  <!-- INIT ICONS -->
+  <script>
+    lucide.createIcons();
+  </script>
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="resume-modal">
+
+  <div class="resume-modal-content">
+
+    <span id="resumeClose"
+          class="resume-close">
+
+      &times;
+
+    </span>
+
+    <iframe
+      id="resumeFrame"
+      class="resume-frame"
+      src="assets/resume.pdf">
+
+    </iframe>
+
+  </div>
+
+</div>
+</body>
 </html>
