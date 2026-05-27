@@ -1872,3 +1872,270 @@ body:not(.dark-theme) .accent-cyan {
   color: #000;
 
 }
+
+
+
+/* =========================================
+   FIRE WEBSITE ANNOUNCEMENT
+========================================= */
+
+.fire-announcement {
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: fit-content;
+
+  margin: 28px auto 0;
+
+  text-decoration: none;
+
+  z-index: 30;
+
+  animation:
+    fireTravelDesktop 14s linear infinite;
+
+  will-change: transform;
+
+}
+
+
+/* =========================================
+   FIRE ICON
+========================================= */
+
+.fire-announcement-icon {
+
+  width: 72px;
+  height: 72px;
+
+  object-fit: contain;
+
+  z-index: 3;
+
+  flex-shrink: 0;
+
+}
+
+
+/* =========================================
+   MESSAGE BOX
+========================================= */
+
+.fire-announcement-box {
+
+  position: absolute;
+
+  left: 58px;
+
+  top: -18px;
+
+  background: #161d39;
+
+  color: #ffffff;
+
+  padding: 10px 18px;
+
+  border-radius: 16px;
+
+  font-size: 0.92rem;
+
+  font-weight: 500;
+
+  line-height: 1.45;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 10px 26px rgba(0,0,0,0.16);
+
+}
+
+
+/* =========================================
+   COMIC POINTER
+========================================= */
+
+.fire-announcement-box::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -8px;
+
+  top: 26px;
+
+  width: 0;
+  height: 0;
+
+  border-top: 8px solid transparent;
+
+  border-bottom: 8px solid transparent;
+
+  border-right: 10px solid #161d39;
+
+}
+
+
+/* =========================================
+   FULL PAGE HORIZONTAL MOVEMENT
+========================================= */
+
+@keyframes fireTravelDesktop {
+
+  0% {
+
+    transform: translateX(-38vw);
+
+  }
+
+  50% {
+
+    transform: translateX(38vw);
+
+  }
+
+  100% {
+
+    transform: translateX(-38vw);
+
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .fire-announcement {
+
+    animation:
+      fireTravelTablet 11s linear infinite;
+
+  }
+
+  .fire-announcement-icon {
+
+    width: 58px;
+    height: 58px;
+
+  }
+
+  .fire-announcement-box {
+
+    left: 48px;
+
+    top: -12px;
+
+    font-size: 0.84rem;
+
+    padding: 9px 15px;
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+
+  .fire-announcement {
+
+    margin-top: 20px;
+
+    animation:
+      fireTravelMobile 9s linear infinite;
+
+  }
+
+  .fire-announcement-icon {
+
+    width: 48px;
+    height: 48px;
+
+  }
+
+  .fire-announcement-box {
+
+    left: 40px;
+
+    top: -8px;
+
+    font-size: 0.74rem;
+
+    padding: 8px 13px;
+
+    border-radius: 12px;
+
+  }
+
+  .fire-announcement-box::before {
+
+    top: 18px;
+
+  }
+
+}
+
+
+/* =========================================
+   TABLET MOVEMENT
+========================================= */
+
+@keyframes fireTravelTablet {
+
+  0% {
+
+    transform: translateX(-22vw);
+
+  }
+
+  50% {
+
+    transform: translateX(22vw);
+
+  }
+
+  100% {
+
+    transform: translateX(-22vw);
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE MOVEMENT
+========================================= */
+
+@keyframes fireTravelMobile {
+
+  0% {
+
+    transform: translateX(-12vw);
+
+  }
+
+  50% {
+
+    transform: translateX(12vw);
+
+  }
+
+  100% {
+
+    transform: translateX(-12vw);
+
+  }
+
+}
