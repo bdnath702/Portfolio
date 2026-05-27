@@ -22,7 +22,44 @@
   --accent-cyan: #63dfff;
 
 }
+@media (max-width: 900px) {
 
+  .page-wrapper {
+
+    padding-left: 22px;
+    padding-right: 22px;
+
+  }
+
+}
+@media (max-width: 600px) {
+
+  .page-wrapper {
+
+    padding-left: 16px;
+    padding-right: 16px;
+
+  }
+
+}
+/* =========================================
+   PAGE WRAPPER
+========================================= */
+
+.page-wrapper {
+
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding-left: 32px;
+  padding-right: 32px;
+
+  box-sizing: border-box;
+
+}
 
 /* =========================================
    DARK THEME
@@ -297,9 +334,13 @@ body {
 
   margin-top: 120px;
 
-  padding: 70px 0 30px;
+  padding: 70px 32px 30px;
 
   border-top: 1px solid var(--border-soft);
+
+  width: 100%;
+
+  box-sizing: border-box;
 
 }
 
@@ -453,6 +494,9 @@ body {
 
     margin-top: 90px;
 
+    padding-left: 22px;
+    padding-right: 22px;
+
   }
 
   .footer-grid {
@@ -477,7 +521,7 @@ body {
 
     margin-top: 70px;
 
-    padding: 55px 0 24px;
+    padding: 55px 16px 24px;
 
   }
 
@@ -922,6 +966,44 @@ html:not(.dark-theme) #mobileResumeBtn {
     gap: 10px;
 
     text-align: center;
+
+  }
+
+}
+
+
+/* =========================================
+   GLOBAL PAGE SPACING FIX
+========================================= */
+
+main {
+
+  padding-left: 32px;
+  padding-right: 32px;
+
+  box-sizing: border-box;
+
+}
+
+
+@media (max-width: 900px) {
+
+  main {
+
+    padding-left: 22px;
+    padding-right: 22px;
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  main {
+
+    padding-left: 16px;
+    padding-right: 16px;
 
   }
 

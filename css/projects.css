@@ -5,14 +5,27 @@
 .projects-page {
   overflow-x: hidden;
 }
+.projects-page{
 
+  width:100%;
+
+  overflow-x:hidden;
+
+  box-sizing:border-box;
+
+}
 /* =========================================
    HERO SECTION
 ========================================= */
 
 .projects-hero-section {
+
   padding-top: 58px;
   padding-bottom: 34px;
+
+  padding-left:32px;
+  padding-right:32px;
+
 }
 
 .projects-hero-content {
@@ -40,8 +53,11 @@
 ========================================= */
 
 .project-showcase-section {
-  padding: 40px 0 52px;
+
+  padding: 40px 32px 52px;
+
   border-top: 1px solid var(--border-soft);
+
 }
 .project-showcase-grid {
   display: grid;
@@ -330,7 +346,13 @@ html:not(.dark-theme) .project-showcase-image:hover {
   .project-role-text {
     font-size: 1rem;
   }
+.projects-hero-section,
+.project-showcase-section{
 
+  padding-left:16px;
+  padding-right:16px;
+
+}
   .project-feature-list li {
     font-size: 0.96rem;
     line-height: 1.65;
