@@ -212,7 +212,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .hero-left {
@@ -1888,7 +1888,7 @@ body:not(.dark-theme) .accent-cyan {
 
   width: fit-content;
 
-  margin: 28px auto 0;
+  margin:  auto 0;
 
   text-decoration: none;
 
@@ -2050,17 +2050,29 @@ body:not(.dark-theme) .accent-cyan {
 
   .fire-announcement {
 
-    margin-top: 20px;
+    margin-top: 0px;
 
     animation:
-      fireTravelMobile 9s linear infinite;
+      fireTravelMobile 4s linear infinite;
 
   }
+  .hero-title {
+    margin-bottom: 4px; /* reduce space below heading */
+  }
 
+  .hero-section {
+    padding-top: 2px;
+    padding-bottom: auto;
+  }
+
+  .fire-announcement {
+    margin-top: -8px; /* pull fire icon upward */
+  }
   .fire-announcement-icon {
-
+margin-top: 0px;
     width: 48px;
     height: 48px;
+    
 
   }
 
