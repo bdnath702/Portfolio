@@ -37,10 +37,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/base.css?v=20260709">
+  <link rel="stylesheet" href="css/animations.css?v=20260709">
+  <link rel="stylesheet" href="css/components.css?v=20260709">
+  <link rel="stylesheet" href="css/about.css?v=20260709">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
@@ -71,13 +71,56 @@
 
   <main id="main">
 
-    <!-- ================= ABOUT HERO ================= -->
-    <section class="section about-hero">
-      <div class="container about-hero-grid">
+    <!-- ================= ABOUT MASTHEAD ================= -->
+    <section class="about-mast" aria-labelledby="aboutName">
+      <div class="container">
+        <p class="eyebrow" data-reveal>About me</p>
+      </div>
 
-        <div class="about-hero-text" data-reveal>
-          <p class="eyebrow">About me</p>
-          <h1>Hi, I'm Bipul.</h1>
+      <div class="container mast-stage" data-reveal="scale">
+        <h1 class="mast-name" id="aboutName">
+          <span class="mast-line mast-solid">Bipul</span>
+          <span class="mast-line mast-outline" aria-hidden="true">Debnath</span>
+          <span class="visually-hidden">Debnath</span>
+        </h1>
+
+        <!-- TEMP: using developer.png as a stand-in until a transparent-
+             background cutout (assets/portrait.png) is supplied. -->
+        <img class="mast-photo" src="assets/developer.png"
+             alt="Bipul Debnath" width="520" height="640"
+             fetchpriority="high">
+
+        <ul class="mast-tags" aria-label="Off the keyboard I'm into">
+          <li class="mast-tag mt-1">cricket</li>
+          <li class="mast-tag mt-2">movies</li>
+          <li class="mast-tag mt-3">AI explorer</li>
+          <li class="mast-tag mt-4">web design</li>
+          <li class="mast-tag mt-5">clean code</li>
+        </ul>
+      </div>
+
+      <div class="mast-strip marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>CSE undergrad</span><i>✦</i>
+          <span>Tripura, India</span><i>✦</i>
+          <span>full-stack developer</span><i>✦</i>
+          <span>MERN + Java</span><i>✦</i>
+          <span>privacy tooling</span><i>✦</i>
+          <span>ships fast</span><i>✦</i>
+          <span>CSE undergrad</span><i>✦</i>
+          <span>Tripura, India</span><i>✦</i>
+          <span>full-stack developer</span><i>✦</i>
+          <span>MERN + Java</span><i>✦</i>
+          <span>privacy tooling</span><i>✦</i>
+          <span>ships fast</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTRO ================= -->
+    <section class="section about-intro">
+      <div class="container">
+        <div class="about-intro-inner" data-reveal>
           <p class="about-lede text-2">
             I'm a 21-year-old CSE undergraduate from Tripura, India, and I
             build for the web — end to end. Frontend interfaces that feel
@@ -91,9 +134,7 @@
           <p class="about-lede text-2">
             What I care about: code that stays readable six months later,
             interfaces that respect the person using them, and getting a
-            little better at both every week. Off the keyboard I'm usually
-            watching cricket or breaking down programming concepts to
-            explain them simply.
+            little better at both every week.
           </p>
           <div class="about-hero-actions">
             <button class="btn btn-primary" data-open-modal="resumeModal">
@@ -104,16 +145,48 @@
             </a>
           </div>
         </div>
-
-        <figure class="about-portrait" data-tilt data-reveal="right">
-          <img src="assets/developer.png" class="tilt-raise"
-               alt="Illustration of Bipul at work"
-               width="520" height="520" loading="lazy">
-        </figure>
-
       </div>
     </section>
 
+
+
+    <!-- ================= NOW ================= -->
+    <section class="section" id="now">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Right now</p>
+        <h2 data-reveal>What I'm up to</h2>
+
+        <div class="now-grid" data-reveal-stagger>
+          <div class="now-card">
+            <p class="now-label">local time</p>
+            <p class="now-big"><span id="nowClock">--:--</span>
+               <span class="now-unit">IST</span></p>
+            <p class="now-sub" id="nowClockSub">Tripura, India</p>
+          </div>
+
+          <div class="now-card">
+            <p class="now-label">now building</p>
+            <p class="now-mid" id="nowBuilding">PrivacyTestLab v2 tools</p>
+            <p class="now-sub" id="nowBuildingSub">DNS-leak engine rewrite</p>
+          </div>
+
+          <div class="now-card">
+            <p class="now-label">last commit</p>
+            <p class="now-mid mono" id="nowCommit">pushing code most days</p>
+            <p class="now-sub" id="nowCommitMeta">
+              <a href="https://github.com/bdnath702" target="_blank"
+                 rel="noopener noreferrer" class="link-draw">see GitHub</a>
+            </p>
+          </div>
+
+          <div class="now-card">
+            <p class="now-label">learning</p>
+            <p class="now-mid" id="nowLearning">System design</p>
+            <p class="now-sub" id="nowLearningSub">+ Next.js app router</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ================= TIMELINE ================= -->
     <section class="section" id="journey">
       <div class="container">
@@ -238,12 +311,13 @@
   <div id="site-modals"></div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
-  <script defer src="js/components.js"></script>
-  <script defer src="js/theme.js"></script>
-  <script defer src="js/modals.js"></script>
-  <script defer src="js/scroll.js"></script>
-  <script defer src="js/tilt.js"></script>
-  <script defer src="js/cursor.js"></script>
-  <script defer src="js/terminal.js"></script>
+  <script defer src="js/components.js?v=20260709"></script>
+  <script defer src="js/theme.js?v=20260709"></script>
+  <script defer src="js/modals.js?v=20260709"></script>
+  <script defer src="js/scroll.js?v=20260709"></script>
+  <script defer src="js/tilt.js?v=20260709"></script>
+  <script defer src="js/cursor.js?v=20260709"></script>
+  <script defer src="js/terminal.js?v=20260709"></script>
+  <script defer src="js/now.js"></script>
 </body>
 </html>

@@ -1,48 +1,191 @@
 /* ==========================================================================
-   about.css — About page only: hero, timeline, ask-me-anything.
+   about.css — About page: masthead, intro, timeline, ask-me-anything.
    ========================================================================== */
 
-/* ---------------- Hero ---------------- */
-.about-hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(var(--sp-5), 5vw, var(--sp-8));
-  align-items: center;
+/* ---------------- Masthead ---------------- */
+.about-mast {
+  padding-block: clamp(var(--sp-6), 6vw, var(--sp-8)) 0;
+  overflow-x: clip;   /* nothing in the masthead can cause page overflow */
 }
 
-.about-hero h1 {
-  font-size: var(--fs-h1);
-  margin-block: var(--sp-2) var(--sp-4);
+.mast-stage {
+  position: relative;
+  height: clamp(340px, 58vw, 520px);
+  margin-top: var(--sp-4);
+}
+
+/* --- The name --- */
+.mast-name {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding-top: clamp(4px, 2vw, 20px);
+  pointer-events: none;
+}
+
+.mast-line {
+  display: block;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  /* 12vw × 7 chars ≈ 50vw of ink — can never exceed the viewport */
+  font-size: clamp(2.6rem, 12vw, 6.6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.mast-solid {
+  color: var(--text);
+}
+
+/* Outline line: solid accent fallback, hollow where text-stroke exists */
+.mast-outline {
+  color: var(--accent);
+}
+
+@supports (-webkit-text-stroke: 1px black) {
+  .mast-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--accent);
+  }
+}
+
+/* --- The photo --- */
+.mast-photo {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 2;
+  height: clamp(250px, 46vw, 420px);
+  width: auto;
+  max-width: 88vw;          /* wide crops can't spill on tiny screens */
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 18px 30px rgba(28, 25, 23, 0.18));
+}
+
+/* --- Hobby tags --- */
+.mast-tags {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  margin: 0;
+}
+
+.mast-tag {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  border: 1px solid transparent;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Each tag gets its own hue — reads as intentional, not a random sticker. */
+.mt-1 { left: 6%;  top: 16%;    transform: rotate(-4deg);
+  background: var(--accent-soft); color: var(--accent-ink); }
+.mt-2 { right: 7%; top: 12%;    transform: rotate(3deg);
+  background: var(--info-soft);   color: var(--info-ink); }
+.mt-3 { right: 3%; top: 52%;    transform: rotate(-3deg);
+  background: var(--violet-soft); color: var(--violet-ink); }
+.mt-4 { left: 3%;  bottom: 22%; transform: rotate(2deg);
+  background: var(--ok-soft);     color: var(--ok-ink); }
+.mt-5 { right: 9%; bottom: 8%;  transform: rotate(-2deg);
+  background: var(--gold-soft);   color: var(--gold-ink); }
+
+/* --- Fact strip (reuses .marquee/.marquee-track from animations.css) --- */
+.mast-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-sunken);
+  padding-block: 10px;
+  margin-top: -2px;   /* photo sits flush on the strip */
+}
+
+.mast-strip .marquee-track {
+  align-items: center;
+  gap: var(--sp-5);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-2);
+}
+
+.mast-strip i {
+  font-style: normal;
+  color: var(--accent);
+  font-size: 0.6rem;
+}
+
+/* ---------------- Intro ---------------- */
+.about-intro {
+  padding-block: var(--sp-7);
+}
+
+.about-intro-inner {
+  max-width: 640px;
+  display: grid;
+  gap: var(--sp-3);
 }
 
 .about-lede {
   font-size: 1.02rem;
-  max-width: 56ch;
-}
-
-.about-lede + .about-lede {
-  margin-top: var(--sp-3);
+  max-width: 60ch;
 }
 
 .about-hero-actions {
   display: flex;
   gap: var(--sp-3);
   flex-wrap: wrap;
-  margin-top: var(--sp-5);
+  margin-top: var(--sp-4);
 }
 
-.about-portrait {
-  margin: 0;
-  margin-inline-start: auto;
-  max-width: clamp(240px, 26vw, 400px);
-  align-self: center;
-}
+/* ---------------- Masthead responsive ---------------- */
+@media (max-width: 700px) {
+  .mast-stage {
+    height: auto;
+    min-height: 0;
+    padding-top: var(--sp-3);
+    display: grid;
+  }
 
-.about-portrait img {
-  width: 100%;
-  object-fit: contain;
-}
+  /* Absolute collage becomes normal flow: name → photo → tag row */
+  .mast-name {
+    position: static;
+    pointer-events: auto;
+  }
 
+  .mast-photo {
+    position: static;
+    transform: none;
+    justify-self: center;
+    height: auto;
+    width: min(320px, 78vw);
+    margin-top: calc(-1 * clamp(12px, 5vw, 30px)); /* keeps the overlap */
+  }
+
+  .mast-tags {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sp-2);
+    padding-block: var(--sp-4) var(--sp-2);
+  }
+
+  .mast-tag {
+    position: static;
+  }
+
+  .mt-1, .mt-2, .mt-3, .mt-4, .mt-5 {
+    transform: rotate(0deg);
+  }
+}
 /* ---------------- Timeline ---------------- */
 .timeline {
   margin-top: var(--sp-6);
@@ -131,27 +274,78 @@
 
 /* ---------------- Responsive ---------------- */
 @media (max-width: 900px) {
-  .about-hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-portrait {
-    margin: var(--sp-6) auto 0;
-    max-width: 200px;
-  }
-
   .ask-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 560px) {
-  .about-portrait {
-    max-width: 160px;
-  }
-
   .timeline-item {
     grid-template-columns: 1fr;
     gap: var(--sp-1);
   }
+}
+
+
+/* --------------------------------------------------------------------------
+   NOW PANEL
+   -------------------------------------------------------------------------- */
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+.now-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.now-label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: var(--sp-2);
+}
+
+.now-big {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.now-unit {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--text-3);
+}
+
+.now-mid {
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;   /* commit messages can be long — wrap, never spill */
+}
+
+.now-mid.mono {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.now-sub {
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  margin-top: var(--sp-1);
+}
+
+.now-live {
+  color: var(--ok);
 }

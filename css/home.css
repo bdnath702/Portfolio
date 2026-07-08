@@ -442,3 +442,188 @@
     display: none;
   }
 }
+
+
+
+/* --------------------------------------------------------------------------
+   8. PRIVACY PEEK — dark scan console, same visual language as the
+   skills terminal. Dark in both themes: it's an object, not a surface.
+   -------------------------------------------------------------------------- */
+.peek-sub {
+  margin-top: var(--sp-2);
+  max-width: 52ch;
+}
+
+.peek-card {
+  position: relative;
+  margin-top: var(--sp-6);
+  max-width: 620px;
+  background: #17140F;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+/* Scan-line sweep, played once when .is-scanned lands */
+.peek-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -3px;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0;
+}
+
+.peek-card.is-scanned::after {
+  animation: peek-sweep 900ms var(--ease-out) forwards;
+}
+
+@keyframes peek-sweep {
+  0%   { opacity: 0.9; transform: translateY(0); }
+  100% { opacity: 0;   transform: translateY(340px); }
+}
+
+.peek-head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(237, 230, 218, 0.12);
+}
+
+.peek-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.peek-dots i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(237, 230, 218, 0.25);
+}
+
+.peek-dots i:first-child {
+  background: var(--accent);
+}
+
+.peek-title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: rgba(237, 230, 218, 0.55);
+  user-select: none;
+}
+
+.peek-badge {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: #F0997B;
+}
+
+.peek-badge.is-done {
+  color: #5DCAA5;
+}
+
+.peek-rows {
+  padding: var(--sp-4) var(--sp-5);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.peek-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--sp-4);
+  padding-block: 7px;
+  /* rows print one by one once .is-scanned lands */
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity var(--dur-base) var(--ease-out),
+              transform var(--dur-base) var(--ease-out);
+}
+
+.is-scanned .peek-row {
+  opacity: 1;
+  transform: none;
+}
+
+.is-scanned .peek-row:nth-child(1) { transition-delay: 100ms; }
+.is-scanned .peek-row:nth-child(2) { transition-delay: 220ms; }
+.is-scanned .peek-row:nth-child(3) { transition-delay: 340ms; }
+.is-scanned .peek-row:nth-child(4) { transition-delay: 460ms; }
+.is-scanned .peek-row:nth-child(5) { transition-delay: 580ms; }
+.is-scanned .peek-row:nth-child(6) { transition-delay: 700ms; }
+.is-scanned .peek-row:nth-child(7) { transition-delay: 820ms; }
+
+.peek-row dt {
+  color: rgba(237, 230, 218, 0.45);
+  flex-shrink: 0;
+}
+
+.peek-row dd {
+  color: #EDE6DA;
+  text-align: right;
+  overflow-wrap: anywhere;   /* long values wrap — no mobile overflow */
+}
+
+.peek-row dd.peek-good {
+  color: #5DCAA5;
+}
+
+.peek-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  padding: 12px 16px;
+  background: rgba(216, 90, 48, 0.12);
+  border-top: 1px solid rgba(237, 230, 218, 0.1);
+  font-size: var(--fs-xs);
+  color: #F5C4B3;
+}
+
+.peek-cta {
+  font-weight: 600;
+  color: #F0997B;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.peek-cta:hover {
+  color: #FFFFFF;
+}
+
+@media (max-width: 560px) {
+  .peek-rows {
+    padding: var(--sp-3) var(--sp-4);
+    font-size: 0.76rem;
+  }
+
+  .peek-row {
+    flex-direction: column;
+    gap: 0;
+    padding-block: 8px;
+  }
+
+  .peek-row dd {
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peek-card::after {
+    animation: none;
+  }
+
+  .peek-row {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

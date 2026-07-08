@@ -40,10 +40,10 @@
         rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/base.css?v=20260709">
+  <link rel="stylesheet" href="css/animations.css?v=20260709">
+  <link rel="stylesheet" href="css/components.css?v=20260709">
+  <link rel="stylesheet" href="css/home.css?v=20260709">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
@@ -209,6 +209,45 @@
       </div>
     </section>
 
+
+    <!-- ================= PRIVACY PEEK ================= -->
+    <section class="section" id="peek">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Live demo</p>
+        <h2 data-reveal>Your browser just told me&hellip;</h2>
+        <p class="peek-sub text-2" data-reveal>
+          &hellip;without you clicking a thing. Everything below is read
+          locally by your own browser — nothing leaves this page.
+        </p>
+
+        <div class="peek-card" id="peekCard" data-reveal="scale"
+             role="group" aria-label="What your browser reveals">
+          <div class="peek-head">
+            <span class="peek-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="peek-title">passive read · no permissions asked</span>
+            <span class="peek-badge" id="peekStatus">scanning&hellip;</span>
+          </div>
+
+          <dl class="peek-rows">
+            <div class="peek-row"><dt>device</dt><dd data-peek="device">&mdash;</dd></div>
+            <div class="peek-row"><dt>screen</dt><dd data-peek="screen">&mdash;</dd></div>
+            <div class="peek-row"><dt>timezone</dt><dd data-peek="timezone">&mdash;</dd></div>
+            <div class="peek-row"><dt>language</dt><dd data-peek="language">&mdash;</dd></div>
+            <div class="peek-row"><dt>hardware</dt><dd data-peek="hardware">&mdash;</dd></div>
+            <div class="peek-row"><dt>battery</dt><dd data-peek="battery">&mdash;</dd></div>
+            <div class="peek-row"><dt>connection</dt><dd data-peek="connection">&mdash;</dd></div>
+          </dl>
+
+          <div class="peek-foot">
+            <span>Stored: nothing. Sent: nowhere. That's the point.</span>
+            <a href="https://privacytestlab.com" target="_blank"
+               rel="noopener noreferrer" class="peek-cta">
+              Run the full scan → PrivacyTestLab
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ================= FEATURED PROJECTS ================= -->
     <section class="section" id="projects-preview">
       <div class="container">
@@ -365,16 +404,17 @@
   <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
-  <script defer src="js/components.js"></script>
-  <script defer src="js/theme.js"></script>
-  <script defer src="js/modals.js"></script>
-  <script defer src="js/welcome.js"></script>
-  <script defer src="js/scroll.js"></script>
-  <script defer src="js/tilt.js"></script>
-  <script defer src="js/stats.js"></script>
-  <script defer src="js/hero3d.js"></script>
-  <script defer src="js/cursor.js"></script>
-  <script defer src="js/terminal.js"></script>
+  <script defer src="js/components.js?v=20260709"></script>
+  <script defer src="js/theme.js?v=20260709"></script>
+  <script defer src="js/modals.js?v=20260709"></script>
+  <script defer src="js/welcome.js?v=20260709"></script>
+  <script defer src="js/scroll.js?v=20260709"></script>
+  <script defer src="js/tilt.js?v=20260709"></script>
+  <script defer src="js/stats.js?v=20260709"></script>
+  <script defer src="js/hero3d.js?v=20260709"></script>
+  <script defer src="js/cursor.js?v=20260709"></script>
+  <script defer src="js/terminal.js?v=20260709"></script>
   <script defer src="js/skills-terminal.js"></script>
+  <script defer src="js/peek.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@ window.App = window.App || {};
     if (!slot) return;
 
     try {
-      const res = await fetch(file, { credentials: "same-origin" });
+      const res = await fetch(file, { credentials: "same-origin", cache: "no-cache" });
       if (!res.ok) throw new Error(`${file} → HTTP ${res.status}`);
       slot.innerHTML = await res.text(); // trusted, same-origin static file
     } catch (err) {

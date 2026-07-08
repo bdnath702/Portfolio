@@ -28,6 +28,17 @@
   --ok-soft:       #E1F5EE;
   --ok-ink:        #085041;
 
+  /* Extra tag/pill hues — used where more than accent+ok are needed
+     (e.g. the About masthead's hobby tags) */
+  --info-soft:     #E7EEF6;
+  --info-ink:      #1F4066;
+
+  --violet-soft:   #F2EAF6;
+  --violet-ink:    #5B2E73;
+
+  --gold-soft:     #FBF1DC;
+  --gold-ink:      #7A4E0B;
+
   /* Scene color fed to Three.js via getComputedStyle (hero3d.js reads it) */
   --scene-line:    #D85A30;
   --scene-fog:     #FAF6F0;
@@ -108,6 +119,15 @@
   --ok:            #2BB98A;
   --ok-soft:       rgba(43, 185, 138, 0.14);
   --ok-ink:        #9FE1CB;
+
+  --info-soft:     rgba(94, 158, 214, 0.16);
+  --info-ink:      #BFDBF7;
+
+  --violet-soft:   rgba(179, 120, 214, 0.16);
+  --violet-ink:    #E3C6F2;
+
+  --gold-soft:     rgba(230, 178, 64, 0.18);
+  --gold-ink:      #F2CE8A;
 
   --scene-line:    #E8703F;
   --scene-fog:     #14110E;
