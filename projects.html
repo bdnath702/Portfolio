@@ -1,803 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8" />
+  <title>Projects — Bipul Debnath | Full-Stack & Privacy Tooling</title>
+  <meta name="description"
+        content="Selected work by Bipul Debnath: PrivacyTestLab (browser privacy testing platform), Infogenie (MERN AI chatbot), and 200+ documented LeetCode Java solutions.">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
+  <!-- TODO: replace with your real domain -->
+  <link rel="canonical" href="https://bipul.dev/projects.html">
 
-  <title>Bipul Debnath | Projects</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — Bipul Debnath">
+  <meta property="og:description"
+        content="Case studies: privacy tooling, full-stack apps, and algorithms.">
+  <meta property="og:url" content="https://bipul.dev/projects.html"><!-- TODO -->
+  <meta property="og:image" content="https://bipul.dev/assets/og-image.png"><!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- GOOGLE FONT -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <!-- No-flash theme boot -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" ||
+            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark-theme");
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <!-- LUCIDE -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/projects.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet"
-        href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
-  <link rel="stylesheet"
-        href="css/layout.css">
-
-  <link rel="stylesheet"
-        href="css/projects.css">
-
-        <script>
-
-  const savedTheme =
-    localStorage.getItem("theme");
-
-  if (savedTheme === "dark") {
-
-    document.documentElement.classList.add("dark-theme");
-
+  <!-- Structured data: the work itself, machine-readable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Projects by Bipul Debnath",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "WebApplication",
+          "name": "PrivacyTestLab",
+          "url": "https://privacytestlab.com",
+          "applicationCategory": "SecurityApplication",
+          "description": "Browser privacy testing platform: IP and DNS leak detection, WebRTC testing, fingerprint analysis, metadata removal, and network diagnostics.",
+          "author": { "@type": "Person", "name": "Bipul Debnath" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "WebApplication",
+          "name": "Infogenie",
+          "url": "https://infogenie.onrender.com/",
+          "applicationCategory": "UtilitiesApplication",
+          "description": "AI-powered chatbot built on the MERN stack.",
+          "author": { "@type": "Person", "name": "Bipul Debnath" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SoftwareSourceCode",
+          "name": "LeetCode Java Solutions",
+          "codeRepository": "https://github.com/bdnath702/LeetCode_Java_Solution",
+          "programmingLanguage": "Java",
+          "description": "200+ documented data-structures-and-algorithms solutions with pattern notes and complexity analysis.",
+          "author": { "@type": "Person", "name": "Bipul Debnath" }
+        }
+      }
+    ]
   }
-
-</script>
-
+  </script>
 </head>
 
-<body class="projects-page">
-
-  <div class="page-wrapper">
-<!-- CONNECT MODAL -->
-<div id="connectModal" class="connect-modal">
-
-  <div class="connect-modal-content">
-
-    <button id="connectClose"
-            class="connect-close">
-
-      &times;
-
-    </button>
-
-    <h2 class="connect-title">
-      Let's Connect
-    </h2>
-
-    <p class="connect-email">
-
-      To:
-      <strong>
-        bdnatheduknow27@gmail.com
-      </strong>
-
-    </p>
-
-    <form id="connectForm"
-          action="https://formspree.io/f/mkgaywkd"
-          method="POST">
-
-      <input type="text"
-             name="name"
-             class="connect-input"
-             placeholder="Your Name"
-             required>
-
-      <input type="email"
-             name="email"
-             class="connect-input"
-             placeholder="Your Email"
-             required>
-
-      <textarea name="message"
-                class="connect-textarea"
-                rows="4"
-                placeholder="Your Message"
-                required></textarea>
-
-      <button type="submit"
-              class="connect-send-btn">
-
-        Send
-
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-    <!-- HEADER -->
-    <header class="main-header">
-
-  <!-- BRAND -->
-  <div class="brand">
-
-    <div class="brand-dot"></div>
-
-    <span class="brand-text">
-      bipul.dev
-    </span>
-
-  </div>
-
-
-  <!-- DESKTOP NAV -->
-  <nav class="main-nav">
-
-    <a href="index.html" class="nav-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html" class="nav-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html" class="nav-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-  </nav>
-
-
-  <!-- RIGHT SIDE -->
-  <div class="header-actions">
-
-    <!-- THEME -->
-    <button id="themeToggle"
-            class="theme-btn">
-
-      <i data-lucide="moon"></i>
-
-    </button>
-
-
-    <!-- RESUME -->
-    <button id="resumeBtn"
-            class="resume-btn">
-
-      <img src="assets/profile.png"
-           class="resume-icon">
-
-      <span>Resume</span>
-
-    </button>
-
-
-    <!-- MOBILE -->
-    <button id="mobileMenuBtn"
-            class="mobile-menu-btn">
-
-      <i data-lucide="menu"></i>
-
-    </button>
-
-  </div>
-
-</header>
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <button id="mobileResumeBtn"
-            class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-</div>
-
-
-    <!-- =========================================
-         PROJECT HERO
-    ========================================== -->
-
-    <section class="projects-hero-section">
-
-      <div class="projects-hero-content">
-
-        <h1 class="projects-heading">
-          My Projects
-        </h1>
-
-        <p class="projects-subtitle">
-
-          A curated selection of work that reflects
-          how I think, code, and ship.
-
+<body>
+
+  <div id="site-header"></div>
+
+  <main id="main">
+
+    <!-- ================= PAGE HERO ================= -->
+    <section class="section projects-hero">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Selected work</p>
+        <h1 data-reveal>Projects</h1>
+        <p class="projects-lede text-2" data-reveal>
+          A curated selection of what I've shipped — how I think,
+          how I build, and what happened after launch.
         </p>
-
       </div>
-
     </section>
 
+    <!-- ================= CASE STUDY 1 · PRIVACYTESTLAB ================= -->
+    <section class="section case" id="privacytestlab">
+      <div class="container case-grid">
 
+        <div class="case-content" data-reveal>
+          <p class="eyebrow">2026 · Privacy &amp; security platform</p>
+          <div class="case-title-row">
+            <h2>PrivacyTestLab</h2>
+            <span class="pill pill-ok">Live</span>
+          </div>
+          <p class="case-role mono text-2">Design · Full-stack build · Security</p>
 
-    <!-- =========================================
-         PROJECT 1
-    ========================================== -->
-
-    <section class="project-showcase-section">
-
-      <div class="project-showcase-grid">
-
-        <!-- LEFT -->
-        <div class="project-showcase-content">
-
-          <span class="project-mini-title">
-            MERN STACK · 2025
-          </span>
-
-          <h2 class="project-main-title">
-            Infogenie
-          </h2>
-
-          <p class="project-role-text">
-            Full-Stack Development
+          <p class="text-2">
+            Most people have no idea what their browser silently reveals.
+            PrivacyTestLab is a free testing platform that shows them —
+            and explains what to do about it.
           </p>
 
+          <dl class="case-facts">
+            <div>
+              <dt>What I built</dt>
+              <dd>IP &amp; DNS leak detection, WebRTC leak testing, browser
+                  fingerprint analysis, metadata remover, password generator,
+                  and network diagnostics (speed, ping &amp; jitter).</dd>
+            </div>
+            <div>
+              <dt>How</dt>
+              <dd>PHP backend, vanilla JavaScript tooling on the client,
+                  hardened with .htaccess rules. Modular architecture,
+                  accessibility-first UI.</dd>
+            </div>
+            <div>
+              <dt>Why it's hard</dt>
+              <dd>A privacy site must practice what it preaches — no
+                  third-party trackers, no leaked user data, tools that run
+                  client-side wherever possible.</dd>
+            </div>
+          </dl>
 
-          <ul class="project-feature-list">
-
-            <li>
-
-              Built a responsive info platform using
-
-              <span class="highlight-cyan">
-                React
-              </span>,
-
-              <span class="highlight-green">
-                Node.js
-              </span>,
-
-              Express, and
-
-              <span class="highlight-yellow">
-                MongoDB
-              </span>.
-
-            </li>
-
-
-            <li>
-
-              Designed smooth navigation and clear
-              content hierarchy for a better
-
-              <span class="highlight-orange">
-                UX
-              </span>.
-
-            </li>
-
-
-            <li>
-
-              Implemented reusable components and a
-
-              <span class="highlight-green">
-                modular folder structure
-              </span>.
-
-            </li>
-
-
-            <li>
-
-              Deployed frontend on
-
-              <span class="highlight-cyan">
-                Render
-              </span>
-
-              and backend API on a
-
-              <span class="highlight-red">
-                separate service
-              </span>.
-
-            </li>
-
-          </ul>
-
-
-          <div class="project-action-buttons">
-
-            <a href="https://infogenie.onrender.com/"
-               target="_blank"
-               class="project-btn">
-
-              Visit
-
-            </a>
-
-
-            <a href="https://github.com/bdnath702"
-               target="_blank"
-               class="project-btn project-btn-outline">
-
-              GitHub
-
-            </a>
-
+          <div class="project-meta-row">
+            <span class="pill">PHP</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Security</span>
           </div>
 
+          <div class="case-actions">
+            <a href="https://privacytestlab.com/" target="_blank"
+               rel="noopener noreferrer" class="btn btn-accent">
+              Visit site <span class="arrow">↗</span>
+            </a>
+          </div>
         </div>
 
-
-        <!-- RIGHT -->
-        <div class="project-showcase-image">
-
-          <img src="assets/infogenie.png"
-               alt="Infogenie Project">
-
-        </div>
+        <figure class="case-visual" data-tilt data-reveal="right">
+          <img src="assets/projects/project2.png" class="tilt-raise"
+               alt="PrivacyTestLab — privacy testing dashboard"
+               width="1200" height="800" loading="lazy">
+        </figure>
 
       </div>
-
     </section>
 
+    <!-- ================= CASE STUDY 2 · INFOGENIE ================= -->
+    <section class="section case case-flip" id="infogenie">
+      <div class="container case-grid">
 
+        <div class="case-content" data-reveal>
+          <p class="eyebrow">2025 · MERN full-stack</p>
+          <div class="case-title-row">
+            <h2>Infogenie</h2>
+            <span class="pill pill-ok">Live</span>
+          </div>
+          <p class="case-role mono text-2">Full-stack development</p>
 
-    <!-- =========================================
-     PROJECT 2
-========================================== -->
-
-
-    <section class="project-showcase-section">
-
-      <div class="project-showcase-grid">
-
-        <!-- LEFT -->
-        <div class="project-showcase-content">
-
-          <span class="project-mini-title">
-            PROBLEM-SOLVING & ALGORITHMS · 2025
-          </span>
-
-          <h2 class="project-main-title">
-            LeetCode Java Solutions
-          </h2>
-
-          <p class="project-role-text">
-            DSA Problem-Solving & Algorithms
+          <p class="text-2">
+            An AI-powered chatbot that answers questions with fast search
+            and smooth, conversational interaction.
           </p>
 
+          <dl class="case-facts">
+            <div>
+              <dt>What I built</dt>
+              <dd>React frontend with reusable components, Express + Node.js
+                  API, MongoDB persistence — a clean, modular folder
+                  structure end to end.</dd>
+            </div>
+            <div>
+              <dt>Shipping it</dt>
+              <dd>Frontend deployed on Render with the backend API on a
+                  separate service — real-world deployment, not localhost.</dd>
+            </div>
+          </dl>
 
-          <ul class="project-feature-list">
+          <div class="project-meta-row">
+            <span class="pill">React</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">Express</span>
+            <span class="pill">MongoDB</span>
+          </div>
 
-            <li>
+          <div class="case-actions">
+            <a href="https://infogenie.onrender.com/" target="_blank"
+               rel="noopener noreferrer" class="btn btn-primary">
+              Visit <span class="arrow">↗</span>
+            </a>
+            <a href="https://github.com/bdnath702" target="_blank"
+               rel="noopener noreferrer" class="btn btn-ghost">
+              <i data-lucide="github" aria-hidden="true"></i> GitHub
+            </a>
+          </div>
+        </div>
 
-              Solved problems consistently to strengthen
+        <figure class="case-visual" data-tilt data-reveal="left">
+          <img src="assets/projects/infogenie.png" class="tilt-raise"
+               alt="Infogenie — AI chatbot interface"
+               width="1200" height="800" loading="lazy">
+        </figure>
 
-              <span class="highlight-yellow">
-                problem-solving skills
-              </span>.
+      </div>
+    </section>
 
-            </li>
+    <!-- ================= CASE STUDY 3 · LEETCODE ================= -->
+    <section class="section case" id="leetcode">
+      <div class="container case-grid">
 
+        <div class="case-content" data-reveal>
+          <p class="eyebrow">2025 · Algorithms &amp; problem-solving</p>
+          <div class="case-title-row">
+            <h2>LeetCode Java Solutions</h2>
+          </div>
+          <p class="case-role mono text-2">Data structures · Algorithms · Java</p>
 
-            <li>
+          <p class="text-2">
+            A public, documented record of consistent problem-solving —
+            not just accepted answers, but the reasoning behind them.
+          </p>
 
-              Wrote clean, structured Java code
-              with proper comments.
+          <dl class="case-facts">
+            <div>
+              <dt>What's inside</dt>
+              <dd>200+ solutions in clean, commented Java — each with
+                  pattern notes and time/space complexity analysis.</dd>
+            </div>
+            <div>
+              <dt>The habit</dt>
+              <dd>Solved consistently over months, covering both
+                  beginner-friendly and optimized approaches per problem.</dd>
+            </div>
+          </dl>
 
-            </li>
+          <div class="project-meta-row">
+            <span class="pill">Java</span>
+            <span class="pill">DSA</span>
+            <span class="pill">Patterns</span>
+          </div>
 
-
-            <li>
-
-              Focused on time/space optimization and
-
-              <span class="highlight-red">
-                pattern recognition
-              </span>.
-
-            </li>
-
-
-            <li>
-
-              Includes
-
-              <span class="highlight-green">
-                beginner-friendly
-              </span>
-
-              and optimized approaches.
-
-            </li>
-
-          </ul>
-
-
-          <div class="project-action-buttons">
-
+          <div class="case-actions">
             <a href="https://github.com/bdnath702/LeetCode_Java_Solution"
-               target="_blank"
-               class="project-btn">
-
-              View Repository
-
+               target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              View repository <span class="arrow">↗</span>
             </a>
-
           </div>
-
         </div>
 
-
-        <!-- RIGHT -->
-        <div class="project-showcase-image">
-
-          <img src="assets/leetcode.png"
-               alt="Leetcode Java Solutions">
-
-        </div>
+        <figure class="case-visual" data-tilt data-reveal="right">
+          <img src="assets/projects/leetcode.png" class="tilt-raise"
+               alt="LeetCode Java solutions repository"
+               width="1200" height="800" loading="lazy">
+        </figure>
 
       </div>
-
     </section>
 
-
-    <!-- =========================================
-         PROJECT 3
-    ========================================== -->
-<section class="project-showcase-section">
-
-  <div class="project-showcase-grid">
-
-    <!-- LEFT -->
-    <div class="project-showcase-content">
-
-      <span class="project-mini-title">
-        PRIVACY & SECURITY TOOLS · 2026
-      </span>
-
-      <h2 class="project-main-title">
-        PrivacyTestLab
-      </h2>
-
-      <p class="project-role-text">
-        Full-Stack Web Development · Privacy Tools Platform
-      </p>
-
-
-      <ul class="project-feature-list">
-
-        <li>
-
-          Built a powerful
-
-          <span class="highlight-green">
-            privacy testing platform
-          </span>
-
-          using
-
-          <span class="highlight-cyan">
-            PHP
-          </span>,
-
-          <span class="highlight-yellow">
-            JavaScript
-          </span>,
-
-          HTML, CSS,
-
-          and
-
-          <span class="highlight-orange">
-            .htaccess
-          </span>.
-
-        </li>
-
-
-        <li>
-
-          Developed advanced tools for
-
-          <span class="highlight-red">
-            IP leak detection
-          </span>,
-
-          DNS/WebRTC testing,
-          browser fingerprinting,
-          metadata removal,
-          and password generation.
-
-        </li>
-
-
-        <li>
-
-          Created utility-based features like
-
-          <span class="highlight-cyan">
-            internet speed checker
-          </span>,
-
-          ping & jitter testing,
-          network diagnostics,
-          and privacy analysis tools.
-
-        </li>
-
-
-        <li>
-
-          Focused on a
-
-          <span class="highlight-green">
-            fast, responsive UI
-          </span>
-
-          with modular architecture,
-          smooth animations,
-          and clean accessibility-first design.
-
-        </li>
-
-      </ul>
-
-
-      <div class="project-action-buttons">
-
-        <a href="https://privacytestlab.com/"
-           target="_blank"
-           class="project-btn">
-
-          Visit Website
-
-        </a>
-
-
-        <a href="https://www.instagram.com/privacytestlabdotcom?igsh=MWt1aGVmajR6emlzeg=="
-           target="_blank"
-           class="project-btn project-btn-outline">
-
-          Instagram
-
-        </a>
-
+    <!-- ================= NEXT PROJECT / CTA ================= -->
+    <section class="section cta-band">
+      <div class="container cta-inner" data-reveal>
+        <div>
+          <h2>The next case study could be yours.</h2>
+          <p class="text-2">Have something in mind? Let's scope it together.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-accent" data-open-modal="hireModal">
+            Hire me <span class="arrow">↗</span>
+          </button>
+          <button class="btn btn-ghost" data-open-modal="connectModal">
+            Just say hello
+          </button>
+        </div>
       </div>
+    </section>
 
-    </div>
+  </main>
 
+  <div id="site-footer"></div>
+  <div id="site-modals"></div>
 
-    <!-- RIGHT -->
-    <div class="project-showcase-image">
-
-      <img src="assets/project2.png"
-           alt="PrivacyTestLab Project">
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-
-    <!-- FOOTER -->
-    <div id="footer"></div>
-
-  </div>
-
-
-  <!-- SCRIPT -->
-  <script src="js/script.js"></script>
-
-  <script>
-    lucide.createIcons();
-  </script>
-<!-- RESUME MODAL -->
-<div id="resumeModal" class="resume-modal">
-
-  <div class="resume-modal-content">
-
-    <span id="resumeClose"
-          class="resume-close">
-
-      &times;
-
-    </span>
-
-    <iframe
-      id="resumeFrame"
-      class="resume-frame"
-      src="assets/resume.pdf">
-
-    </iframe>
-
-  </div>
-
-</div>
+  <!-- No Three.js / hero3d / welcome here — this page doesn't use them -->
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script defer src="js/components.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/modals.js"></script>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/tilt.js"></script>
+  <script defer src="js/cursor.js"></script>
+  <script defer src="js/terminal.js"></script>
 </body>
 </html>

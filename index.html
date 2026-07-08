@@ -1,753 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8" />
+  <title>Bipul Debnath — Full-Stack Developer & Builder of PrivacyTestLab</title>
+  <meta name="description"
+        content="Full-stack developer from Tripura, India. I build fast, secure web experiences — including PrivacyTestLab, a browser privacy testing platform. React, Node.js, MongoDB, Java.">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
+  <!-- TODO: replace with your real domain on every page -->
+  <link rel="canonical" href="https://bipul.dev/">
 
-  <title>Bipul Debnath | Portfolio</title>
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bipul Debnath — Full-Stack Developer">
+  <meta property="og:description"
+        content="I build fast, secure web experiences — from pixels to production.">
+  <meta property="og:url" content="https://bipul.dev/"><!-- TODO -->
+  <meta property="og:image" content="https://bipul.dev/assets/og-image.png"><!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <!-- No-flash theme boot: runs before first paint. Keep inline, keep first. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" ||
+            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark-theme");
+        }
+      } catch (e) { /* private mode — default theme is fine */ }
+    })();
+  </script>
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <!-- Fonts (pinned families, swap so text is never invisible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <!-- LUCIDE ICONS -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet"
-        href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
-  <link rel="stylesheet"
-        href="css/layout.css">
-
-  <!-- FAVICON -->
-  <link rel="icon"
-        type="image/png"
-        href="assets/favicon.png">
-        <script>
-
-  const savedTheme =
-    localStorage.getItem("theme");
-
-  if (savedTheme === "dark") {
-
-    document.documentElement.classList.add("dark-theme");
-
+  <!-- Structured data: who you are, machine-readable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bipul Debnath",
+    "url": "https://bipul.dev/",
+    "jobTitle": "Full-Stack Developer",
+    "address": { "@type": "PostalAddress", "addressRegion": "Tripura", "addressCountry": "IN" },
+    "alumniOf": "ICFAI University Tripura",
+    "knowsAbout": ["Web development", "React", "Node.js", "MongoDB", "Java",
+                   "Data structures and algorithms", "Browser privacy", "Web security"],
+    "sameAs": [
+      "https://github.com/bdnath702",
+      "https://www.linkedin.com/in/bipul-debnath-bb5b20338/",
+      "https://privacytestlab.com"
+    ]
   }
-
-</script>
-
+  </script>
 </head>
 
 <body>
 
-  <!-- WELCOME OVERLAY -->
-  <div class="welcome-overlay" id="welcomeOverlay">
-
-    <div class="welcome-inner">
-      <span id="welcomeText">Welcome</span>
-    </div>
-
+  <!-- Multilingual welcome (welcome.js). Session-scoped; reduced-motion users skip it. -->
+  <div class="welcome-overlay" id="welcomeOverlay" aria-hidden="true">
+    <div class="welcome-word" id="welcomeWord">Welcome</div>
   </div>
 
-
-  <!-- PAGE WRAPPER -->
-  <div class="page-wrapper">
-
-    <!-- HEADER -->
-   <header class="main-header">
-
-  <!-- BRAND -->
-  <div class="brand">
-
-    <div class="brand-dot"></div>
-
-    <span class="brand-text">
-      bipul.dev
-    </span>
-
-  </div>
-
-
-  <!-- DESKTOP NAV -->
-  <nav class="main-nav">
-
-    <a href="index.html" class="nav-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html" class="nav-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html" class="nav-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-  </nav>
-
-
-  <!-- RIGHT SIDE -->
-  <div class="header-actions">
-
-    <!-- THEME -->
-    <button id="themeToggle"
-            class="theme-btn">
-
-      <i data-lucide="moon"></i>
-
-    </button>
-
-
-    <!-- RESUME -->
-    <button id="resumeBtn"
-            class="resume-btn">
-
-      <img src="assets/profile.png"
-           class="resume-icon">
-
-      <span>Resume</span>
-
-    </button>
-
-
-    <!-- MOBILE -->
-    <button id="mobileMenuBtn"
-            class="mobile-menu-btn">
-
-      <i data-lucide="menu"></i>
-
-    </button>
-
-  </div>
-
-</header>
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <button id="mobileResumeBtn"
-            class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-</div>
-
-    <!-- MAIN -->
-    <main>
-
-      <!-- CONNECT MODAL -->
-<div id="connectModal" class="connect-modal">
-  <div class="connect-modal-content">
-
-    <button id="connectClose" class="connect-close">&times;</button>
-
-    <h2 class="connect-title">Let's Connect</h2>
-
-    <p class="connect-email">To: <strong>aroraa09tg@gmail.com</strong></p>
-
-    <!-- ADDED: REAL FORMSPREE FORM -->
-    <form id="connectForm" action="https://formspree.io/f/mkgaywkd" method="POST">
-
-      <input type="text" name="name" class="connect-input" placeholder="Your Name" required>
-
-      <input type="email" name="email" class="connect-input" placeholder="Your Email" required>
-
-      <textarea name="message" class="connect-textarea" rows="4" placeholder="Your Message" required></textarea>
-
-      <button type="submit" class="connect-send-btn">Send</button>
-    </form>
-
-  </div>
-</div>
-
-
-    <main>
-      <!-- Name Loader -->
-<div class="name-loader" id="nameLoader">
-  <span id="typedName"></span>
-</div>
-
-            <!-- Hero section -->
-            
-
-      <section class="hero-section" id="home">
-        <!-- LATEST WEBSITE FLOATING BADGE -->
-
-<!-- FLOATING FIRE ANNOUNCEMENT -->
-
-<a href="https://privacytestlab.com"
-   target="_blank"
-   class="fire-announcement">
-
-  <img src="assets/fire.png"
-       alt="Fire"
-       class="fire-announcement-icon">
-
-  <div class="fire-announcement-box">
-
-    👈Latest website is live
-
-  </div>
-
-</a>
-
-
-
-        <div class="hero-left">
-          <div class="hero-intro-pill">
-    <div class="avatar-circle">
-      <img src="assets/avatar.png" alt="Avatar" class="avatar-img">
-    </div>
-
-    <span>Hello, I'm Bipul</span>
-</div>
-
-
-          <div class="hero-title">
-            <span class="hero-word hero-digital">DIGITAL</span>
-            <span class="hero-word hero-experience">EXPERIENCE</span>
-            <span class="hero-word hero-designer">ENGINEER</span>
-            <span class="hero-word hero-and">&amp;</span>
-            <span class="hero-word hero-developer">DEVELOPER.</span>
-          </div>
-
-          <div class="hero-meta-row">
-            <div class="hero-meta">
-              <span>// Developer</span>
-              <span><b>CSE Undergrad</b></span>
-            </div>
-            <div class="hero-meta hero-location">
-              <span>// Based in</span>
-              <span><b>Tripura, India</b></span>
-            </div>
-          </div>
-
-          
-
-          <p class="hero-subtext">
-  I build <span class="accent-purple">fast</span>, 
-  <span class="accent-yellow">reliable</span>, and 
-  <span class="accent-cyan">scalable</span> digital experiences using clean code and thoughtful design.
-</p>
-
-        </div>
-      </section>
-
-
-      <!-- What I do -->
-      <section class="section what-i-do" id="services">
-        <p class="section-eyebrow">WHAT I DO</p>
-        <h2 class="section-title-center">How I can help you</h2>
-
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon">🎨</div>
-            <h3>Frontend Dev
-            </h3>
-            <p>Building Responsive, clear & modern web interfaces</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">📱</div>
-            <h3>Web & Mobile</h3>
-            <p>Turning ideas into responsive and accessible web experiences.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">🧠</div>
-            <h3>Design & Creative</h3>
-            <p>Crafting visuals that connect with your users and brand.</p>
-          </article>
-          <article class="service-card">
-            <div class="service-icon">⚡</div>
-            <h3>Development</h3>
-            <p>Building scalable frontends using modern JavaScript and tools.</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Projects preview -->
-      <section class="section projects-preview" id="projects-preview">
-        <div class="section-header-row">
-          <h2 class="section-title">My Projects</h2>
-          <a href="projects.html" class="pill-button pill-outline">
-            <span>View All</span>
-          </a>
-        </div>
-
-        <div class="project-list">
-          <a  class="project-row">
-            <div>
-              <h3>Infogenie</h3>
-              <p class="project-meta">MERN Stack · 2025</p>
-            </div>
-            <div class="project-tags">
-              <span>Full-Stack</span>
-              <span>React</span>
-            </div>
-          </a>
-
-          
-          <a  class="project-row">
-            <div>
-              <h3>LeetCode Java Solution</h3>
-              <p class="project-meta">DSA· 2025</p>
-            </div>
-            <div class="project-tags">
-              <span>Logic</span>
-              <span>Algorithms</span>
-            </div>
-          </a>
-
-
-          <a  class="project-row">
-  <div>
-    <h3>PrivacyTestLab</h3>
-
-
-    <p class="project-meta">
-      Privacy & Security Tools Platform · 2026
-    </p>
-  </div>
-
-
-  <div class="project-tags">
-    <span>Privacy Tools</span>
-    <span>Cyber Security</span>
-    <span>Web Utilities</span>
-  </div>
-</a>
-
-        </div>
-      </section>
-
-      <!-- Tech stack -->
-      <section class="section tech-stack">
-        <p class="section-eyebrow">MY TECH STACK</p>
-        <h2 class="section-title-center">
-          My expertise spans a range of
-          <span class="accent-yellow">technologies</span>, enabling me to ship
-          <span class="accent-cyan">reliable</span> &amp;
-          <span class="accent-purple">modern</span> solutions.
-        </h2>
-
- <div class="tech-marquee">
-  <div class="marquee-content" id="marqueeRow">
-    
-    <div class="tech-pill"><img src="icons/html.png"><span>HTML</span></div>
-    <div class="tech-pill"><img src="icons/css.png"><span>CSS</span></div>
-    <div class="tech-pill"><img src="icons/javascript.png"><span>JavaScript</span></div>
-    <div class="tech-pill"><img src="icons/react.png"><span>React</span></div>
-    <div class="tech-pill"><img src="icons/node.png"><span>Node.js</span></div>
-    <div class="tech-pill"><img src="icons/mongodb.png"><span>MongoDB</span></div>
-    <div class="tech-pill"><img src="icons/c.png"><span>C</span></div>
-    <div class="tech-pill"><img src="icons/java.png"><span>Java</span></div>
-    <div class="tech-pill"><img src="icons/git.png"><span>Git</span></div>
-    <div class="tech-pill"><img src="icons/github.png"><span>GitHub</span></div>
-    <div class="tech-pill"><img src="icons/cpp.png"><span>C++</span></div>
-    <div class="tech-pill"><img src="icons/gcp.png"><span>Google Cloud</span></div>
-
-  </div>
-</div>
-
-
-
-        <div class="cta-row">
-          <a href="projects.html" class="pill-button pill-solid-green">
-            <span>My Projects</span>
-          </a>
-          <!-- HIRE ME button -->
-<button id="hireBtn" class="hire-button">
-  <img src="assets/hired.png" class="hire-icon" alt="Hire Me Icon">
-  <span>Hire Me</span>
-</button>
-
-
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-grid">
-        <div>
-          <p class="footer-heading">Where aesthetics &amp; functionality meet</p>
-          <p class="footer-text">
-            Clean layouts, smooth interactions, and code that is easy to maintain.
+  <!-- Shared shell slots — filled by js/components.js -->
+  <div id="site-header"></div>
+
+  <main id="main">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <canvas id="heroScene" class="hero-scene" aria-hidden="true"></canvas>
+
+      <div class="container hero-inner">
+        <div class="hero-content">
+
+          <span class="pill pill-ok hero-anim" style="--d: 100ms">
+            <span class="dot-live" aria-hidden="true"></span>
+            Available for freelance &amp; internships
+          </span>
+
+          <h1 class="hero-title hero-anim" style="--d: 220ms">
+            I build fast, secure<br>
+            web experiences —<br>
+            <span class="accent">from pixels to production.</span>
+          </h1>
+
+          <p class="hero-sub text-2 hero-anim" style="--d: 340ms">
+            Full-stack developer &amp; CSE undergrad from Tripura, India.
+            Currently building
+            <a href="https://privacytestlab.com" target="_blank"
+               rel="noopener noreferrer" class="link-draw">PrivacyTestLab</a>
+            — a browser privacy testing platform.
           </p>
+
+          <div class="hero-actions hero-anim" style="--d: 460ms">
+            <a href="projects.html" class="btn btn-primary">
+              View my work <span class="arrow">↗</span>
+            </a>
+            <button class="btn btn-ghost" data-open-modal="resumeModal">
+              <i data-lucide="file-text" aria-hidden="true"></i> Resume
+            </button>
+          </div>
+
+          <dl class="hero-stats hero-anim" style="--d: 580ms">
+            <div>
+              <dt>Shipped projects</dt>
+              <dd><span data-count="3">0</span></dd>
+            </div>
+            <div>
+              <dt>DSA problems solved</dt>
+              <dd><span data-count="200">0</span>+</dd>
+            </div>
+            <div>
+              <dt>Public repos</dt>
+              <dd><span data-count="0" data-github="repos">—</span></dd>
+            </div>
+            <div>
+              <dt>Building since</dt>
+              <dd>2024</dd>
+            </div>
+          </dl>
+
         </div>
-
-        <div>
-          <p class="footer-heading">Explore</p>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="projects.html">My Projects</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-heading">Follow Me</p>
-          <ul class="footer-links">
-            <a href="https://www.linkedin.com/in/bipul-debnath-bb5b20338/" target="_blank" class="social-icon">
-    <img src="icons/linkedin.png" alt="LinkedIn">
-    <span>LinkedIn</span>
-  </a>
-</li>
-             <a href="https://www.instagram.com/bd_nath09?igsh=cHNxZzUwMTc4djZw" target="_blank" class="social-icon">
-    <img src="icons/instagram.png" alt="Instagram">
-    <span>Instagram</span>
-  </a>
-</li>
-            <li>
-  <a href="https://github.com/bdnath702" target="_blank" class="social-icon">
-    <img src="icons/github.png" alt="GitHub">
-    <span>GitHub</span>
-  </a>
-</li>
-<li>
-  <a href="https://www.reddit.com/u/just_im_frustrated6/s/yF8vAq0iFE" target="_blank" class="social-icon">
-    <img src="icons/reddit.png" alt="Reddit">
-    <span>Reddit</span>
-  </a>
-</li>
-
-          </ul>
-        </div>
-
-        <div>
-  <p class="footer-heading">Contact</p>
-  <ul class="footer-links">
-    <li><a id="footerHello" style="cursor:pointer;">Say Hello!</a></li>
-
-
-    <li><span>Tripura, India</span></li>
-    <li><span>Let's build something incredible together 🚀</span></li>
-    <li><span>I reply fast — try me.</span></li>
-  </ul>
-</div>
-
       </div>
 
-      <div class="footer-bottom">
-        <span>© 2026 Bipul Debnath</span>
-        <span>Portfolio</span>
+      <a href="#services" class="scroll-cue hero-anim" style="--d: 800ms"
+         aria-label="Scroll to next section">
+        <i data-lucide="arrow-down" aria-hidden="true"></i>
+      </a>
+    </section>
+
+    <!-- ================= WHAT I DO ================= -->
+    <section class="section" id="services">
+      <div class="container">
+        <p class="eyebrow" data-reveal>What I do</p>
+        <h2 data-reveal>Three things, done well</h2>
+
+        <div class="service-grid" data-reveal-stagger>
+          <article class="service-card" data-tilt>
+            <div class="service-icon tilt-raise">
+              <i data-lucide="layout-dashboard" aria-hidden="true"></i>
+            </div>
+            <h3>Full-stack web apps</h3>
+            <p class="text-2">
+              End-to-end products with React, Node.js and MongoDB —
+              responsive, accessible, and fast by default.
+            </p>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon service-icon-accent tilt-raise">
+              <i data-lucide="shield-check" aria-hidden="true"></i>
+            </div>
+            <h3>Privacy &amp; security tools</h3>
+            <p class="text-2">
+              Diagnostic tooling for IP/DNS/WebRTC leaks and browser
+              fingerprinting — shipped live at PrivacyTestLab.
+            </p>
+          </article>
+
+          <article class="service-card" data-tilt>
+            <div class="service-icon tilt-raise">
+              <i data-lucide="gauge" aria-hidden="true"></i>
+            </div>
+            <h3>Performance &amp; UX</h3>
+            <p class="text-2">
+              Core Web Vitals, clean interfaces, and interactions that
+              feel considered — not decorated.
+            </p>
+          </article>
+        </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
+    <!-- ================= FEATURED PROJECTS ================= -->
+    <section class="section" id="projects-preview">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Featured projects</h2>
+          </div>
+          <a href="projects.html" class="btn btn-ghost">
+            View all <span class="arrow">↗</span>
+          </a>
+        </div>
 
+        <!-- Flagship -->
+        <article class="project-feature" data-tilt data-reveal>
+          <div class="project-feature-visual tilt-raise">
+            <img src="assets/projects/project2.png"
+                 alt="PrivacyTestLab — privacy testing dashboard"
+                 width="1200" height="800" loading="lazy">
+          </div>
+          <div class="project-feature-body">
+            <div class="project-title-row">
+              <h3>PrivacyTestLab</h3>
+              <span class="pill pill-ok">Live</span>
+            </div>
+            <p class="text-2">
+              Browser privacy testing platform — IP &amp; DNS leak detection,
+              WebRTC testing, fingerprint analysis, metadata removal, and
+              network diagnostics. My 2026 flagship.
+            </p>
+            <div class="project-meta-row">
+              <span class="pill">PHP</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">Security</span>
+              <a class="project-link link-draw"
+                 href="https://privacytestlab.com" target="_blank"
+                 rel="noopener noreferrer">
+                Visit site <span class="arrow">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
 
-  <!-- HIRE ME MODAL -->
-<div id="hireModal" class="hire-modal">
-  <div class="hire-modal-content">
+        <div class="project-grid" data-reveal-stagger>
+          <article class="project-card" data-tilt>
+            <div class="project-title-row">
+              <h3>Infogenie</h3>
+              <span class="mono text-2">2025</span>
+            </div>
+            <p class="text-2">
+              AI-powered chatbot on the MERN stack — intelligent responses,
+              fast search, smooth interaction.
+            </p>
+            <div class="project-meta-row">
+              <span class="pill">React</span>
+              <span class="pill">Node.js</span>
+              <a class="project-link link-draw"
+                 href="https://infogenie.onrender.com/" target="_blank"
+                 rel="noopener noreferrer">
+                Live <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
 
-    <button id="hireClose" class="hire-close">×</button>
-    <h2 class="hire-title">Hire Me</h2>
+          <article class="project-card" data-tilt>
+            <div class="project-title-row">
+              <h3>LeetCode Java solutions</h3>
+              <span class="mono text-2">2025</span>
+            </div>
+            <p class="text-2">
+              200+ documented DSA solutions with pattern notes and
+              time/space analysis.
+            </p>
+            <div class="project-meta-row">
+              <span class="pill">Java</span>
+              <span class="pill">Algorithms</span>
+              <a class="project-link link-draw"
+                 href="https://github.com/bdnath702/LeetCode_Java_Solution"
+                 target="_blank" rel="noopener noreferrer">
+                GitHub <span class="arrow">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-   <form id="hireForm" class="hire-form" action="https://formspree.io/f/mkgaywkd" method="POST">
+    <!-- ================= MY TECH STACK ================= -->
+    <section class="section" id="stack">
+      <div class="container">
+        <p class="eyebrow" data-reveal>My tech stack</p>
+        <h2 class="stack-title" data-reveal>
+          My expertise spans a range of technologies, enabling me to ship
+          <span class="accent">reliable &amp; modern</span> solutions.
+        </h2>
+      </div>
 
-  <input type="hidden" name="_subject" value="New Hire Request">
-  <input type="hidden" name="_replyto" value="">
+      <div class="marquee" data-reveal="fade">
+        <div class="marquee-track">
+          <!-- Row 1 -->
+          <div class="tech-pill"><img src="icons/html.png" alt="" width="22" height="22" loading="lazy"><span>HTML</span></div>
+          <div class="tech-pill"><img src="icons/css.png" alt="" width="22" height="22" loading="lazy"><span>CSS</span></div>
+          <div class="tech-pill"><img src="icons/javascript.png" alt="" width="22" height="22" loading="lazy"><span>JavaScript</span></div>
+          <div class="tech-pill"><img src="icons/react.png" alt="" width="22" height="22" loading="lazy"><span>React</span></div>
+          <div class="tech-pill"><img src="icons/node.png" alt="" width="22" height="22" loading="lazy"><span>Node.js</span></div>
+          <div class="tech-pill"><img src="icons/mongodb.png" alt="" width="22" height="22" loading="lazy"><span>MongoDB</span></div>
+          <div class="tech-pill"><img src="icons/c.png" alt="" width="22" height="22" loading="lazy"><span>C</span></div>
+          <div class="tech-pill"><img src="icons/java.png" alt="" width="22" height="22" loading="lazy"><span>Java</span></div>
+          <div class="tech-pill"><img src="icons/git.png" alt="" width="22" height="22" loading="lazy"><span>Git</span></div>
+          <div class="tech-pill"><img src="icons/github.png" alt="" width="22" height="22" loading="lazy"><span>GitHub</span></div>
+          <div class="tech-pill"><img src="icons/cpp.png" alt="" width="22" height="22" loading="lazy"><span>C++</span></div>
+          <div class="tech-pill"><img src="icons/gcp.png" alt="" width="22" height="22" loading="lazy"><span>Google Cloud</span></div>
+          <!-- Row 2: exact clone for the seamless loop — hidden from AT -->
+          <div class="tech-pill" aria-hidden="true"><img src="icons/html.png" alt="" width="22" height="22" loading="lazy"><span>HTML</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/css.png" alt="" width="22" height="22" loading="lazy"><span>CSS</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/javascript.png" alt="" width="22" height="22" loading="lazy"><span>JavaScript</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/react.png" alt="" width="22" height="22" loading="lazy"><span>React</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/node.png" alt="" width="22" height="22" loading="lazy"><span>Node.js</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/mongodb.png" alt="" width="22" height="22" loading="lazy"><span>MongoDB</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/c.png" alt="" width="22" height="22" loading="lazy"><span>C</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/java.png" alt="" width="22" height="22" loading="lazy"><span>Java</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/git.png" alt="" width="22" height="22" loading="lazy"><span>Git</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/github.png" alt="" width="22" height="22" loading="lazy"><span>GitHub</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/cpp.png" alt="" width="22" height="22" loading="lazy"><span>C++</span></div>
+          <div class="tech-pill" aria-hidden="true"><img src="icons/gcp.png" alt="" width="22" height="22" loading="lazy"><span>Google Cloud</span></div>
+        </div>
+      </div>
+    </section>
 
-  <label>Your Name</label>
-  <input type="text" name="name" required>
+    <!-- ================= CTA ================= -->
+    <section class="section cta-band" id="hire">
+      <div class="container cta-inner" data-reveal>
+        <div>
+          <h2>Have a project in mind?</h2>
+          <p class="text-2">Tell me about it — I usually reply within 24 hours.</p>
+        </div>
+        <div class="cta-actions">
+          <button class="btn btn-accent" data-open-modal="hireModal">
+            Hire me <span class="arrow">↗</span>
+          </button>
+          <button class="btn btn-ghost" data-open-modal="connectModal">
+            Just say hello
+          </button>
+        </div>
+      </div>
+    </section>
 
-  <label>Your Email</label>
-  <input type="email" name="email" required>
+  </main>
 
-  <label>Your Message</label>
-  <textarea name="message" rows="4" required></textarea>
+  <div id="site-footer"></div>
+  <div id="site-modals"></div>
 
-  <label>Budget Range</label>
-  <select name="budget">
-    <option value="Not specified">Not specified</option>
-    <option value="₹1,000 – ₹5,000">₹1,000 – ₹5,000</option>
-    <option value="₹5,000 – ₹15,000">₹5,000 – ₹15,000</option>
-    <option value="₹15,000+">₹15,000+</option>
-  </select>
+  <!-- Scripts: pinned versions, deferred, order matters only for the first three -->
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
-  <button type="submit" class="hire-send-btn">Send</button>
-</form>
-
-
-  </div>
-</div>
-
-
-
-<!-- SUCCESS POPUP -->
-<div id="hireSuccess" class="hire-success-popup">Request Sent Successfully!</div>
-
-    </main>
-
-
-   
-
-  </div>
-
-
-   <!-- HIRE ME MODAL -->
-<div id="hireModal" class="hire-modal">
-  <div class="hire-modal-content">
-
-    <button id="hireClose" class="hire-close">×</button>
-    <h2 class="hire-title">Hire Me</h2>
-
-   <form id="hireForm" class="hire-form" action="https://formspree.io/f/mkgaywkd" method="POST">
-
-  <input type="hidden" name="_subject" value="New Hire Request">
-  <input type="hidden" name="_replyto" value="">
-
-  <label>Your Name</label>
-  <input type="text" name="name" required>
-
-  <label>Your Email</label>
-  <input type="email" name="email" required>
-
-  <label>Your Message</label>
-  <textarea name="message" rows="4" required></textarea>
-
-  <label>Budget Range</label>
-  <select name="budget">
-    <option value="Not specified">Not specified</option>
-    <option value="₹1,000 – ₹5,000">₹1,000 – ₹5,000</option>
-    <option value="₹5,000 – ₹15,000">₹5,000 – ₹15,000</option>
-    <option value="₹15,000+">₹15,000+</option>
-  </select>
-
-  <button type="submit" class="hire-send-btn">Send</button>
-</form>
-
-
-  </div>
-</div>
-
-
-
-<!-- SUCCESS POPUP -->
-<div id="hireSuccess" class="hire-success-popup">Request Sent Successfully!</div>
-
-
-  <!-- JS -->
-  <script src="js/script.js"></script>
-
-  <!-- INIT ICONS -->
-  <script>
-    lucide.createIcons();
-  </script>
-<!-- RESUME MODAL -->
-<div id="resumeModal" class="resume-modal">
-
-  <div class="resume-modal-content">
-
-    <span id="resumeClose"
-          class="resume-close">
-
-      &times;
-
-    </span>
-
-    <iframe
-      id="resumeFrame"
-      class="resume-frame"
-      src="assets/resume.pdf">
-
-    </iframe>
-
-  </div>
-
-</div>
+  <script defer src="js/components.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/modals.js"></script>
+  <script defer src="js/welcome.js"></script>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/tilt.js"></script>
+  <script defer src="js/stats.js"></script>
+  <script defer src="js/hero3d.js"></script>
+  <script defer src="js/cursor.js"></script>
+  <script defer src="js/terminal.js"></script>
 </body>
 </html>

@@ -1,100 +1,83 @@
+<!-- ==========================================================================
+     components/footer.html
+     Injected into <div id="site-footer"></div> by js/components.js.
+     Contact email shown is the public alias — Formspree routes the mail,
+     the personal inbox is never exposed in markup.
+     ========================================================================== -->
+
 <footer class="site-footer">
+  <div class="container">
 
-  <div class="footer-grid">
+    <div class="footer-grid">
 
-    <div>
-      <p class="footer-heading">
-        Where aesthetics &amp; functionality meet
-      </p>
+      <div>
+        <p class="footer-heading">Where aesthetics &amp; functionality meet</p>
+        <p class="footer-text">
+          Clean layouts, smooth interactions, and code that's easy to maintain.
+          Built and shipped from Tripura, India.
+        </p>
+      </div>
 
-      <p class="footer-text">
-        Aligning design choices with technical decisions from day one.
-      </p>
+      <div>
+        <p class="footer-heading">Explore</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="https://privacytestlab.com" target="_blank"
+                 rel="noopener noreferrer">PrivacyTestLab
+            <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-heading">Elsewhere</p>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/bdnath702" target="_blank"
+               rel="noopener noreferrer">
+              <i data-lucide="github" aria-hidden="true"></i>
+              <span>GitHub</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/bipul-debnath-bb5b20338/"
+               target="_blank" rel="noopener noreferrer">
+              <i data-lucide="linkedin" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/bd_nath09" target="_blank"
+               rel="noopener noreferrer">
+              <i data-lucide="instagram" aria-hidden="true"></i>
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-heading">Contact</p>
+        <ul class="footer-links">
+          <li>
+            <a href="#" data-open-modal="connectModal">
+              <i data-lucide="mail" aria-hidden="true"></i>
+              <span>Say hello</span>
+            </a>
+          </li>
+          <li><span>Tripura, India</span></li>
+          <li><span>Usually reply within 24 hours</span></li>
+        </ul>
+      </div>
+
     </div>
 
-    <div>
-      <p class="footer-heading">Explore</p>
-
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Me</a></li>
-        <li><a href="projects.html">My Projects</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <p class="footer-heading">Follow Me</p>
-
-      <ul class="footer-links">
-
-        <li>
-          <a href="https://www.linkedin.com/in/bipul-debnath-bb5b20338/"
-             target="_blank"
-             class="social-icon">
-
-            <img src="icons/linkedin.png"
-                 alt="LinkedIn">
-
-            <span>LinkedIn</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://www.instagram.com/bd_nath09"
-             target="_blank"
-             class="social-icon">
-
-            <img src="icons/instagram.png"
-                 alt="Instagram">
-
-            <span>Instagram</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://github.com/bdnath702"
-             target="_blank"
-             class="social-icon">
-
-            <img src="icons/github.png"
-                 alt="GitHub">
-
-            <span>GitHub</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="https://reddit.com"
-             target="_blank"
-             class="social-icon">
-
-            <img src="icons/reddit.png"
-                 alt="Reddit">
-
-            <span>Reddit</span>
-          </a>
-        </li>
-
-      </ul>
-    </div>
-
-    <div>
-      <p class="footer-heading">Contact</p>
-
-      <ul class="footer-links">
-        <li>
-  <a id="footerHello" style="cursor:pointer;">
-    Say Hello!
-  </a>
-</li>
-      </ul>
+    <div class="footer-bottom">
+      <span>© 2026 Bipul Debnath. All rights reserved.</span>
+      <span class="terminal-hint" data-open-terminal
+            title="Try the terminal">press <kbd>~</kbd> for terminal</span>
     </div>
 
   </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 Bipul Debnath</span>
-    <span>Portfolio</span>
-  </div>
-
 </footer>

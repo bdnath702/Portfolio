@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page not found | bipul.dev</title>
+  <meta name="robots" content="noindex">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" ||
+            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark-theme");
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+  <!-- Absolute paths: a 404 can be served from ANY url depth,
+       so relative paths like css/base.css would themselves 404. -->
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+
+  <style>
+    .nf-wrap {
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: var(--sp-5);
+    }
+    .nf-code {
+      font-family: var(--font-mono);
+      font-size: var(--fs-xs);
+      letter-spacing: 0.14em;
+      color: var(--text-3);
+      text-transform: uppercase;
+    }
+    .nf-title {
+      font-size: var(--fs-hero);
+      line-height: 1.05;
+      margin-block: var(--sp-3) var(--sp-4);
+    }
+    .nf-title .accent { display: inline-block; }
+    .nf-sub { color: var(--text-2); margin-bottom: var(--sp-6); }
+    .nf-home {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: 0.8rem 1.6rem;
+      border-radius: var(--r-full);
+      background: var(--text);
+      color: var(--bg);
+      font-weight: 600;
+      font-size: var(--fs-sm);
+      transition: transform var(--dur-fast) var(--ease-out);
+    }
+    .nf-home:hover { transform: translateY(-2px); }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .nf-title .accent {
+        animation: nf-drift 3.2s var(--ease-out) infinite alternate;
+      }
+      @keyframes nf-drift {
+        from { transform: translateY(0) rotate(0deg); }
+        to   { transform: translateY(-10px) rotate(3deg); }
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="nf-wrap">
+    <div>
+      <p class="nf-code">Error 404 — not found</p>
+      <h1 class="nf-title">This page drifted <span class="accent">off&nbsp;the&nbsp;map.</span></h1>
+      <p class="nf-sub">The link is broken or the page has moved. The rest of the site is very much alive.</p>
+      <a class="nf-home" href="/">← Back to home</a>
+    </div>
+  </main>
+</body>
+</html>

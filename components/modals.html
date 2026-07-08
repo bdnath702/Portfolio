@@ -1,0 +1,146 @@
+<!-- ==========================================================================
+     components/modals.html
+     Injected into <div id="site-modals"></div> by js/components.js.
+     One copy per page — never paste these into pages directly.
+
+     Security notes:
+     • Forms post to Formspree over HTTPS; no personal inbox address appears
+       anywhere in the markup.
+     • Honeypot field (_gotcha) silently drops bot submissions.
+     • Resume iframe is same-origin (assets/resume.pdf) — no sandbox needed.
+     ========================================================================== -->
+
+<!-- CONNECT MODAL -->
+<div id="connectModal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="connectTitle" hidden>
+  <div class="modal-panel">
+    <button class="modal-close" data-close-modal aria-label="Close">
+      <i data-lucide="x" aria-hidden="true"></i>
+    </button>
+
+    <h2 class="modal-title" id="connectTitle">Let's connect</h2>
+    <p class="modal-sub">
+      Have a question or an idea? Send a message — it lands straight
+      in my inbox.
+    </p>
+
+    <form class="form-grid" action="https://formspree.io/f/mkgaywkd"
+          method="POST" data-ajax-form>
+      <input type="hidden" name="_subject" value="Portfolio — new message">
+      <input type="text" name="_gotcha" style="display:none"
+             tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="field">
+        <label for="cName">Name</label>
+        <input id="cName" type="text" name="name"
+               placeholder="Ada Lovelace" autocomplete="name"
+               maxlength="80" required>
+      </div>
+
+      <div class="field">
+        <label for="cEmail">Email</label>
+        <input id="cEmail" type="email" name="email"
+               placeholder="ada@example.com" autocomplete="email"
+               maxlength="120" required>
+      </div>
+
+      <div class="field">
+        <label for="cMsg">Message</label>
+        <textarea id="cMsg" name="message" rows="4"
+                  placeholder="What's on your mind?"
+                  maxlength="2000" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-accent">
+        <span data-submit-label>Send message</span>
+        <i data-lucide="send" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- HIRE MODAL -->
+<div id="hireModal" class="modal" role="dialog" aria-modal="true"
+     aria-labelledby="hireTitle" hidden>
+  <div class="modal-panel">
+    <button class="modal-close" data-close-modal aria-label="Close">
+      <i data-lucide="x" aria-hidden="true"></i>
+    </button>
+
+    <h2 class="modal-title" id="hireTitle">Hire me</h2>
+    <p class="modal-sub">
+      Tell me about the project — scope, timeline, anything useful.
+    </p>
+
+    <form class="form-grid" action="https://formspree.io/f/mkgaywkd"
+          method="POST" data-ajax-form>
+      <input type="hidden" name="_subject" value="Portfolio — hire request">
+      <input type="text" name="_gotcha" style="display:none"
+             tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="field">
+        <label for="hName">Name</label>
+        <input id="hName" type="text" name="name"
+               placeholder="Your name" autocomplete="name"
+               maxlength="80" required>
+      </div>
+
+      <div class="field">
+        <label for="hEmail">Email</label>
+        <input id="hEmail" type="email" name="email"
+               placeholder="you@company.com" autocomplete="email"
+               maxlength="120" required>
+      </div>
+
+      <div class="field">
+        <label for="hBudget">Budget range</label>
+        <select id="hBudget" name="budget">
+          <option value="Not specified">Not specified</option>
+          <option value="₹1,000 – ₹5,000">₹1,000 – ₹5,000</option>
+          <option value="₹5,000 – ₹15,000">₹5,000 – ₹15,000</option>
+          <option value="₹15,000+">₹15,000+</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="hMsg">Project details</label>
+        <textarea id="hMsg" name="message" rows="4"
+                  placeholder="What are we building?"
+                  maxlength="2000" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-accent">
+        <span data-submit-label>Send request</span>
+        <i data-lucide="send" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="modal" role="dialog" aria-modal="true"
+     aria-label="Resume" hidden>
+  <div class="modal-panel modal-panel-wide">
+    <button class="modal-close" data-close-modal aria-label="Close">
+      <i data-lucide="x" aria-hidden="true"></i>
+    </button>
+
+    <!-- data-src is swapped to src on first open — the PDF never blocks
+         page load on any page (Core Web Vitals) -->
+    <iframe class="resume-frame" title="Resume — Bipul Debnath"
+            data-src="assets/resume.pdf" loading="lazy"></iframe>
+
+    <div style="display:flex; justify-content:flex-end; margin-top: var(--sp-3);">
+      <a class="btn btn-ghost" href="assets/resume.pdf" download>
+        <i data-lucide="download" aria-hidden="true"></i>
+        <span>Download PDF</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SHARED TOAST -->
+<div id="toast" class="toast" role="status" aria-live="polite">
+  <i data-lucide="check" aria-hidden="true"></i>
+  <span id="toastMsg">Done</span>
+</div>

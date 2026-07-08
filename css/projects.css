@@ -1,382 +1,144 @@
-/* =========================================
-   PROJECTS PAGE
-========================================= */
+/* ==========================================================================
+   projects.css — Projects page only: page hero + case-study layouts.
+   Reuses .cta-band styles? No — those live in home.css, so they're
+   duplicated here in miniature to keep pages independent. See bottom.
+   ========================================================================== */
 
-.projects-page {
-  overflow-x: hidden;
-}
-.projects-page{
-
-  width:100%;
-
-  overflow-x:hidden;
-
-  box-sizing:border-box;
-
-}
-/* =========================================
-   HERO SECTION
-========================================= */
-
-.projects-hero-section {
-
-  padding-top: 58px;
-  padding-bottom: 34px;
-
-  padding-left:32px;
-  padding-right:32px;
-
+/* --------------------------------------------------------------------------
+   1. PAGE HERO
+   -------------------------------------------------------------------------- */
+.projects-hero {
+  padding-bottom: var(--sp-6);
 }
 
-.projects-hero-content {
-  max-width: 760px;
+.projects-hero h1 {
+  font-size: var(--fs-h1);
+  margin-top: var(--sp-2);
 }
 
-.projects-heading {
-  font-size: clamp(2.8rem, 5vw, 2.3rem);
-  line-height: 0.94;
-  letter-spacing: -0.045em;
-  font-weight: 800;
-  margin: 0 0 12px;
-  color: var(--text-main);
+.projects-lede {
+  margin-top: var(--sp-3);
+  font-size: 1.05rem;
+  max-width: 52ch;
 }
 
-.projects-subtitle {
-  font-size: 1rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-/* =========================================
-   PROJECT SECTION
-========================================= */
-
-.project-showcase-section {
-
-  padding: 40px 32px 52px;
-
-  border-top: 1px solid var(--border-soft);
-
-}
-.project-showcase-grid {
+/* --------------------------------------------------------------------------
+   2. CASE STUDIES
+   Alternating layout: text | image, flipped on .case-flip.
+   -------------------------------------------------------------------------- */
+.case-grid {
   display: grid;
-  grid-template-columns: 1fr 1.02fr;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(var(--sp-5), 5vw, var(--sp-8));
   align-items: center;
-  gap: 52px;
 }
 
-/* =========================================
-   LEFT CONTENT
-========================================= */
+.case-flip .case-grid .case-content { order: 2; }
+.case-flip .case-grid .case-visual  { order: 1; }
 
-.project-mini-title {
-  display: inline-block;
-  margin-bottom: 18px;
-
-  font-size: 0.92rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  color: var(--text-muted);
+.case-content {
+  display: grid;
+  gap: var(--sp-4);
+  justify-items: start;
 }
 
-.project-main-title {
-  font-size: clamp(2.2rem, 3.2vw, 3.4rem);
-  line-height: 0.96;
-  font-weight: 800;
-  margin: 0 0 10px;
-  color: var(--text-main);
-}
-
-.project-role-text {
-  font-size: 1rem;
-  margin-bottom: 18px;
-  color: var(--text-muted);
-}
-
-/* =========================================
-   FEATURE LIST
-========================================= */
-
-.project-feature-list {
-  padding-left: 26px;
-  margin: 0 0 34px;
-}
-.project-feature-list li {
-  margin-bottom: 12px;
-  line-height: 1.55;
-  font-size: 0.96rem;
-  color: var(--text-main);
-}
-
-/* =========================================
-   HIGHLIGHT COLORS
-========================================= */
-
-.highlight-cyan {
-  color: #53c7ff;
-  font-weight: 600;
-}
-
-.highlight-green {
-  color: #7eff72;
-  font-weight: 600;
-}
-
-.highlight-yellow {
-  color: #ffd44d;
-  font-weight: 600;
-}
-
-.highlight-orange {
-  color: #ffb347;
-  font-weight: 600;
-}
-
-.highlight-red {
-  color: #ff6f8d;
-  font-weight: 600;
-}
-
-/* LIGHT MODE FIX */
-
-html:not(.dark-theme) .highlight-yellow {
-  color: #b88600;
-}
-
-html:not(.dark-theme) .highlight-green {
-  color: #2f8a45;
-}
-
-html:not(.dark-theme) .highlight-cyan {
-  color: #2586d8;
-}
-
-html:not(.dark-theme) .highlight-orange {
-  color: #d67b00;
-}
-
-html:not(.dark-theme) .highlight-red {
-  color: #d14b67;
-}
-
-/* =========================================
-   BUTTONS
-========================================= */
-
-.project-action-buttons {
+.case-title-row {
   display: flex;
+  align-items: center;
+  gap: var(--sp-3);
   flex-wrap: wrap;
-  gap: 16px;
 }
 
-.project-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.case-role {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 
-  padding: 13px 28px;
+/* Fact list — the case-study skeleton */
+.case-facts {
+  display: grid;
+  gap: var(--sp-4);
+  border-left: 2px solid var(--accent);
+  padding-left: var(--sp-4);
+}
 
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  font-size: 1rem;
+.case-facts dt {
+  font-family: var(--font-display);
   font-weight: 600;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease,
-    border 0.3s ease;
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-1);
 }
 
-/* DARK */
-
-.dark-theme .project-btn {
-  background: #111111;
-  color: #ffffff;
-  border: 1px solid #2b2b2b;
+.case-facts dd {
+  font-size: var(--fs-sm);
+  color: var(--text-2);
+  max-width: 52ch;
 }
 
-.dark-theme .project-btn:hover {
-  background: #1b1b1b;
-  transform: translateY(-3px);
+.case-actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-top: var(--sp-2);
 }
 
-/* LIGHT */
-
-html:not(.dark-theme) .project-btn {
-  background: #ffffff;
-  color: #111111;
-  border: 1px solid #d7cdc0;
-}
-
-html:not(.dark-theme) .project-btn:hover {
-  background: #f4ece2;
-  transform: translateY(-3px);
-}
-
-/* =========================================
-   IMAGE SIDE
-========================================= */
-
-.project-showcase-image {
+/* Visual */
+.case-visual {
+  margin: 0;
+  border-radius: var(--r-lg);
   overflow: hidden;
-
-  border-radius: 30px;
-
-  border: 1px solid var(--border-soft);
-
-  background: transparent;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  border: 1px solid var(--line);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-md);
 }
 
-.project-showcase-image:hover {
-  transform: translateY(-5px);
-}
-
-.project-showcase-image img {
+.case-visual img {
   width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
   object-fit: cover;
-
-  border-radius: 30px;
+  aspect-ratio: 3 / 2;
 }
 
-/* REMOVE EXTRA WHITE SPACE */
-
-.project-showcase-image::after {
-  display: none !important;
-}
-
-/* LIGHT MODE */
-
-html:not(.dark-theme) .project-showcase-image {
-  border: 1px solid #d8cfc1;
-}
-
-html:not(.dark-theme) .project-showcase-image:hover {
-  box-shadow: 0 14px 34px rgba(0,0,0,0.08);
-}
-
-/* =========================================
-   COMING SOON
-========================================= */
-
-.coming-soon-box {
+/* project-meta-row + .pill come from components.css/home.css; redefine
+   the one home.css-only piece this page needs: */
+.project-meta-row {
   display: flex;
   align-items: center;
-  justify-content: center;
-
-  min-height: 320px;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
 }
 
-.coming-soon-box span {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-muted);
+/* --------------------------------------------------------------------------
+   3. CTA BAND (duplicated from home.css so pages stay independent)
+   -------------------------------------------------------------------------- */
+.cta-band {
+  background: var(--bg-sunken);
 }
 
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1100px) {
-
-  .project-showcase-grid {
-    gap: 64px;
-  }
-
+.cta-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  flex-wrap: wrap;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+.cta-actions {
+  display: flex;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
 
+/* --------------------------------------------------------------------------
+   4. RESPONSIVE
+   -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
-
-  .project-showcase-grid {
+  .case-grid {
     grid-template-columns: 1fr;
-    gap: 42px;
   }
 
-  .projects-heading {
-    font-size: 3.3rem;
-  }
-
-  .project-main-title {
-    font-size: 2.8rem;
-  }
-
+  /* On mobile, the image always leads — visual hook first, then story */
+  .case-grid .case-visual { order: 1; }
+  .case-grid .case-content { order: 2; }
 }
-
-@media (max-width: 768px) {
-
-  .projects-hero-section {
-    padding-top: 56px;
-    padding-bottom: 40px;
-  }
-
-  .projects-heading {
-    font-size: 2.7rem;
-  }
-
-  .projects-subtitle {
-    font-size: 1rem;
-  }
-
-  .project-showcase-section {
-    padding: 42px 0 56px;
-  }
-
-  .project-main-title {
-    font-size: 2.2rem;
-  }
-
-  .project-role-text {
-    font-size: 1rem;
-  }
-.projects-hero-section,
-.project-showcase-section{
-
-  padding-left:16px;
-  padding-right:16px;
-
-}
-  .project-feature-list li {
-    font-size: 0.96rem;
-    line-height: 1.65;
-  }
-
-}
-
-@media (max-width: 520px) {
-
-  .projects-heading {
-    font-size: 2.2rem;
-  }
-
-  .project-main-title {
-    font-size: 1.9rem;
-  }
-
-  .project-mini-title {
-    font-size: 0.8rem;
-  }
-
-  .project-btn {
-    width: 100%;
-  }
-
-}
-

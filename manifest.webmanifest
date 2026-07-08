@@ -1,0 +1,12 @@
+{
+  "name": "Bipul Debnath — Portfolio",
+  "short_name": "bipul.dev",
+  "description": "Full-stack developer & builder of PrivacyTestLab.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FAF6F0",
+  "theme_color": "#FAF6F0",
+  "icons": [
+    { "src": "/assets/favicon.png", "sizes": "192x192", "type": "image/png" }
+  ]
+}

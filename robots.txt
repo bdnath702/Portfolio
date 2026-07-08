@@ -1,0 +1,9 @@
+# robots.txt — bipul.dev
+User-agent: *
+Allow: /
+
+# Don't index the shell fragments — they're partial HTML, useless in search
+Disallow: /components/
+
+# TODO: replace with your real domain
+Sitemap: https://bipul.dev/sitemap.xml

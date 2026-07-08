@@ -1,258 +1,101 @@
-<header class="main-header">
+<!-- ==========================================================================
+     components/header.html
+     Injected into <div id="site-header"></div> by js/components.js.
+     Icons are Lucide (initialized after injection).
+     ========================================================================== -->
 
-  <!-- BRAND -->
-  <div class="brand">
+<a class="skip-link" href="#main">Skip to content</a>
 
-    <div class="brand-dot"></div>
+<div class="scroll-progress" aria-hidden="true"></div>
 
-    <span class="brand-text">
-      bipul.dev
-    </span>
+<header class="site-header">
+  <div class="container header-inner">
+
+    <!-- BRAND -->
+    <a href="index.html" class="brand" aria-label="bipul.dev — home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>bipul.dev</span>
+    </a>
+
+    <!-- DESKTOP NAV -->
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html" class="nav-link" data-nav="index">
+        <i data-lucide="home" aria-hidden="true"></i>
+        <span>Home</span>
+      </a>
+      <a href="projects.html" class="nav-link" data-nav="projects">
+        <i data-lucide="folder-kanban" aria-hidden="true"></i>
+        <span>Projects</span>
+      </a>
+      <a href="about.html" class="nav-link" data-nav="about">
+        <i data-lucide="user" aria-hidden="true"></i>
+        <span>About</span>
+      </a>
+    </nav>
+
+    <!-- ACTIONS -->
+    <div class="header-actions">
+      <button id="themeToggle" class="icon-btn theme-btn"
+              aria-label="Toggle dark mode">
+        <i data-lucide="moon" class="icon-moon" aria-hidden="true"></i>
+        <i data-lucide="sun" class="icon-sun" aria-hidden="true"></i>
+      </button>
+
+      <button class="btn btn-ghost btn-resume-desktop" data-open-modal="resumeModal">
+        <i data-lucide="file-text" aria-hidden="true"></i>
+        <span>Resume</span>
+      </button>
+
+      <button class="btn btn-accent btn-resume-desktop" data-open-modal="connectModal">
+        <span>Let's talk</span>
+      </button>
+
+      <button id="mobileMenuBtn" class="icon-btn mobile-menu-btn"
+              aria-label="Open menu" aria-expanded="false"
+              aria-controls="mobileSidebar">
+        <i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+    </div>
 
   </div>
-
-
-  <!-- DESKTOP NAV -->
-  <nav class="main-nav">
-
-    <a href="index.html" class="nav-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html" class="nav-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html" class="nav-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-  </nav>
-
-
-  <!-- RIGHT SIDE -->
-  <div class="header-actions">
-
-    <!-- THEME -->
-    <button id="themeToggle"
-            class="theme-btn">
-
-      <i data-lucide="moon"></i>
-
-    </button>
-
-
-    <!-- RESUME -->
-    <button id="resumeBtn"
-            class="resume-btn">
-
-      <img src="assets/profile.png"
-           class="resume-icon">
-
-      <span>Resume</span>
-
-    </button>
-
-
-    <!-- MOBILE -->
-    <button id="mobileMenuBtn"
-            class="mobile-menu-btn">
-
-      <i data-lucide="menu"></i>
-
-    </button>
-
-  </div>
-
 </header>
 
-
-
 <!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
+<div class="sidebar-overlay" data-close-sidebar aria-hidden="true"></div>
 
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <button id="mobileResumeBtn"
-            class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
+<aside id="mobileSidebar" class="mobile-sidebar" aria-label="Mobile navigation">
+  <div class="sidebar-head">
+    <span class="brand">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span>bipul.dev</span>
+    </span>
+    <button class="icon-btn" data-close-sidebar aria-label="Close menu">
+      <i data-lucide="x" aria-hidden="true"></i>
     </button>
-
   </div>
 
-</div>
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
+  <nav aria-label="Mobile">
+    <a href="index.html" class="mobile-link" data-nav="index">
+      <i data-lucide="home" aria-hidden="true"></i>
       <span>Home</span>
-
     </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
+    <a href="projects.html" class="mobile-link" data-nav="projects">
+      <i data-lucide="folder-kanban" aria-hidden="true"></i>
       <span>Projects</span>
-
     </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
+    <a href="about.html" class="mobile-link" data-nav="about">
+      <i data-lucide="user" aria-hidden="true"></i>
       <span>About</span>
-
     </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
+    <button class="mobile-link" data-open-modal="resumeModal">
+      <i data-lucide="file-text" aria-hidden="true"></i>
       <span>Resume</span>
+    </button>
+  </nav>
 
-    </a>
-
+  <div class="sidebar-foot">
+    <button class="btn btn-accent" data-open-modal="connectModal">
+      Let's talk
+    </button>
   </div>
-
-</div>
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-</div>
+</aside>

@@ -1,688 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8" />
+  <title>About — Bipul Debnath | Full-Stack Developer, Tripura</title>
+  <meta name="description"
+        content="Bipul Debnath is a CSE undergrad and full-stack developer from Tripura, India — builder of PrivacyTestLab and MERN applications. This is his story so far.">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0" />
+  <!-- TODO: replace with your real domain -->
+  <link rel="canonical" href="https://bipul.dev/about.html">
 
-  <title>About | Bipul Debnath</title>
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="About — Bipul Debnath">
+  <meta property="og:description"
+        content="CSE undergrad, full-stack developer, builder of PrivacyTestLab.">
+  <meta property="og:url" content="https://bipul.dev/about.html"><!-- TODO -->
+  <meta property="og:image" content="https://bipul.dev/assets/og-image.png"><!-- TODO -->
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+  <!-- No-flash theme boot -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "dark" ||
+            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark-theme");
+        }
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 
-  <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <!-- MAIN CSS -->
-  <link rel="stylesheet"
-        href="css/styles.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/about.css">
 
-  <link rel="stylesheet"
-        href="css/layout.css">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
 
-  <link rel="stylesheet"
-        href="css/about.css">
-
-  <!-- LUCIDE -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-03VJ63QXHP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-03VJ63QXHP');
-</script>
-  <!-- FAVICON -->
-  <link rel="icon"
-        type="image/png"
-        href="assets/favicon.png">
-        <script>
-
-  const savedTheme =
-    localStorage.getItem("theme");
-
-  if (savedTheme === "dark") {
-
-    document.documentElement.classList.add("dark-theme");
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Bipul Debnath",
+      "jobTitle": "Full-Stack Developer",
+      "description": "CSE undergraduate and full-stack developer from Tripura, India. Builder of PrivacyTestLab.",
+      "address": { "@type": "PostalAddress", "addressRegion": "Tripura", "addressCountry": "IN" },
+      "alumniOf": "ICFAI University Tripura",
+      "sameAs": [
+        "https://github.com/bdnath702",
+        "https://www.linkedin.com/in/bipul-debnath-bb5b20338/",
+        "https://privacytestlab.com"
+      ]
+    }
   }
-
-</script>
-
+  </script>
 </head>
 
 <body>
 
-  <div class="page-wrapper">
-<!-- CONNECT MODAL -->
-<div id="connectModal" class="connect-modal">
-
-  <div class="connect-modal-content">
-
-    <button id="connectClose"
-            class="connect-close">
-
-      &times;
-
-    </button>
-
-    <h2 class="connect-title">
-      Let's Connect
-    </h2>
-
-    <p class="connect-email">
-
-      To:
-      <strong>
-        aroraa09tg@gmail.com
-      </strong>
-
-    </p>
-
-    <form id="connectForm"
-          action="https://formspree.io/f/mkgaywkd"
-          method="POST">
-
-      <input type="text"
-             name="name"
-             class="connect-input"
-             placeholder="Your Name"
-             required>
-
-      <input type="email"
-             name="email"
-             class="connect-input"
-             placeholder="Your Email"
-             required>
-
-      <textarea name="message"
-                class="connect-textarea"
-                rows="4"
-                placeholder="Your Message"
-                required></textarea>
-
-      <button type="submit"
-              class="connect-send-btn">
-
-        Send
-
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-    <!-- HEADER -->
-    <header class="main-header">
-
-  <!-- BRAND -->
-  <div class="brand">
-
-    <div class="brand-dot"></div>
-
-    <span class="brand-text">
-      bipul.dev
-    </span>
-
-  </div>
-
-
-  <!-- DESKTOP NAV -->
-  <nav class="main-nav">
-
-    <a href="index.html" class="nav-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html" class="nav-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html" class="nav-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-  </nav>
-
-
-  <!-- RIGHT SIDE -->
-  <div class="header-actions">
-
-    <!-- THEME -->
-    <button id="themeToggle"
-            class="theme-btn">
-
-      <i data-lucide="moon"></i>
-
-    </button>
-
-
-    <!-- RESUME -->
-    <button id="resumeBtn"
-            class="resume-btn">
-
-      <img src="assets/profile.png"
-           class="resume-icon">
-
-      <span>Resume</span>
-
-    </button>
-
-
-    <!-- MOBILE -->
-    <button id="mobileMenuBtn"
-            class="mobile-menu-btn">
-
-      <i data-lucide="menu"></i>
-
-    </button>
-
-  </div>
-
-</header>
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <button id="mobileResumeBtn"
-            class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </button>
-
-  </div>
-
-</div>
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-
-
-
-<!-- MOBILE SIDEBAR -->
-<div id="mobileSidebar"
-     class="mobile-sidebar">
-
-  <!-- CLOSE BUTTON -->
-  <button id="closeSidebarBtn"
-          class="close-sidebar-btn">
-
-    <i data-lucide="x"></i>
-
-  </button>
-
-
-  <div class="mobile-sidebar-content">
-
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-    <a href="index.html"
-       class="mobile-link">
-
-      <i data-lucide="home"></i>
-
-      <span>Home</span>
-
-    </a>
-
-
-    <a href="projects.html"
-       class="mobile-link">
-
-      <i data-lucide="folder-kanban"></i>
-
-      <span>Projects</span>
-
-    </a>
-
-
-    <a href="about.html"
-       class="mobile-link">
-
-      <i data-lucide="info"></i>
-
-      <span>About</span>
-
-    </a>
-
-
-    <a id="mobileResumeBtn"
-       class="mobile-link">
-
-      <i data-lucide="file-text"></i>
-
-      <span>Resume</span>
-
-    </a>
-
-  </div>
-
-</div>
-</div>
-
-
-    <!-- MAIN -->
-    <main class="about-page">
-<svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
-  <clipPath id="myBlob" clipPathUnits="objectBoundingBox">
-    <path d="M0.54,0.03 C0.67,0.05,0.82,0.13,0.91,0.26 C1.02,0.42,1.01,0.61,0.93,0.78 C0.85,0.95,0.69,1.02,0.51,1 C0.33,0.98,0.18,0.88,0.09,0.74 C-0.02,0.57,-0.02,0.37,0.09,0.19 C0.19,0.06,0.36,0.01,0.54,0.03Z"/>
-  </clipPath>
-</svg>
-      <!-- HERO -->
-      <section class="section about-hero">
-
-        <div class="about-hero-left">
-
-          <h1 class="page-title">
-            About Me
-          </h1>
-
-          <p class="page-subtitle">
-
-  I'm Bipul Debnath, a <span class="cyan-text">21-year-old</span>
-  developer from <span class="green-text">India</span> and a CSE
-  undergraduate who enjoys blending
-  <span class="yellow-text">clean code</span>,
-  modern design, and practical problem-solving into meaningful digital
-  experiences.
-
-  I love building responsive interfaces, experimenting with UI details,
-  and turning ideas into projects that feel
-  <span class="green-text">smooth</span>,
-  fast, and intuitive across all devices.
-
-  Alongside frontend and MERN development, I also run
-  <span class="cyan-text">  <a href="https://privacytestlab.com"
-     target="_blank">
-
-    <u>PrivacyTestLab.com</u>
-
-  </a></span>, 
-
-   where I create privacy-focused tools and educational resources around
-  IP leaks, DNS leaks, browser fingerprinting, and online security.
-
-  Outside coding, I'm someone who enjoys learning new tech, refining
-  design aesthetics, and constantly improving both technical and
-  real-world skills while building projects that are
-  <span class="red-text">modern</span>,
-  scalable, and user-focused.
-
-</p>
-
+  <div id="site-header"></div>
+
+  <main id="main">
+
+    <!-- ================= ABOUT HERO ================= -->
+    <section class="section about-hero">
+      <div class="container about-hero-grid">
+
+        <div data-reveal>
+          <p class="eyebrow">About me</p>
+          <h1>Hi, I'm Bipul.</h1>
+          <p class="about-lede text-2">
+            I'm a 21-year-old CSE undergraduate from Tripura, India, and I
+            build for the web — end to end. Frontend interfaces that feel
+            considered, backends that hold up, and lately an entire privacy
+            platform:
+            <a href="https://privacytestlab.com" target="_blank"
+               rel="noopener noreferrer" class="link-draw">PrivacyTestLab</a>,
+            where I ship tools around IP &amp; DNS leaks, browser
+            fingerprinting, and online security.
+          </p>
+          <p class="about-lede text-2">
+            What I care about: code that stays readable six months later,
+            interfaces that respect the person using them, and getting a
+            little better at both every week. Off the keyboard I'm usually
+            watching cricket or breaking down programming concepts to
+            explain them simply.
+          </p>
+          <div class="about-hero-actions">
+            <button class="btn btn-primary" data-open-modal="resumeModal">
+              <i data-lucide="file-text" aria-hidden="true"></i> Resume
+            </button>
+            <a href="projects.html" class="btn btn-ghost">
+              See my work <span class="arrow">↗</span>
+            </a>
+          </div>
         </div>
 
+        <figure class="about-portrait" data-tilt data-reveal="right">
+          <img src="assets/developer.png" class="tilt-raise"
+               alt="Illustration of Bipul at work"
+               width="520" height="520" loading="lazy">
+        </figure>
 
-        <!-- IMAGE -->
-        <div class="about-hero-right">
+      </div>
+    </section>
 
-          <img src="assets/developer.png"
-               alt="Developer"
-               class="developer-image">
+    <!-- ================= TIMELINE ================= -->
+    <section class="section" id="journey">
+      <div class="container">
+        <p class="eyebrow" data-reveal>The journey</p>
+        <h2 data-reveal>Experience &amp; education</h2>
 
+        <ol class="timeline" data-reveal-stagger>
+
+          <li class="timeline-item">
+            <span class="timeline-year mono">2026</span>
+            <div class="timeline-body">
+              <h3>PrivacyTestLab — privacy &amp; security platform</h3>
+              <p class="text-2">
+                Built and launched privacytestlab.com: IP leak detection,
+                DNS &amp; WebRTC testing, fingerprint analysis, metadata
+                removal, speed / ping / jitter diagnostics — with PHP,
+                JavaScript, and hardened .htaccess rules.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year mono">2025</span>
+            <div class="timeline-body">
+              <h3>Infogenie — MERN stack</h3>
+              <p class="text-2">
+                Built an AI-powered chatbot: React frontend, Node/Express
+                API, MongoDB — deployed as separate services on Render.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year mono">2025</span>
+            <div class="timeline-body">
+              <h3>LeetCode — Java solutions</h3>
+              <p class="text-2">
+                Started a public, documented DSA practice: 200+ problems in
+                clean Java with pattern notes and complexity analysis.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year mono">2024 —</span>
+            <div class="timeline-body">
+              <h3>B.Tech CSE — ICFAI University Tripura</h3>
+              <p class="text-2">
+                Programming, data structures &amp; algorithms, web
+                technologies, and core computer science.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year mono">2024</span>
+            <div class="timeline-body">
+              <h3>12th grade — CBSE</h3>
+              <p class="text-2">
+                Physics, Chemistry, Mathematics — and a growing pull toward
+                computer science.
+              </p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <span class="timeline-year mono">2022</span>
+            <div class="timeline-body">
+              <h3>10th grade — TBSE</h3>
+              <p class="text-2">Completed secondary education.</p>
+            </div>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= ASK ME ANYTHING ================= -->
+    <section class="section cta-band" id="ask">
+      <div class="container ask-grid" data-reveal>
+        <div>
+          <p class="eyebrow">Ask me anything</p>
+          <h2>Got a question?</h2>
+          <p class="text-2">
+            About a project, my stack, PrivacyTestLab, or how I built
+            something on this site — send it straight to my inbox.
+          </p>
         </div>
 
-      </section>
+        <form class="form-grid ask-form"
+              action="https://formspree.io/f/mkgaywkd"
+              method="POST" data-ajax-form>
+          <input type="hidden" name="_subject" value="Portfolio — AMA question">
+          <input type="text" name="_gotcha" style="display:none"
+                 tabindex="-1" autocomplete="off" aria-hidden="true">
 
-
-
-      <!-- ABOUT CONTENT -->
-      <section class="section about-layout">
-
-        <!-- LEFT -->
-        <div class="about-main">
-
-          <p>
-
-            I'm
-
-            <strong class="cyan-text">
-              Bipul Debnath
-            </strong>,
-
-            a B.Tech CSE student with a strong interest in
-
-            <span class="yellow-text">
-              web development
-            </span>
-
-            and computer science fundamentals.
-
-            I enjoy building interfaces that feel
-
-            <span class="green-text">
-              smooth and polished
-            </span>
-
-            while keeping the codebase
-
-            <strong class="red-text">
-              readable
-            </strong>
-
-            and
-
-            <strong class="yellow-text">
-              maintainable
-            </strong>.
-
-          </p>
-
-
-          <p>
-
-            Outside of coding, I’m passionate about
-
-            <strong class="green-text">
-              cricket
-            </strong>,
-
-            learning new tech, and creating content that simplifies programming
-            concepts for others.
-
-          </p>
-
-
-          <p>
-
-            I see myself growing into a well-rounded engineer who can design,
-            build, and communicate clearly within a team.
-
-          </p>
-
-        </div>
-
-
-        <!-- RIGHT -->
-        <aside class="about-side">
-
-          <div class="about-card ask-card">
-
-            <h3>
-              Ask Me Anything
-            </h3>
-
-            <p class="ask-desc">
-              Got a question? Send it directly to my inbox.
-            </p>
-
-            <form id="askForm"
-                  action="https://formspree.io/f/mkgaywkd"
-                  method="POST">
-
-              <textarea name="message"
-                        placeholder="Type your question here..."
-                        class="ask-input"
-                        rows="4"
-                        required></textarea>
-
-              <button type="submit"
-                      class="ask-button">
-
-                Send
-
-              </button>
-
-            </form>
-
+          <div class="field">
+            <label for="amaEmail">Your email (for the reply)</label>
+            <input id="amaEmail" type="email" name="email"
+                   placeholder="you@example.com" autocomplete="email"
+                   maxlength="120" required>
           </div>
 
-        </aside>
+          <div class="field">
+            <label for="amaMsg">Your question</label>
+            <textarea id="amaMsg" name="message" rows="4"
+                      placeholder="Type your question here…"
+                      maxlength="2000" required></textarea>
+          </div>
 
-      </section>
-
-
-
-      <!-- TIMELINE -->
-       <section class="section timeline-section">
-  <h2 class="section-title">Experience & Education</h2>
-
-  <div class="timeline">
-
-    <!-- 10th Grade -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <p class="timeline-date">2022</p>
-        <h3>10th Grade – TBSE</h3>
-        <p>Completed secondary education with strong academic performance.</p>
+          <button type="submit" class="btn btn-accent">
+            <span data-submit-label>Send question</span>
+            <i data-lucide="send" aria-hidden="true"></i>
+          </button>
+        </form>
       </div>
-    </div>
+    </section>
 
-    <!-- 12th Grade -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <p class="timeline-date">2024</p>
-        <h3>12th Grade – CBSE</h3>
-        <p>Studied Physics, Chemistry, and Mathematics with an interest in computer science.</p>
-      </div>
-    </div>
+  </main>
 
-    <!-- B.Tech CSE Admission -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <p class="timeline-date">2024 – Present</p>
-        <h3>B.Tech CSE – ICFAI University Tripura</h3>
-        <p>Learning programming, DSA, web technologies, and core computer science.</p>
-      </div>
-    </div>
+  <div id="site-footer"></div>
+  <div id="site-modals"></div>
 
-    <!-- LeetCode Java -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <p class="timeline-date">2025</p>
-        <h3>LeetCode – Java Solutions</h3>
-        <p>Consistently solving DSA problems to improve problem-solving and Java skills.</p>
-      </div>
-    </div>
-
-    <!-- Infogenie – Frontend -->
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <p class="timeline-date">2025</p>
-        <h3>Infogenie – MERN Stack</h3>
-        <p>Built an AI-powered chatbot using the MERN stack, focusing on intelligent responses, fast search, and smooth user interaction.</p>
-      </div>
-    </div>
-<!-- PrivacyTestLab -->
-<div class="timeline-item">
-
-  <div class="timeline-dot"></div>
-
-  <div class="timeline-content">
-
-    <p class="timeline-date">
-      2026
-    </p>
-
-    <h3>
-      PrivacyTestLab – Privacy & Security Platform
-    </h3>
-
-    <p>
-      Built PrivacyTestLab.com, a privacy-focused platform featuring IP leak detection, DNS leak testing, WebRTC testing, browser fingerprinting analysis, password generator, metadata remover, internet speed testing, ping & jitter checker, and educational privacy tools using PHP, HTML, CSS, JavaScript, and .htaccess.
-    </p>
-
-  </div>
-
-</div>
-  </div>
-
-  
-</section>
-
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <div id="footer"></div>
-
-  </div>
-
-
-  <!-- SUCCESS POPUP -->
-  <div id="successPopup"
-       class="success-popup">
-
-    Message sent successfully!
-
-  </div>
-
-
-  <!-- SCRIPT -->
-  <script src="js/script.js"></script>
-
-  <script>
-    lucide.createIcons();
-  </script>
-<!-- RESUME MODAL -->
-<div id="resumeModal" class="resume-modal">
-
-  <div class="resume-modal-content">
-
-    <span id="resumeClose"
-          class="resume-close">
-
-      &times;
-
-    </span>
-
-    <iframe
-      id="resumeFrame"
-      class="resume-frame"
-      src="assets/resume.pdf">
-
-    </iframe>
-
-  </div>
-
-</div>
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+  <script defer src="js/components.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/modals.js"></script>
+  <script defer src="js/scroll.js"></script>
+  <script defer src="js/tilt.js"></script>
+  <script defer src="js/cursor.js"></script>
+  <script defer src="js/terminal.js"></script>
 </body>
-
 </html>
