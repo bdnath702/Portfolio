@@ -254,7 +254,7 @@ p {
 }
 
 .section {
-  padding-block: clamp(var(--sp-7), 8vw, var(--sp-9));
+  padding-block: clamp(var(--sp-5), 5vw, var(--sp-7));
 }
 
 .section + .section {

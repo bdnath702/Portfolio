@@ -33,16 +33,14 @@
 
 .about-portrait {
   margin: 0;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background: var(--bg-sunken);
-  box-shadow: var(--shadow-md);
+  margin-inline-start: auto;
+  max-width: clamp(240px, 26vw, 400px);
+  align-self: center;
 }
 
 .about-portrait img {
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* ---------------- Timeline ---------------- */
@@ -138,8 +136,8 @@
   }
 
   .about-portrait {
-    order: -1;
-    max-width: 380px;
+    margin: var(--sp-6) auto 0;
+    max-width: 200px;
   }
 
   .ask-grid {
@@ -148,6 +146,10 @@
 }
 
 @media (max-width: 560px) {
+  .about-portrait {
+    max-width: 160px;
+  }
+
   .timeline-item {
     grid-template-columns: 1fr;
     gap: var(--sp-1);

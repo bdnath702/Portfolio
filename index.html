@@ -129,6 +129,14 @@
               <dd><span data-count="0" data-github="repos">—</span></dd>
             </div>
             <div>
+              <dt>Contributions this year</dt>
+              <dd><span data-count="700">0</span>+</dd>
+            </div>
+            <div>
+              <dt>Languages known</dt>
+              <dd><span data-count="13">0</span>+</dd>
+            </div>
+            <div>
               <dt>Building since</dt>
               <dd>2024</dd>
             </div>
@@ -143,46 +151,61 @@
       </a>
     </section>
 
-    <!-- ================= WHAT I DO ================= -->
+   <!-- ================= WHAT I DO (terminal) ================= -->
     <section class="section" id="services">
       <div class="container">
         <p class="eyebrow" data-reveal>What I do</p>
         <h2 data-reveal>Three things, done well</h2>
 
-        <div class="service-grid" data-reveal-stagger>
-          <article class="service-card" data-tilt>
-            <div class="service-icon tilt-raise">
-              <i data-lucide="layout-dashboard" aria-hidden="true"></i>
-            </div>
-            <h3>Full-stack web apps</h3>
-            <p class="text-2">
-              End-to-end products with React, Node.js and MongoDB —
-              responsive, accessible, and fast by default.
-            </p>
-          </article>
+        <div class="skills-terminal" id="skillsTerminal" data-reveal="scale"
+             role="group" aria-label="Skills, shown as a terminal">
+          <div class="st-bar" aria-hidden="true">
+            <span class="st-dots"><i></i><i></i><i></i></span>
+            <span class="st-title">bipul@dev — skills</span>
+          </div>
 
-          <article class="service-card" data-tilt>
-            <div class="service-icon service-icon-accent tilt-raise">
-              <i data-lucide="shield-check" aria-hidden="true"></i>
-            </div>
-            <h3>Privacy &amp; security tools</h3>
-            <p class="text-2">
-              Diagnostic tooling for IP/DNS/WebRTC leaks and browser
-              fingerprinting — shipped live at PrivacyTestLab.
-            </p>
-          </article>
+          <div class="st-body">
 
-          <article class="service-card" data-tilt>
-            <div class="service-icon tilt-raise">
-              <i data-lucide="gauge" aria-hidden="true"></i>
+            <div class="st-block">
+              <p class="st-cmd">
+                <span class="st-prompt" aria-hidden="true">$</span>
+                <span class="st-type">bipul --fullstack</span>
+              </p>
+              <p class="st-out">→ React · Node.js · MongoDB — end-to-end apps,
+                 responsive and fast by default
+                 <span class="st-ok">[3 shipped]</span></p>
             </div>
-            <h3>Performance &amp; UX</h3>
-            <p class="text-2">
-              Core Web Vitals, clean interfaces, and interactions that
-              feel considered — not decorated.
+
+            <div class="st-block">
+              <p class="st-cmd">
+                <span class="st-prompt" aria-hidden="true">$</span>
+                <span class="st-type">bipul --security</span>
+              </p>
+              <p class="st-out">→ IP/DNS/WebRTC leak testing, fingerprint analysis —
+                 live at <a href="https://privacytestlab.com" target="_blank"
+                 rel="noopener noreferrer">privacytestlab.com</a>
+                 <span class="st-ok">[flagship]</span></p>
+            </div>
+
+            <div class="st-block">
+              <p class="st-cmd">
+                <span class="st-prompt" aria-hidden="true">$</span>
+                <span class="st-type">bipul --performance</span>
+              </p>
+              <p class="st-out">→ Core Web Vitals, accessible UI, motion with intent
+                 <span class="st-ok">[95+ Lighthouse]</span></p>
+            </div>
+
+            <p class="st-cmd st-idle" aria-hidden="true">
+              <span class="st-prompt">$</span><span class="st-cursor"></span>
             </p>
-          </article>
+
+          </div>
         </div>
+
+        <p class="st-hint mono text-2" data-reveal>
+          psst — the real terminal is one <kbd>~</kbd> away.
+        </p>
       </div>
     </section>
 
@@ -243,9 +266,9 @@
               <span class="pill">React</span>
               <span class="pill">Node.js</span>
               <a class="project-link link-draw"
-                 href="https://infogenie.onrender.com/" target="_blank"
+                 href="https://github.com/bdnath702" target="_blank"
                  rel="noopener noreferrer">
-                Live <span class="arrow">↗</span>
+                GitHub <span class="arrow">↗</span>
               </a>
             </div>
           </article>
@@ -352,5 +375,6 @@
   <script defer src="js/hero3d.js"></script>
   <script defer src="js/cursor.js"></script>
   <script defer src="js/terminal.js"></script>
+  <script defer src="js/skills-terminal.js"></script>
 </body>
 </html>
