@@ -554,3 +554,461 @@ body.sidebar-open {
     padding: var(--sp-5);
   }
 }
+
+/* ===========================================================================
+   INTERNSHIP CREDENTIAL — shared by the home and projects pages
+   ========================================================================== */
+.internship-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.internship-section::before {
+  content: "";
+  position: absolute;
+  inset: 10% 0 auto;
+  height: 68%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 17% 34%, var(--accent-soft), transparent 29%),
+    radial-gradient(circle at 88% 62%, var(--ok-soft), transparent 24%);
+  opacity: 0.78;
+}
+
+.internship-heading {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, 42ch);
+  align-items: end;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-6);
+}
+
+.internship-heading .eyebrow {
+  margin-bottom: var(--sp-3);
+}
+
+.internship-story-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(390px, 0.75fr);
+  align-items: start;
+  gap: var(--sp-5);
+}
+
+.internship-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: calc(var(--r-lg) + 4px);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-md);
+}
+
+.internship-story-grid .internship-card {
+  grid-template-columns: 1fr;
+}
+
+.internship-story-grid .internship-content::before {
+  inset: 0 0 auto;
+  width: auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--ok));
+}
+
+.internship-certificate {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: clamp(var(--sp-3), 2.5vw, var(--sp-5));
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(216, 90, 48, 0.17), transparent 46%),
+    var(--bg-sunken);
+}
+
+.internship-certificate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(var(--line-strong) 0.75px, transparent 0.75px);
+  background-size: 18px 18px;
+  opacity: 0.24;
+}
+
+.internship-certificate img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(20, 17, 14, 0.12);
+  border-radius: var(--r-md);
+  box-shadow: 0 18px 46px rgba(20, 17, 14, 0.22);
+  transform: rotate(-0.7deg);
+  transition: transform var(--dur-base) var(--ease-out),
+              box-shadow var(--dur-base) var(--ease-out);
+}
+
+.internship-certificate:hover img,
+.internship-certificate:focus-visible img {
+  transform: rotate(0deg) scale(1.018);
+  box-shadow: 0 22px 54px rgba(20, 17, 14, 0.28);
+}
+
+.certificate-grade {
+  position: absolute;
+  z-index: 2;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border: 4px solid var(--bg-elevated);
+  border-radius: 50%;
+  background: var(--ok);
+  color: #10251F;
+  box-shadow: var(--shadow-sm);
+  line-height: 1;
+}
+
+.certificate-grade small {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.certificate-grade strong {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+}
+
+.certificate-open {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: var(--sp-4);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 0.62rem 0.88rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--r-full);
+  background: rgba(20, 17, 14, 0.86);
+  color: #fff;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+
+.certificate-open svg {
+  width: 14px;
+  height: 14px;
+}
+
+.internship-certificate:hover .certificate-open,
+.internship-certificate:focus-visible .certificate-open {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.internship-content {
+  position: relative;
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: var(--sp-4);
+  padding: clamp(var(--sp-5), 4vw, var(--sp-7));
+}
+
+.internship-content::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(var(--accent), var(--ok));
+}
+
+.internship-kicker {
+  color: var(--accent);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.internship-content h3 {
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  letter-spacing: -0.025em;
+}
+
+.internship-company {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-2);
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.internship-company svg {
+  width: 17px;
+  height: 17px;
+  color: var(--accent);
+}
+
+.internship-summary {
+  max-width: 52ch;
+}
+
+.internship-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+  width: 100%;
+}
+
+.internship-facts > div {
+  padding: var(--sp-3);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--bg-sunken);
+}
+
+.internship-facts dt {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.internship-facts dt svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent);
+}
+
+.internship-facts dd {
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.internship-action {
+  margin-top: var(--sp-1);
+}
+
+/* LinkedIn story panel — intentionally dark in both themes, like the site's
+   terminal surfaces. The blue is reserved for LinkedIn-specific actions. */
+.linkedin-proof {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: var(--sp-4);
+  border: 1px solid rgba(237, 230, 218, 0.14);
+  border-radius: calc(var(--r-lg) + 4px);
+  background: #17140f;
+  box-shadow: var(--shadow-md);
+}
+
+.linkedin-proof::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, #0a66c2, #45a5ff 56%, transparent);
+}
+
+.linkedin-proof-head {
+  display: grid;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-1) var(--sp-4);
+}
+
+.linkedin-proof-head h3 {
+  color: #fff;
+  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  letter-spacing: -0.02em;
+}
+
+.linkedin-proof-head > p {
+  color: #b8b0a5;
+  font-size: var(--fs-sm);
+}
+
+.linkedin-proof-topline {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-width: 0;
+  color: rgba(237, 230, 218, 0.62);
+  font-size: 0.66rem;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.linkedin-mark {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #0a66c2;
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(10, 102, 194, 0.28);
+}
+
+.linkedin-mark svg {
+  width: 16px;
+  height: 16px;
+}
+
+.linkedin-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  color: #8fc9ff;
+  white-space: nowrap;
+}
+
+.linkedin-live i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #45a5ff;
+  box-shadow: 0 0 0 4px rgba(69, 165, 255, 0.12);
+}
+
+.linkedin-post-frame {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--r-md);
+  background: #fff;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+}
+
+.linkedin-post-frame iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 739px;
+  border: 0;
+  background: #fff;
+}
+
+.linkedin-proof-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-1) var(--sp-1);
+  color: #8fc9ff;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.linkedin-proof-link:hover {
+  color: #fff;
+}
+
+@media (max-width: 1020px) {
+  .internship-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-story-grid .internship-card {
+    grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
+  }
+
+  .internship-story-grid .internship-content::before {
+    inset: 0 auto 0 0;
+    width: 4px;
+    height: auto;
+    background: linear-gradient(var(--accent), var(--ok));
+  }
+
+  .linkedin-proof {
+    width: min(100%, 560px);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .internship-card {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-story-grid .internship-card {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-content::before {
+    inset: 0 0 auto;
+    width: auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--ok));
+  }
+
+  .internship-story-grid .internship-content::before {
+    inset: 0 0 auto;
+    width: auto;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--ok));
+  }
+}
+
+@media (max-width: 640px) {
+  .internship-heading {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .internship-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-grade {
+    top: var(--sp-3);
+    right: var(--sp-3);
+    width: 58px;
+    height: 58px;
+  }
+
+  .certificate-open {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .linkedin-proof {
+    padding: var(--sp-3);
+  }
+
+  .linkedin-proof-topline > .mono {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .internship-certificate img,
+  .certificate-open {
+    transition: none;
+  }
+}

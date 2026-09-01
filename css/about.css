@@ -243,9 +243,39 @@
   margin-bottom: var(--sp-1);
 }
 
+.timeline-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--sp-1);
+}
+
+.timeline-title-row h3 {
+  margin-bottom: 0;
+}
+
+.timeline-title-row .pill {
+  flex: 0 0 auto;
+}
+
 .timeline-body p {
   font-size: var(--fs-sm);
   max-width: 58ch;
+}
+
+.timeline-item-internship::before {
+  box-shadow: 0 0 0 4px var(--accent-soft);
+}
+
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-top: var(--sp-2);
+  color: var(--accent);
+  font-size: var(--fs-xs);
+  font-weight: 600;
 }
 
 /* ---------------- Ask me anything ---------------- */
