@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
 
   <title>Bipul Debnath — Full-Stack Developer & Builder of PrivacyTestLab</title>
   <meta name="description"
@@ -20,19 +21,6 @@
   <meta property="og:image" content="https://bipul.dev/assets/og-image.png"><!-- TODO -->
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- No-flash theme boot: runs before first paint. Keep inline, keep first. -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        if (t === "dark" ||
-            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
-          document.documentElement.classList.add("dark-theme");
-        }
-      } catch (e) { /* private mode — default theme is fine */ }
-    })();
-  </script>
-
   <!-- Fonts (pinned families, swap so text is never invisible) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,10 +28,10 @@
         rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="css/base.css?v=20260709">
+  <link rel="stylesheet" href="css/base.css?v=20260905d">
   <link rel="stylesheet" href="css/animations.css?v=20260709">
-  <link rel="stylesheet" href="css/components.css?v=20260901">
-  <link rel="stylesheet" href="css/home.css?v=20260901">
+  <link rel="stylesheet" href="css/components.css?v=20260905c">
+  <link rel="stylesheet" href="css/home.css?v=20260905b">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
@@ -82,8 +70,6 @@
 
     <!-- ================= HERO ================= -->
     <section class="hero" id="home" aria-label="Introduction">
-      <canvas id="heroScene" class="hero-scene" aria-hidden="true"></canvas>
-
       <div class="container hero-inner">
         <div class="hero-content">
 
@@ -93,17 +79,15 @@
           </span>
 
           <h1 class="hero-title hero-anim" style="--d: 220ms">
-            I build fast, secure<br>
-            web experiences —<br>
-            <span class="accent">from pixels to production.</span>
+            Building <span class="hl-green">fast</span>,<br>
+            <span class="hl-violet">secure</span> web things.
           </h1>
 
           <p class="hero-sub text-2 hero-anim" style="--d: 340ms">
-            Full-stack developer &amp; CSE undergrad from Tripura, India.
-            Currently building
+            Full-stack engineer shipping production apps. Currently building
             <a href="https://privacytestlab.com" target="_blank"
                rel="noopener noreferrer" class="link-draw">PrivacyTestLab</a>
-            — a browser privacy testing platform.
+            — browser privacy testing done right.
           </p>
 
           <div class="hero-actions hero-anim" style="--d: 460ms">
@@ -130,7 +114,7 @@
             </div>
             <div>
               <dt>Contributions this year</dt>
-              <dd><span data-count="700">0</span>+</dd>
+              <dd><span data-count="1">0</span>k+</dd>
             </div>
             <div>
               <dt>Languages known</dt>
@@ -143,111 +127,236 @@
           </dl>
 
         </div>
+
+        <aside class="build-motion hero-anim" style="--d: 420ms" aria-label="What I build">
+          <h2 class="visually-hidden">What I build</h2>
+          <ul class="build-motion-list">
+            <li class="build-motion-row" style="--tone: #8B7CF6; --row-delay: 0s">
+              <span class="build-motion-marker" aria-hidden="true"><i></i></span>
+              <span class="build-motion-label">Web Apps</span>
+            </li>
+            <li class="build-motion-row" style="--tone: #D85A30; --row-delay: 2s">
+              <span class="build-motion-marker" aria-hidden="true"><i></i></span>
+              <span class="build-motion-label">Privacy Tools</span>
+            </li>
+            <li class="build-motion-row" style="--tone: #E7B938; --row-delay: 4s">
+              <span class="build-motion-marker" aria-hidden="true"><i></i></span>
+              <span class="build-motion-label">APIs</span>
+            </li>
+            <li class="build-motion-row" style="--tone: #7F9F36; --row-delay: 6s">
+              <span class="build-motion-marker" aria-hidden="true"><i></i></span>
+              <span class="build-motion-label">Open Source</span>
+            </li>
+          </ul>
+        </aside>
       </div>
 
-      <a href="#services" class="scroll-cue hero-anim" style="--d: 800ms"
+      <a href="#open-source" class="scroll-cue hero-anim" style="--d: 800ms"
          aria-label="Scroll to next section">
         <i data-lucide="arrow-down" aria-hidden="true"></i>
       </a>
     </section>
 
-   <!-- ================= WHAT I DO (terminal) ================= -->
-    <section class="section" id="services">
+    <!-- ================= OPEN SOURCE (GitHub repos) ================= -->
+    <!-- Star / fork counts are filled in live by js/repos.js. They stay
+         hidden until GitHub reports a non-zero number, so the cards never
+         show a row of zeros (or an invented one). -->
+    <section class="section" id="open-source">
       <div class="container">
-        <p class="eyebrow" data-reveal>What I do</p>
-        <h2 data-reveal>Three things, done well</h2>
 
-        <div class="skills-terminal" id="skillsTerminal" data-reveal="scale"
-             role="group" aria-label="Skills, shown as a terminal">
-          <div class="st-bar" aria-hidden="true">
-            <span class="st-dots"><i></i><i></i><i></i></span>
-            <span class="st-title">bipul@dev — skills</span>
-          </div>
+        <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+          <symbol id="i-github" viewBox="0 0 16 16">
+            <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53 .63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27 c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95 .29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+          </symbol>
+        </svg>
 
-          <div class="st-body">
+        <div class="repos-panel" data-reveal>
 
-            <div class="st-block">
-              <p class="st-cmd">
-                <span class="st-prompt" aria-hidden="true">$</span>
-                <span class="st-type">bipul --fullstack</span>
-              </p>
-              <p class="st-out">→ React · Node.js · MongoDB — end-to-end apps,
-                 responsive and fast by default
-                 <span class="st-ok">[3 shipped]</span></p>
+          <div class="repos-head">
+            <div class="repos-head-text">
+              <p class="eyebrow eyebrow-bare">Open source</p>
+              <h2>Things I&rsquo;ve built in public</h2>
             </div>
 
-            <div class="st-block">
-              <p class="st-cmd">
-                <span class="st-prompt" aria-hidden="true">$</span>
-                <span class="st-type">bipul --security</span>
-              </p>
-              <p class="st-out">→ IP/DNS/WebRTC leak testing, fingerprint analysis —
-                 live at <a href="https://privacytestlab.com" target="_blank"
-                 rel="noopener noreferrer">privacytestlab.com</a>
-                 <span class="st-ok">[flagship]</span></p>
-            </div>
-
-            <div class="st-block">
-              <p class="st-cmd">
-                <span class="st-prompt" aria-hidden="true">$</span>
-                <span class="st-type">bipul --performance</span>
-              </p>
-              <p class="st-out">→ Core Web Vitals, accessible UI, motion with intent
-                 <span class="st-ok">[95+ Lighthouse]</span></p>
-            </div>
-
-            <p class="st-cmd st-idle" aria-hidden="true">
-              <span class="st-prompt">$</span><span class="st-cursor"></span>
-            </p>
-
-          </div>
-        </div>
-
-        <p class="st-hint mono text-2" data-reveal>
-          psst — the real terminal is one <kbd>~</kbd> away.
-        </p>
-      </div>
-    </section>
-
-
-    <!-- ================= PRIVACY PEEK ================= -->
-    <section class="section" id="peek">
-      <div class="container">
-        <p class="eyebrow" data-reveal>Live demo</p>
-        <h2 data-reveal>Your browser just told me&hellip;</h2>
-        <p class="peek-sub text-2" data-reveal>
-          &hellip;without you clicking a thing. Everything below is read
-          locally by your own browser — nothing leaves this page.
-        </p>
-
-        <div class="peek-card" id="peekCard" data-reveal="scale"
-             role="group" aria-label="What your browser reveals">
-          <div class="peek-head">
-            <span class="peek-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-            <span class="peek-title">passive read · no permissions asked</span>
-            <span class="peek-badge" id="peekStatus">scanning&hellip;</span>
-          </div>
-
-          <dl class="peek-rows">
-            <div class="peek-row"><dt>device</dt><dd data-peek="device">&mdash;</dd></div>
-            <div class="peek-row"><dt>screen</dt><dd data-peek="screen">&mdash;</dd></div>
-            <div class="peek-row"><dt>timezone</dt><dd data-peek="timezone">&mdash;</dd></div>
-            <div class="peek-row"><dt>language</dt><dd data-peek="language">&mdash;</dd></div>
-            <div class="peek-row"><dt>hardware</dt><dd data-peek="hardware">&mdash;</dd></div>
-            <div class="peek-row"><dt>battery</dt><dd data-peek="battery">&mdash;</dd></div>
-            <div class="peek-row"><dt>connection</dt><dd data-peek="connection">&mdash;</dd></div>
-          </dl>
-
-          <div class="peek-foot">
-            <span>Stored: nothing. Sent: nowhere. That's the point.</span>
-            <a href="https://privacytestlab.com" target="_blank"
-               rel="noopener noreferrer" class="peek-cta">
-              Run the full scan → PrivacyTestLab
+            <a class="repos-all" href="https://github.com/bdnath702?tab=repositories"
+               target="_blank" rel="noopener noreferrer">
+              <svg class="gh-mark" aria-hidden="true"><use href="#i-github"></use></svg>
+              <span>All repos</span>
             </a>
           </div>
+
+          <ul class="repo-grid">
+            <li class="repo-card repo-card--accent" data-repo="bdnath702/USB-Auto-Backup">
+              <a class="repo-link" href="https://github.com/bdnath702/USB-Auto-Backup"
+                 target="_blank" rel="noopener noreferrer">
+                <svg class="gh-mark" aria-hidden="true"><use href="#i-github"></use></svg>
+                <span class="repo-name">USB Auto Backup</span>
+                <i data-lucide="arrow-up-right" class="repo-out" aria-hidden="true"></i>
+              </a>
+
+              <p class="repo-desc">Backs up USB drives on connect &mdash; finds them by volume serial, not drive letter.</p>
+
+              <ul class="repo-tags">
+                <li class="repo-tag">windows</li>
+                <li class="repo-tag">backup</li>
+                <li class="repo-tag">cli</li>
+              </ul>
+
+              <p class="repo-meta">
+                <span class="repo-lang">
+                  <i style="--dot: #3572A5" aria-hidden="true"></i>Python
+                </span>
+                <span class="repo-stat" data-repo-stars hidden>
+                  <i data-lucide="star" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">stars</span>
+                </span>
+                <span class="repo-stat" data-repo-forks hidden>
+                  <i data-lucide="git-fork" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">forks</span>
+                </span>
+              </p>
+            </li>
+            <li class="repo-card repo-card--ok" data-repo="bdnath702/LeetCode_Java_Solution">
+              <a class="repo-link" href="https://github.com/bdnath702/LeetCode_Java_Solution"
+                 target="_blank" rel="noopener noreferrer">
+                <svg class="gh-mark" aria-hidden="true"><use href="#i-github"></use></svg>
+                <span class="repo-name">LeetCode Java</span>
+                <i data-lucide="arrow-up-right" class="repo-out" aria-hidden="true"></i>
+              </a>
+
+              <p class="repo-desc">200+ DSA solutions organised by topic &mdash; HashMap, sorting, trees and more.</p>
+
+              <ul class="repo-tags">
+                <li class="repo-tag">dsa</li>
+                <li class="repo-tag">interview-prep</li>
+              </ul>
+
+              <p class="repo-meta">
+                <span class="repo-lang">
+                  <i style="--dot: #B07219" aria-hidden="true"></i>Java
+                </span>
+                <span class="repo-stat" data-repo-stars hidden>
+                  <i data-lucide="star" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">stars</span>
+                </span>
+                <span class="repo-stat" data-repo-forks hidden>
+                  <i data-lucide="git-fork" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">forks</span>
+                </span>
+              </p>
+            </li>
+            <li class="repo-card repo-card--info" data-repo="bdnath702/CineSearch">
+              <a class="repo-link" href="https://github.com/bdnath702/CineSearch"
+                 target="_blank" rel="noopener noreferrer">
+                <svg class="gh-mark" aria-hidden="true"><use href="#i-github"></use></svg>
+                <span class="repo-name">CineSearch</span>
+                <i data-lucide="arrow-up-right" class="repo-out" aria-hidden="true"></i>
+              </a>
+
+              <p class="repo-desc">Movie details, ratings, cast and banners, pulled live from the TMDB API.</p>
+
+              <ul class="repo-tags">
+                <li class="repo-tag">tmdb-api</li>
+                <li class="repo-tag">frontend</li>
+              </ul>
+
+              <p class="repo-meta">
+                <span class="repo-lang">
+                  <i style="--dot: #F1E05A" aria-hidden="true"></i>JavaScript
+                </span>
+                <span class="repo-stat" data-repo-stars hidden>
+                  <i data-lucide="star" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">stars</span>
+                </span>
+                <span class="repo-stat" data-repo-forks hidden>
+                  <i data-lucide="git-fork" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">forks</span>
+                </span>
+              </p>
+            </li>
+            <li class="repo-card repo-card--violet" data-repo="bdnath702/Marco-s-Store">
+              <a class="repo-link" href="https://github.com/bdnath702/Marco-s-Store"
+                 target="_blank" rel="noopener noreferrer">
+                <svg class="gh-mark" aria-hidden="true"><use href="#i-github"></use></svg>
+                <span class="repo-name">Marco's Store</span>
+                <i data-lucide="arrow-up-right" class="repo-out" aria-hidden="true"></i>
+              </a>
+
+              <p class="repo-desc">Browser game for buying and selling produce with virtual currency.</p>
+
+              <ul class="repo-tags">
+                <li class="repo-tag">game</li>
+                <li class="repo-tag">javascript</li>
+              </ul>
+
+              <p class="repo-meta">
+                <span class="repo-lang">
+                  <i style="--dot: #F1E05A" aria-hidden="true"></i>JavaScript
+                </span>
+                <span class="repo-stat" data-repo-stars hidden>
+                  <i data-lucide="star" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">stars</span>
+                </span>
+                <span class="repo-stat" data-repo-forks hidden>
+                  <i data-lucide="git-fork" aria-hidden="true"></i><b>0</b>
+                  <span class="visually-hidden">forks</span>
+                </span>
+              </p>
+            </li>
+          </ul>
+
         </div>
       </div>
     </section>
+
+    <!-- ================= MOMENTS ================= -->
+    <!-- One <li class="moment"> per memory. Photos live in assets/moments/;
+         give every <img> real width/height so the grid never jumps. -->
+    <section class="section" id="moments">
+      <div class="container">
+        <p class="eyebrow" data-reveal>Moments</p>
+        <h2 data-reveal>Moments along the way</h2>
+        <p class="moments-sub text-2" data-reveal>
+          Internships, teammates, and the days worth keeping a photo of.
+        </p>
+
+        <ul class="moments-list">
+
+          <li class="moment" data-reveal data-tilt>
+            <figure class="moment-shot">
+              <img src="assets/moments/moments.jpeg"
+                   width="1280" height="960" loading="lazy" decoding="async"
+                   alt="Bipul Debnath and the intern team outside the Insyssky Softtech office on the last day of the summer internship">
+            </figure>
+
+            <div class="moment-body">
+              <p class="moment-meta mono">Summer 2026 &middot; Insyssky Softtech</p>
+              <h3>Wrapping up the Web Development internship</h3>
+              <p class="text-2">
+                Completed my Web Development Internship at Insyssky Softtech
+                Private Limited. Thank you to the team for the valuable
+                learning experience!
+              </p>
+
+              <ul class="moment-tags" aria-label="Post hashtags">
+                <li>#webdevelopment</li>
+                <li>#summerinternship</li>
+                <li>#tech</li>
+                <li>#internship</li>
+                <li>#InsysskySofttech</li>
+              </ul>
+
+              <a class="moment-link" href="https://www.linkedin.com/posts/bipul-debnath-bb5b20338_webdevelopment-summerinternship-tech-activity-7482441571628544000-VxeE"
+                 target="_blank" rel="noopener noreferrer">
+                See the post on LinkedIn <span class="arrow">&#8599;</span>
+              </a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
     <!-- ================= FEATURED PROJECTS ================= -->
     <section class="section" id="projects-preview">
       <div class="container">
@@ -348,22 +457,6 @@
 
         <div class="internship-story-grid">
         <article class="internship-card" data-reveal="scale">
-          <a class="internship-certificate" href="assets/internships/certificate.jpeg"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Open the full Web Development internship certificate">
-            <img src="assets/internships/certificate.jpeg"
-                 alt="Certificate of Achievement for Bipul Debnath's Web Development internship at Insyssky Softtech"
-                 width="1280" height="908" loading="lazy">
-            <span class="certificate-grade" aria-label="Grade S">
-              <small>Grade</small>
-              <strong>S</strong>
-            </span>
-            <span class="certificate-open">
-              <i data-lucide="maximize-2" aria-hidden="true"></i>
-              View certificate
-            </span>
-          </a>
-
           <div class="internship-content">
             <p class="internship-kicker mono">Summer Internship Program 2026</p>
             <div>
@@ -397,11 +490,6 @@
               </div>
             </dl>
 
-            <a class="btn btn-primary internship-action"
-               href="assets/internships/certificate.jpeg" target="_blank"
-               rel="noopener noreferrer">
-              View full certificate <span class="arrow">↗</span>
-            </a>
           </div>
         </article>
 
@@ -410,19 +498,21 @@
           <div class="linkedin-proof-head">
             <div class="linkedin-proof-topline">
               <span class="linkedin-mark" aria-hidden="true">
-                <i data-lucide="linkedin"></i>
+                <svg class="linkedin-logo" viewBox="0 0 448 512" aria-hidden="true">
+                  <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 84 0 54.3A53.79 53.79 0 0 1 107.58 54.3c0 29.7-24.09 53.8-53.79 53.8zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.19 61.9 111.19 142.3z"/>
+                </svg>
               </span>
-              <span class="mono">Shared milestone</span>
-              <span class="linkedin-live"><i aria-hidden="true"></i> LinkedIn post</span>
+              <span class="mono">Verified experience</span>
+              <span class="linkedin-live"><i aria-hidden="true"></i> LinkedIn</span>
             </div>
             <h3 id="linkedin-story-title-home">The moment behind the milestone.</h3>
-            <p>The certificate records the achievement. This post captures the story.</p>
+            <p>The full internship story and certificate, shared in one place.</p>
           </div>
 
           <div class="linkedin-post-frame">
             <iframe
               src="https://www.linkedin.com/embed/feed/update/urn:li:share:7489975746178908160"
-              height="739" width="504" frameborder="0" allowfullscreen=""
+              height="460" width="760" frameborder="0" allowfullscreen=""
               loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
               title="LinkedIn post about Bipul Debnath's Web Development internship">
             </iframe>
@@ -505,19 +595,14 @@
 
   <!-- Scripts: pinned versions, deferred, order matters only for the first three -->
   <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
   <script defer src="js/components.js?v=20260709"></script>
-  <script defer src="js/theme.js?v=20260709"></script>
   <script defer src="js/modals.js?v=20260709"></script>
   <script defer src="js/welcome.js?v=20260709"></script>
   <script defer src="js/scroll.js?v=20260709"></script>
   <script defer src="js/tilt.js?v=20260709"></script>
   <script defer src="js/stats.js?v=20260709"></script>
-  <script defer src="js/hero3d.js?v=20260709"></script>
-  <script defer src="js/cursor.js?v=20260709"></script>
   <script defer src="js/terminal.js?v=20260709"></script>
-  <script defer src="js/skills-terminal.js"></script>
-  <script defer src="js/peek.js"></script>
+  <script defer src="js/repos.js"></script>
 </body>
 </html>

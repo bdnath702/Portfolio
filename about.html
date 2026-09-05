@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
 
   <title>About — Bipul Debnath | Full-Stack Developer, Tripura</title>
   <meta name="description"
@@ -19,28 +20,15 @@
   <meta property="og:image" content="https://bipul.dev/assets/og-image.png"><!-- TODO -->
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- No-flash theme boot -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        if (t === "dark" ||
-            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
-          document.documentElement.classList.add("dark-theme");
-        }
-      } catch (e) { /* ignore */ }
-    })();
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="css/base.css?v=20260709">
+  <link rel="stylesheet" href="css/base.css?v=20260905d">
   <link rel="stylesheet" href="css/animations.css?v=20260709">
   <link rel="stylesheet" href="css/components.css?v=20260709">
-  <link rel="stylesheet" href="css/about.css?v=20260901">
+  <link rel="stylesheet" href="css/about.css?v=20260906a">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
 
@@ -71,50 +59,11 @@
 
   <main id="main">
 
-    <!-- ================= ABOUT MASTHEAD ================= -->
-    <section class="about-mast" aria-labelledby="aboutName">
-      <div class="container">
-        <p class="eyebrow" data-reveal>About me</p>
-      </div>
-
-      <div class="container mast-stage" data-reveal="scale">
-        <h1 class="mast-name" id="aboutName">
-          <span class="mast-line mast-solid">Bipul</span>
-          <span class="mast-line mast-outline" aria-hidden="true">Debnath</span>
-          <span class="visually-hidden">Debnath</span>
-        </h1>
-
-        <ul class="mast-tags" aria-label="Off the keyboard I'm into">
-          <li class="mast-tag mt-1">cricket</li>
-          <li class="mast-tag mt-2">movies</li>
-          <li class="mast-tag mt-3">AI explorer</li>
-          <li class="mast-tag mt-4">web design</li>
-          <li class="mast-tag mt-5">clean code</li>
-        </ul>
-      </div>
-
-      <div class="mast-strip marquee" aria-hidden="true">
-        <div class="marquee-track">
-          <span>CSE undergrad</span><i>✦</i>
-          <span>Tripura, India</span><i>✦</i>
-          <span>full-stack developer</span><i>✦</i>
-          <span>MERN + Java</span><i>✦</i>
-          <span>privacy tooling</span><i>✦</i>
-          <span>ships fast</span><i>✦</i>
-          <span>CSE undergrad</span><i>✦</i>
-          <span>Tripura, India</span><i>✦</i>
-          <span>full-stack developer</span><i>✦</i>
-          <span>MERN + Java</span><i>✦</i>
-          <span>privacy tooling</span><i>✦</i>
-          <span>ships fast</span><i>✦</i>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= INTRO ================= -->
-    <section class="section about-intro">
+    <section class="section about-intro" aria-labelledby="aboutName">
       <div class="container">
         <div class="about-intro-inner" data-reveal>
+          <h1 class="about-name" id="aboutName">Bipul Debnath</h1>
           <p class="about-lede text-2">
             I'm a 21-year-old CSE undergraduate from Tripura, India, and I
             build for the web — end to end. Frontend interfaces that feel
@@ -324,11 +273,9 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <script defer src="js/components.js?v=20260709"></script>
-  <script defer src="js/theme.js?v=20260709"></script>
   <script defer src="js/modals.js?v=20260709"></script>
   <script defer src="js/scroll.js?v=20260709"></script>
   <script defer src="js/tilt.js?v=20260709"></script>
-  <script defer src="js/cursor.js?v=20260709"></script>
   <script defer src="js/terminal.js?v=20260709"></script>
   <script defer src="js/now.js"></script>
 </body>

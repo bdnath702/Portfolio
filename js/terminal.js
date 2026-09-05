@@ -23,7 +23,6 @@
       "  resume      open my resume",
       "  hire        let's work together",
       "  contact     send me a message",
-      "  theme       toggle dark / light",
       "  clear       clear the screen",
       "  exit        close the terminal",
     ],
@@ -73,12 +72,6 @@
       return [];
     },
 
-    theme: () => {
-      const btn = document.getElementById("themeToggle");
-      if (btn) btn.click();
-      return ["Theme toggled."];
-    },
-
     sudo: () => ["Nice try. This incident will be reported. (not really)"],
 
     clear: (term) => {
@@ -111,8 +104,8 @@
         max-height: 60dvh;
         display: flex;
         flex-direction: column;
-        background: #17140F;
-        color: #EDE6DA;
+        background: #131316;
+        color: #E9E9EC;
         border: 1px solid var(--line-strong);
         border-radius: var(--r-md);
         box-shadow: var(--shadow-lg);
@@ -126,15 +119,15 @@
         align-items: center;
         gap: 6px;
         padding: 10px 14px;
-        border-bottom: 1px solid rgba(237, 230, 218, 0.12);
-        color: rgba(237, 230, 218, 0.55);
+        border-bottom: 1px solid rgba(233, 233, 236, 0.12);
+        color: rgba(233, 233, 236, 0.55);
         font-size: 0.72rem;
         user-select: none;
       }
       .terminal-bar span:first-child { display: flex; gap: 6px; }
       .terminal-bar i {
         width: 10px; height: 10px; border-radius: 50%;
-        background: rgba(237, 230, 218, 0.25);
+        background: rgba(233, 233, 236, 0.25);
         display: inline-block;
       }
       .terminal-bar i:first-child { background: var(--accent); }
@@ -153,7 +146,7 @@
         display: flex;
         gap: 8px;
         padding: 10px 14px;
-        border-top: 1px solid rgba(237, 230, 218, 0.12);
+        border-top: 1px solid rgba(233, 233, 236, 0.12);
       }
       .terminal-input-row label { color: var(--accent); user-select: none; }
       .terminal-input {

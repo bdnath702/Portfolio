@@ -49,6 +49,17 @@
   flex-wrap: wrap;
 }
 
+/* Project names stay clean and highly readable; the custom subheading font
+   is reserved for the page's descriptive section headings. */
+.case-title-row h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
 .case-role {
   font-size: var(--fs-xs);
   letter-spacing: 0.06em;

@@ -115,11 +115,6 @@
   height: 17px;
 }
 
-/* Theme toggle: show one icon per theme */
-.theme-btn .icon-sun          { display: none; }
-.dark-theme .theme-btn .icon-sun  { display: block; }
-.dark-theme .theme-btn .icon-moon { display: none; }
-
 .mobile-menu-btn {
   display: none;
 }
@@ -166,7 +161,7 @@
 
 .btn-accent {
   background: var(--accent);
-  color: #FFF8F4;
+  color: #FFFFFF;
 }
 
 .btn-accent:hover {
@@ -218,7 +213,7 @@
   position: fixed;
   inset: 0;
   z-index: calc(var(--z-sidebar) - 1);
-  background: rgba(20, 17, 14, 0.45);
+  background: rgba(9, 9, 11, 0.45);
   opacity: 0;
   visibility: hidden;
   transition:
@@ -590,135 +585,29 @@ body.sidebar-open {
 
 .internship-story-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(390px, 0.75fr);
-  align-items: start;
-  gap: var(--sp-5);
-}
-
-.internship-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
-  overflow: hidden;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1.28fr);
+  align-items: stretch;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
   border: 1px solid var(--line);
-  border-radius: calc(var(--r-lg) + 4px);
-  background: var(--bg-elevated);
+  border-radius: calc(var(--r-lg) + 6px);
+  background:
+    linear-gradient(135deg, rgba(10, 102, 194, 0.055), transparent 42%),
+    var(--bg-elevated);
   box-shadow: var(--shadow-md);
 }
 
-.internship-story-grid .internship-card {
-  grid-template-columns: 1fr;
-}
-
-.internship-story-grid .internship-content::before {
-  inset: 0 0 auto;
-  width: auto;
-  height: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--ok));
-}
-
-.internship-certificate {
-  position: relative;
-  display: grid;
-  place-items: center;
-  min-width: 0;
-  padding: clamp(var(--sp-3), 2.5vw, var(--sp-5));
-  overflow: hidden;
-  background:
-    linear-gradient(135deg, rgba(216, 90, 48, 0.17), transparent 46%),
-    var(--bg-sunken);
-}
-
-.internship-certificate::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: radial-gradient(var(--line-strong) 0.75px, transparent 0.75px);
-  background-size: 18px 18px;
-  opacity: 0.24;
-}
-
-.internship-certificate img {
-  position: relative;
-  z-index: 1;
+.internship-card {
   display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba(20, 17, 14, 0.12);
-  border-radius: var(--r-md);
-  box-shadow: 0 18px 46px rgba(20, 17, 14, 0.22);
-  transform: rotate(-0.7deg);
-  transition: transform var(--dur-base) var(--ease-out),
-              box-shadow var(--dur-base) var(--ease-out);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--r-lg);
+  background: var(--bg-sunken);
+  box-shadow: none;
 }
 
-.internship-certificate:hover img,
-.internship-certificate:focus-visible img {
-  transform: rotate(0deg) scale(1.018);
-  box-shadow: 0 22px 54px rgba(20, 17, 14, 0.28);
-}
-
-.certificate-grade {
-  position: absolute;
-  z-index: 2;
-  top: var(--sp-4);
-  right: var(--sp-4);
-  display: grid;
-  place-items: center;
-  width: 68px;
-  height: 68px;
-  border: 4px solid var(--bg-elevated);
-  border-radius: 50%;
-  background: var(--ok);
-  color: #10251F;
-  box-shadow: var(--shadow-sm);
-  line-height: 1;
-}
-
-.certificate-grade small {
-  font-family: var(--font-mono);
-  font-size: 0.56rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.certificate-grade strong {
-  font-family: var(--font-display);
-  font-size: 1.55rem;
-}
-
-.certificate-open {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  bottom: var(--sp-4);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-2);
-  padding: 0.62rem 0.88rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--r-full);
-  background: rgba(20, 17, 14, 0.86);
-  color: #fff;
-  font-size: var(--fs-xs);
-  font-weight: 600;
-  white-space: nowrap;
-  box-shadow: var(--shadow-sm);
-  opacity: 0;
-  transform: translate(-50%, 8px);
-  transition: opacity var(--dur-fast) var(--ease-out),
-              transform var(--dur-fast) var(--ease-out);
-}
-
-.certificate-open svg {
-  width: 14px;
-  height: 14px;
-}
-
-.internship-certificate:hover .certificate-open,
-.internship-certificate:focus-visible .certificate-open {
-  opacity: 1;
-  transform: translate(-50%, 0);
+.internship-story-grid .internship-card {
+  min-width: 0;
 }
 
 .internship-content {
@@ -728,14 +617,7 @@ body.sidebar-open {
   justify-items: start;
   gap: var(--sp-4);
   padding: clamp(var(--sp-5), 4vw, var(--sp-7));
-}
-
-.internship-content::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 4px;
-  background: linear-gradient(var(--accent), var(--ok));
+  min-height: 100%;
 }
 
 .internship-kicker {
@@ -809,45 +691,42 @@ body.sidebar-open {
   line-height: 1.45;
 }
 
-.internship-action {
-  margin-top: var(--sp-1);
-}
-
-/* LinkedIn story panel — intentionally dark in both themes, like the site's
-   terminal surfaces. The blue is reserved for LinkedIn-specific actions. */
+/* LinkedIn story panel — a light, landscape verification surface. */
 .linkedin-proof {
   position: relative;
   min-width: 0;
   overflow: hidden;
-  padding: var(--sp-4);
-  border: 1px solid rgba(237, 230, 218, 0.14);
-  border-radius: calc(var(--r-lg) + 4px);
-  background: #17140f;
-  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: var(--sp-3);
+  border: 1px solid rgba(10, 102, 194, 0.18);
+  border-radius: var(--r-lg);
+  background: #FFFFFF;
+  box-shadow: 0 12px 34px -24px rgba(10, 102, 194, 0.42);
 }
 
 .linkedin-proof::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
-  height: 3px;
-  background: linear-gradient(90deg, #0a66c2, #45a5ff 56%, transparent);
+  height: 2px;
+  background: linear-gradient(90deg, #0A66C2, #58A9E8 56%, transparent 92%);
 }
 
 .linkedin-proof-head {
   display: grid;
   gap: var(--sp-2);
-  padding: var(--sp-2) var(--sp-1) var(--sp-4);
+  padding: var(--sp-3) var(--sp-2) var(--sp-4);
 }
 
 .linkedin-proof-head h3 {
-  color: #fff;
-  font-size: clamp(1.3rem, 2vw, 1.75rem);
+  color: var(--text);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
   letter-spacing: -0.02em;
 }
 
 .linkedin-proof-head > p {
-  color: #b8b0a5;
+  color: var(--text-2);
   font-size: var(--fs-sm);
 }
 
@@ -856,7 +735,7 @@ body.sidebar-open {
   align-items: center;
   gap: var(--sp-2);
   min-width: 0;
-  color: rgba(237, 230, 218, 0.62);
+  color: var(--text-3);
   font-size: 0.66rem;
   letter-spacing: 0.055em;
   text-transform: uppercase;
@@ -866,17 +745,17 @@ body.sidebar-open {
   display: grid;
   flex: 0 0 auto;
   place-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  background: #0a66c2;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  background: #0A66C2;
   color: #fff;
   box-shadow: 0 8px 18px rgba(10, 102, 194, 0.28);
 }
 
-.linkedin-mark svg {
-  width: 16px;
-  height: 16px;
+.linkedin-logo {
+  width: 18px;
+  height: 21px;
 }
 
 .linkedin-live {
@@ -884,7 +763,7 @@ body.sidebar-open {
   align-items: center;
   gap: 6px;
   margin-left: auto;
-  color: #8fc9ff;
+  color: #0A66C2;
   white-space: nowrap;
 }
 
@@ -892,23 +771,24 @@ body.sidebar-open {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #45a5ff;
-  box-shadow: 0 0 0 4px rgba(69, 165, 255, 0.12);
+  background: #0A66C2;
+  box-shadow: 0 0 0 4px rgba(10, 102, 194, 0.10);
 }
 
 .linkedin-post-frame {
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 0;
+  border: 1px solid var(--line);
   border-radius: var(--r-md);
-  background: #fff;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+  background: #FFFFFF;
+  box-shadow: var(--shadow-sm);
 }
 
 .linkedin-post-frame iframe {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: 739px;
+  height: 460px;
   border: 0;
   background: #fff;
 }
@@ -918,15 +798,15 @@ body.sidebar-open {
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-3);
-  padding: var(--sp-4) var(--sp-1) var(--sp-1);
-  color: #8fc9ff;
+  padding: var(--sp-3) var(--sp-2) var(--sp-1);
+  color: #0A66C2;
   font-size: var(--fs-sm);
   font-weight: 600;
   transition: color var(--dur-fast) var(--ease-out);
 }
 
 .linkedin-proof-link:hover {
-  color: #fff;
+  color: #004182;
 }
 
 @media (max-width: 1020px) {
@@ -934,45 +814,13 @@ body.sidebar-open {
     grid-template-columns: 1fr;
   }
 
-  .internship-story-grid .internship-card {
-    grid-template-columns: minmax(0, 1.04fr) minmax(340px, 0.96fr);
-  }
-
-  .internship-story-grid .internship-content::before {
-    inset: 0 auto 0 0;
-    width: 4px;
-    height: auto;
-    background: linear-gradient(var(--accent), var(--ok));
-  }
-
   .linkedin-proof {
-    width: min(100%, 560px);
-    margin-inline: auto;
+    width: 100%;
+    margin-inline: 0;
   }
 }
 
 @media (max-width: 900px) {
-  .internship-card {
-    grid-template-columns: 1fr;
-  }
-
-  .internship-story-grid .internship-card {
-    grid-template-columns: 1fr;
-  }
-
-  .internship-content::before {
-    inset: 0 0 auto;
-    width: auto;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--ok));
-  }
-
-  .internship-story-grid .internship-content::before {
-    inset: 0 0 auto;
-    width: auto;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent), var(--ok));
-  }
 }
 
 @media (max-width: 640px) {
@@ -985,30 +833,15 @@ body.sidebar-open {
     grid-template-columns: 1fr;
   }
 
-  .certificate-grade {
-    top: var(--sp-3);
-    right: var(--sp-3);
-    width: 58px;
-    height: 58px;
-  }
-
-  .certificate-open {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-
   .linkedin-proof {
     padding: var(--sp-3);
   }
 
+  .linkedin-post-frame iframe {
+    height: 520px;
+  }
+
   .linkedin-proof-topline > .mono {
     display: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .internship-certificate img,
-  .certificate-open {
-    transition: none;
   }
 }

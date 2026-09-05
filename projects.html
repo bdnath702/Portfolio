@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
 
   <title>Projects &amp; Experience — Bipul Debnath | Full-Stack Developer</title>
   <meta name="description"
@@ -19,27 +20,14 @@
   <meta property="og:image" content="https://bipul.dev/assets/og-image.png"><!-- TODO -->
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- No-flash theme boot -->
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        if (t === "dark" ||
-            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
-          document.documentElement.classList.add("dark-theme");
-        }
-      } catch (e) { /* ignore */ }
-    })();
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
-  <link rel="stylesheet" href="css/base.css?v=20260709">
+  <link rel="stylesheet" href="css/base.css?v=20260905d">
   <link rel="stylesheet" href="css/animations.css?v=20260709">
-  <link rel="stylesheet" href="css/components.css?v=20260901">
+  <link rel="stylesheet" href="css/components.css?v=20260905c">
   <link rel="stylesheet" href="css/projects.css?v=20260901">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -294,22 +282,6 @@
 
         <div class="internship-story-grid">
         <article class="internship-card" data-reveal="scale">
-          <a class="internship-certificate" href="assets/internships/certificate.jpeg"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Open the full Web Development internship certificate">
-            <img src="assets/internships/certificate.jpeg"
-                 alt="Certificate of Achievement for Bipul Debnath's Web Development internship at Insyssky Softtech"
-                 width="1280" height="908" loading="lazy">
-            <span class="certificate-grade" aria-label="Grade S">
-              <small>Grade</small>
-              <strong>S</strong>
-            </span>
-            <span class="certificate-open">
-              <i data-lucide="maximize-2" aria-hidden="true"></i>
-              View certificate
-            </span>
-          </a>
-
           <div class="internship-content">
             <p class="internship-kicker mono">Summer Internship Program 2026</p>
             <div>
@@ -343,11 +315,6 @@
               </div>
             </dl>
 
-            <a class="btn btn-primary internship-action"
-               href="assets/internships/certificate.jpeg" target="_blank"
-               rel="noopener noreferrer">
-              View full certificate <span class="arrow">↗</span>
-            </a>
           </div>
         </article>
 
@@ -356,19 +323,21 @@
           <div class="linkedin-proof-head">
             <div class="linkedin-proof-topline">
               <span class="linkedin-mark" aria-hidden="true">
-                <i data-lucide="linkedin"></i>
+                <svg class="linkedin-logo" viewBox="0 0 448 512" aria-hidden="true">
+                  <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 84 0 54.3A53.79 53.79 0 0 1 107.58 54.3c0 29.7-24.09 53.8-53.79 53.8zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.19 61.9 111.19 142.3z"/>
+                </svg>
               </span>
-              <span class="mono">Shared milestone</span>
-              <span class="linkedin-live"><i aria-hidden="true"></i> LinkedIn post</span>
+              <span class="mono">Verified experience</span>
+              <span class="linkedin-live"><i aria-hidden="true"></i> LinkedIn</span>
             </div>
             <h3 id="linkedin-story-title-projects">The moment behind the milestone.</h3>
-            <p>The certificate records the achievement. This post captures the story.</p>
+            <p>The full internship story and certificate, shared in one place.</p>
           </div>
 
           <div class="linkedin-post-frame">
             <iframe
               src="https://www.linkedin.com/embed/feed/update/urn:li:share:7489975746178908160"
-              height="739" width="504" frameborder="0" allowfullscreen=""
+              height="460" width="760" frameborder="0" allowfullscreen=""
               loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
               title="LinkedIn post about Bipul Debnath's Web Development internship">
             </iframe>
@@ -407,14 +376,12 @@
   <div id="site-footer"></div>
   <div id="site-modals"></div>
 
-  <!-- No Three.js / hero3d / welcome here — this page doesn't use them -->
+  <!-- No welcome overlay here — this page doesn't use it -->
   <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
   <script defer src="js/components.js?v=20260709"></script>
-  <script defer src="js/theme.js?v=20260709"></script>
   <script defer src="js/modals.js?v=20260709"></script>
   <script defer src="js/scroll.js?v=20260709"></script>
   <script defer src="js/tilt.js?v=20260709"></script>
-  <script defer src="js/cursor.js?v=20260709"></script>
   <script defer src="js/terminal.js?v=20260709"></script>
 </body>
 </html>

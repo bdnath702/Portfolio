@@ -3,20 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFFFFF">
   <title>404 — Page not found | bipul.dev</title>
   <meta name="robots" content="noindex">
-
-  <script>
-    (function () {
-      try {
-        var t = localStorage.getItem("theme");
-        if (t === "dark" ||
-            (t === null && matchMedia("(prefers-color-scheme: dark)").matches)) {
-          document.documentElement.classList.add("dark-theme");
-        }
-      } catch (e) { /* ignore */ }
-    })();
-  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +14,7 @@
 
   <!-- Absolute paths: a 404 can be served from ANY url depth,
        so relative paths like css/base.css would themselves 404. -->
-  <link rel="stylesheet" href="/css/base.css?v=20260709">
+  <link rel="stylesheet" href="/css/base.css?v=20260905d">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
 
   <style>

@@ -5,53 +5,70 @@
 
 /* --------------------------------------------------------------------------
    1. DESIGN TOKENS
-   Light theme = warm cream. Dark theme = warm charcoal (not pure black —
-   pure black + cream accents looks harsh; warm dark keeps brand cohesion).
+   Single light theme — clean white surfaces, neutral greys, warm accent.
    -------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Pixemon";
+  src: url("../assets/fonts/pixemon_2/Pixemon.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "The Stone Tribes";
+  src: url("../assets/fonts/the_stone_tribes/The%20Stone%20Tribes.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
-  /* Color — light (default) */
-  --bg:            #FAF6F0;
+  /* Color — surfaces */
+  --bg:            #FFFFFF;
   --bg-elevated:   #FFFFFF;
-  --bg-sunken:     #F1EAE0;
-  --text:          #1C1917;
-  --text-2:        #57534E;
-  --text-3:        #8A8580;
-  --line:          rgba(28, 25, 23, 0.10);
-  --line-strong:   rgba(28, 25, 23, 0.22);
+  --bg-sunken:     #F5F5F6;
+  --text:          #18181B;
+  --text-2:        #52525B;
+  --text-3:        #8B8B93;
+  --line:          rgba(9, 9, 11, 0.10);
+  --line-strong:   rgba(9, 9, 11, 0.20);
 
   --accent:        #D85A30;
   --accent-strong: #B4451F;
-  --accent-soft:   #FAECE7;
+  --accent-soft:   #FDEDE7;
   --accent-ink:    #4A1B0C;   /* text on accent-soft */
 
   --ok:            #1D9E75;
-  --ok-soft:       #E1F5EE;
+  --ok-soft:       #E4F6F0;
   --ok-ink:        #085041;
 
   /* Extra tag/pill hues — used where more than accent+ok are needed
      (e.g. the About masthead's hobby tags) */
-  --info-soft:     #E7EEF6;
+  --info-soft:     #E8EFF8;
   --info-ink:      #1F4066;
 
-  --violet-soft:   #F2EAF6;
+  --violet-soft:   #F3EBF7;
   --violet-ink:    #5B2E73;
 
-  --gold-soft:     #FBF1DC;
+  --gold-soft:     #FCF3DE;
   --gold-ink:      #7A4E0B;
 
-  /* Scene color fed to Three.js via getComputedStyle (hero3d.js reads it) */
-  --scene-line:    #D85A30;
-  --scene-fog:     #FAF6F0;
+  /* Hero headline highlights */
+  --hl-green:      #3FA37B;
+  --hl-violet:     #6C5CE7;
 
   /* Elevation — soft, diffuse, never glow */
-  --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.05);
-  --shadow-md: 0 6px 24px -8px rgba(28, 25, 23, 0.12);
-  --shadow-lg: 0 24px 60px -20px rgba(28, 25, 23, 0.22);
+  --shadow-sm: 0 1px 2px rgba(9, 9, 11, 0.05);
+  --shadow-md: 0 6px 24px -8px rgba(9, 9, 11, 0.14);
+  --shadow-lg: 0 24px 60px -20px rgba(9, 9, 11, 0.24);
 
   /* Typography */
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
   --font-body:    "Inter", system-ui, -apple-system, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+  --font-headline: "Pixemon", var(--font-display);
+  --font-subhead:  "The Stone Tribes", var(--font-display);
 
   /* Fluid type scale (min @ 360px viewport → max @ 1280px) */
   --fs-hero:  clamp(2.6rem, 1.2rem + 6.2vw, 5.4rem);
@@ -98,45 +115,6 @@
   --z-welcome:  500;
 
   color-scheme: light;
-}
-
-/* Dark theme — toggled by theme.js on <html> */
-.dark-theme {
-  --bg:            #14110E;
-  --bg-elevated:   #1D1915;
-  --bg-sunken:     #0E0C0A;
-  --text:          #F2ECE3;
-  --text-2:        #B8B0A5;
-  --text-3:        #7D766D;
-  --line:          rgba(242, 236, 227, 0.10);
-  --line-strong:   rgba(242, 236, 227, 0.24);
-
-  --accent:        #E8703F;
-  --accent-strong: #F08A5D;
-  --accent-soft:   rgba(232, 112, 63, 0.14);
-  --accent-ink:    #F5C4B3;
-
-  --ok:            #2BB98A;
-  --ok-soft:       rgba(43, 185, 138, 0.14);
-  --ok-ink:        #9FE1CB;
-
-  --info-soft:     rgba(94, 158, 214, 0.16);
-  --info-ink:      #BFDBF7;
-
-  --violet-soft:   rgba(179, 120, 214, 0.16);
-  --violet-ink:    #E3C6F2;
-
-  --gold-soft:     rgba(230, 178, 64, 0.18);
-  --gold-ink:      #F2CE8A;
-
-  --scene-line:    #E8703F;
-  --scene-fog:     #14110E;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 6px 24px -8px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.65);
-
-  color-scheme: dark;
 }
 
 /* --------------------------------------------------------------------------
@@ -205,16 +183,42 @@ ol {
    3. TYPOGRAPHY
    -------------------------------------------------------------------------- */
 h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
-h1 { font-size: var(--fs-h1); }
-h2 { font-size: var(--fs-h2); }
-h3 { font-size: var(--fs-h3); }
+h1 {
+  font-family: var(--font-headline);
+  font-size: var(--fs-h1);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
+
+h2 {
+  font-family: var(--font-subhead);
+  width: fit-content;
+  max-width: 100%;
+  font-size: var(--fs-h2);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--text);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text);
+}
+
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--text);
+}
 
 p {
   max-width: 62ch;
@@ -223,7 +227,7 @@ p {
 
 ::selection {
   background: var(--accent);
-  color: #FFF8F4;
+  color: #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------
